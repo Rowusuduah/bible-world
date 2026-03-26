@@ -1,11 +1,11 @@
 {
   "world_name": "BibleWorld",
   "version": "1.0.0",
-  "current_cycle": 0,
-  "cycle_count": 0,
+  "current_cycle": 1,
+  "cycle_count": 1,
   "last_updated": "2026-03-26",
-  "world_alive": false,
-  "initialized": false,
+  "world_alive": true,
+  "initialized": true,
 
   "survival_thresholds": {
     "revelation_score_min": 0.70,
@@ -15,13 +15,13 @@
   },
 
   "current_metrics": {
-    "revelation_score": 0.0,
-    "build_score": 0.0,
-    "integrity_score": 0.0,
-    "agent_count": 0,
-    "active_patterns": 0,
-    "active_builds": 0,
-    "total_patterns_discovered": 0,
+    "revelation_score": 0.82,
+    "build_score": 0.75,
+    "integrity_score": 0.91,
+    "agent_count": 12,
+    "active_patterns": 12,
+    "active_builds": 2,
+    "total_patterns_discovered": 4,
     "total_builds_completed": 0
   },
 
@@ -59,29 +59,35 @@
 
   "labs": {
     "pattern_discovery": {
-      "status": "INITIALIZING",
-      "director": "TBD",
-      "score": 0.0
+      "status": "ACTIVE",
+      "director": "Pattern Discovery Director",
+      "score": 7.7
     },
     "innovation_build": {
-      "status": "INITIALIZING",
-      "director": "TBD",
-      "score": 0.0
+      "status": "ACTIVE",
+      "director": "Innovation Build Director",
+      "score": 7.5
     },
     "science_research": {
-      "status": "INITIALIZING",
-      "director": "TBD",
-      "score": 0.0
+      "status": "ACTIVE",
+      "director": "Science Research Director",
+      "score": 7.4
     },
     "kingdom_business": {
-      "status": "INITIALIZING",
-      "director": "TBD",
-      "score": 0.0
+      "status": "ACTIVE",
+      "director": "Kingdom Business Director",
+      "score": 7.3
     }
   },
 
   "red_lines_active": true,
   "enforcement_active": true,
-  "web_search_enabled": true,
-  "autonomous_mode": true
+  "web_search_enabled": false,
+  "autonomous_mode": true,
+
+  "reading_position": {
+    "old_testament": "Genesis 3",
+    "psalms": "Psalm 2",
+    "new_testament": "John 1:19"
+  }
 }
