@@ -1,0 +1,19 @@
+{
+  "world": "BibleWorld",
+  "version": "1.0.0",
+  "last_updated_cycle": 0,
+  "memory_files": {
+    "pattern_registry": ".Codex/memory/pattern-registry.md",
+    "build_registry": ".Codex/memory/build-registry.md",
+    "agent_registry": ".Codex/memory/agent-registry.md",
+    "known_unknowns": ".Codex/memory/known-unknowns.md",
+    "scripture_index": ".Codex/intelligence/scripture-index.md"
+  },
+  "log_files": {
+    "survival_log": ".Codex/logs/world-survival-log.md",
+    "enforcement_log": ".Codex/logs/enforcement-log.md",
+    "agent_activity_log": ".Codex/logs/agent-activity-log.md",
+    "evolution_log": ".Codex/logs/evolution-log.md"
+  },
+  "notes": []
+}

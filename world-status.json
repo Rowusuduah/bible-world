@@ -1,0 +1,52 @@
+{
+  "world": "BibleWorld",
+  "version": "1.0.0",
+  "as_of_cycle": 0,
+  "last_updated": "2026-03-26",
+  "world_alive": false,
+  "initialized": false,
+  "death_spiral": false,
+
+  "survival_metrics": {
+    "revelation_score": 0.0,
+    "build_score": 0.0,
+    "integrity_score": 0.0,
+    "agent_count": 0,
+    "last_enforcement_check": 0,
+    "doctrinal_violations": 0,
+    "labs_operational": 0
+  },
+
+  "pattern_council": {
+    "chief_theologian": { "status": "SPAWNING", "score": 0.0 },
+    "chief_technologist": { "status": "SPAWNING", "score": 0.0 },
+    "chief_scientist": { "status": "SPAWNING", "score": 0.0 },
+    "chief_innovator": { "status": "SPAWNING", "score": 0.0 },
+    "chief_historian": { "status": "SPAWNING", "score": 0.0 },
+    "chief_engineer": { "status": "SPAWNING", "score": 0.0 },
+    "chief_futurist": { "status": "SPAWNING", "score": 0.0 },
+    "chief_builder": { "status": "SPAWNING", "score": 0.0 }
+  },
+
+  "top_patterns": [],
+
+  "top_builds": [],
+
+  "active_research": [],
+
+  "scripture_coverage": {
+    "genesis": false,
+    "exodus": false,
+    "psalms": false,
+    "proverbs": false,
+    "isaiah": false,
+    "matthew": false,
+    "john": false,
+    "acts": false,
+    "romans": false,
+    "corinthians": false,
+    "revelation": false
+  },
+
+  "cycle_history": []
+}

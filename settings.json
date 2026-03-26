@@ -1,0 +1,87 @@
+{
+  "world_name": "BibleWorld",
+  "version": "1.0.0",
+  "current_cycle": 0,
+  "cycle_count": 0,
+  "last_updated": "2026-03-26",
+  "world_alive": false,
+  "initialized": false,
+
+  "survival_thresholds": {
+    "revelation_score_min": 0.70,
+    "build_score_min": 0.65,
+    "integrity_score_min": 0.80,
+    "agent_count_min": 4
+  },
+
+  "current_metrics": {
+    "revelation_score": 0.0,
+    "build_score": 0.0,
+    "integrity_score": 0.0,
+    "agent_count": 0,
+    "active_patterns": 0,
+    "active_builds": 0,
+    "total_patterns_discovered": 0,
+    "total_builds_completed": 0
+  },
+
+  "pattern_taxonomy": [
+    "CREATION",
+    "MULTIPLICATION",
+    "COVENANT",
+    "HEALING",
+    "GOVERNANCE",
+    "COMMUNICATION",
+    "STRUCTURE",
+    "TIME",
+    "LIGHT",
+    "RESTORATION"
+  ],
+
+  "cycle_types": {
+    "A": "PATTERN_DISCOVERY",
+    "B": "BUILD_CYCLE",
+    "C": "SCIENCE_CORRELATION",
+    "D": "AGENT_EVOLUTION",
+    "E": "HISTORICAL_VALIDATION",
+    "F": "BUSINESS_MODEL",
+    "G": "TECHNOLOGY_FORECAST"
+  },
+
+  "agent_evolution": {
+    "promotion_threshold": 8.0,
+    "immediate_promotion_threshold": 9.0,
+    "warning_threshold": 5.0,
+    "deletion_threshold": 5.0,
+    "deletion_consecutive_cycles": 2,
+    "probation_cycles_before_deletion": 1
+  },
+
+  "labs": {
+    "pattern_discovery": {
+      "status": "INITIALIZING",
+      "director": "TBD",
+      "score": 0.0
+    },
+    "innovation_build": {
+      "status": "INITIALIZING",
+      "director": "TBD",
+      "score": 0.0
+    },
+    "science_research": {
+      "status": "INITIALIZING",
+      "director": "TBD",
+      "score": 0.0
+    },
+    "kingdom_business": {
+      "status": "INITIALIZING",
+      "director": "TBD",
+      "score": 0.0
+    }
+  },
+
+  "red_lines_active": true,
+  "enforcement_active": true,
+  "web_search_enabled": true,
+  "autonomous_mode": true
+}
