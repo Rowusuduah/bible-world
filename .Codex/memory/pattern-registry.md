@@ -1,10 +1,10 @@
 # BibleWorld Pattern Registry
 ## Living Record of All Discovered Biblical Patterns
 
-**Last Updated:** Cycle 014
-**Total Patterns:** 47 (8 seed + 39 discovered)
-**Active Patterns:** 47
-**Level 3 Patterns:** 20 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038, PAT-041, PAT-042, PAT-044, PAT-045, PAT-046)
+**Last Updated:** Cycle 015
+**Total Patterns:** 50 (8 seed + 42 discovered)
+**Active Patterns:** 50
+**Level 3 Patterns:** 22 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038, PAT-041, PAT-042, PAT-044, PAT-045, PAT-046, PAT-048, PAT-049)
 
 ---
 
@@ -100,6 +100,53 @@
 **Discovered By:** Chief Theologian + Chief Engineer
 **Cycle Discovered:** 012
 **Build Status:** CONCEPT
+**Level:** 2
+
+### PAT-048
+**Scripture:** Daniel 5:25-28 — "This is the inscription that was written: MENE, MENE, TEKEL, PARSIN. Here is what these words mean: Mene: God has numbered the days of your reign and brought it to an end. Tekel: You have been weighed on the scales and found wanting. Peres: Your kingdom is divided and given to the Medes and Persians."
+**Supporting Texts:** Daniel 5:17 (independent evaluator principle); Daniel 5:12 (domain expert interpreter)
+**Pattern Type:** GOVERNANCE + LIGHT
+**Pattern Name:** The Writing on the Wall Pattern — Brittleness as Weights-and-Measures Audit
+**Pattern Description:** King Belshazzar's interpretation systems saw the same words on the wall but could not consistently interpret them. Daniel revealed: each word (MENE, TEKEL, PERES) is a weights-and-measures unit (mina, shekel, half-shekel) deployed as a calibrated audit. TEKEL = "weighed and found wanting" — a calibrated measurement revealing inadequacy under independent evaluation. The pattern: feed the same content through multiple interpretation pathways and measure whether the output remains consistent, OR reveals structural inadequacy in the interpreters.
+**Modern Mapping:** Prompt brittleness testing. The TEKEL audit = BrittlenessScore. Feed the same semantic content through N surface-form paraphrases. Measure output consistency. A brittle prompt is "found wanting" — its surface form, not semantic content, drives output. The BrittleCertificate is the written wall — permanent, authoritative. prompt-shield (BUILD-014) runs the TEKEL audit.
+**Infrastructure Status:** EXISTS NOW (Python, paraphrase generation, sentence-transformers, SQLite, CI/CD)
+**Application Potential:** prompt-shield — pip install prompt-shield. BrittlenessEngine + BrittlenessRunner + BrittleCertificate + CI gate.
+**Pattern Score:** 9.1/10 (textual grounding 2.8 + modern relevance 2.9 + specificity 1.9 + novelty 1.5)
+**Discovered By:** Chief Theologian (Senior Agent) + Chief Technologist (Senior Agent)
+**Cycle Discovered:** 015
+**Build Status:** IN-DESIGN (BUILD-014: prompt-shield, Pivot_Score 8.75)
+**Level:** 3
+**Note:** FIRST Daniel pattern in BibleWorld history. Opens book of Daniel. scripture_coverage.daniel = TRUE from cycle 015.
+
+### PAT-049
+**Scripture:** Matthew 7:24-27 — "Therefore everyone who hears these words of mine and puts them into practice is like a wise man who built his house on the rock. The rain came down, the streams rose, and the winds blew and beat against that house; yet it did not fall, because it had its foundation on the rock. But everyone who hears these words of mine and does not put them into practice is like a foolish man who built his house on sand. The rain came down, the streams rose, and the winds blew and beat against that house, and it fell with a great crash."
+**Supporting Texts:** Luke 6:47-49 (parallel — "dug down deep and laid the foundation on rock"); Matthew 7:28-29 (amazement — authoritative teaching)
+**Pattern Type:** STRUCTURE + GOVERNANCE
+**Pattern Name:** The Two Builders Pattern — Foundation Quality Revealed Under Stress
+**Pattern Description:** Two houses are indistinguishable in fair weather. The storm (rain/streams/wind — three independent stress vectors) reveals whether the foundation is rock or sand. Both builders heard the same words; the difference is depth of implementation. The storm is not the enemy — it is the diagnostic instrument. Fair-weather testing cannot reveal sand. The stress test reveals what was always there.
+**Modern Mapping:** Prompt stress testing. Both a robust and a brittle prompt perform identically on standard eval inputs (fair weather). Real user input variation (natural rephrasing, paraphrase variants) = the storm. Three storm vectors = three paraphrase levels (lexical/rain, syntactic/streams, semantic/wind). A brittle prompt falls with "a great crash" when users rephrase naturally. prompt-shield IS the storm — applied pre-deployment.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** prompt-shield — three-level paraphrase stress test. Configurable levels matching the three storm vectors.
+**Pattern Score:** 9.0/10 (textual grounding 2.9 + modern relevance 2.8 + specificity 1.8 + novelty 1.5)
+**Discovered By:** Chief Theologian (Senior Agent) + Pattern Commander
+**Cycle Discovered:** 015
+**Build Status:** IN-DESIGN (BUILD-014: prompt-shield, Pivot_Score 8.75)
+**Level:** 3
+**Note:** FIRST Matthew pattern in BibleWorld history. Opens Gospel of Matthew. scripture_coverage.matthew = TRUE from cycle 015. Matthew 5-7 (Sermon on the Mount) and Matthew 13 (Parables) flagged for future harvest.
+
+### PAT-050
+**Scripture:** Proverbs 17:3 — "The crucible for silver and the furnace for gold, but the Lord tests the heart."
+**Supporting Texts:** Proverbs 27:21; Zechariah 13:9; Malachi 3:3; 1 Peter 1:7
+**Pattern Type:** RESTORATION + GOVERNANCE
+**Pattern Name:** The Refining Crucible Pattern — Stress Test as Quality Certification
+**Pattern Description:** The crucible is a controlled-stress environment designed to certify quality by separating impurities. Silver and gold are NOT damaged by the crucible — they are certified by it. The dross (impurities) separates under heat. What remains is verifiably pure. The crucible produces a certificate: the tested material can now be claimed as pure, not merely asserted as pure.
+**Modern Mapping:** BrittleCertificate. The brittleness stress test is the crucible. The BrittleCertificate is the output — proof that the prompt passed the heat, that its quality is certified, not asserted. Low dross = ROBUST verdict. High dross = BRITTLE verdict. The certificate changes deployment decisions.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** prompt-shield — BrittleCertificate as the crucible output artifact. Structured JSON + Markdown certificate.
+**Pattern Score:** 8.4/10 (textual grounding 2.6 + modern relevance 2.7 + specificity 1.6 + novelty 1.5)
+**Discovered By:** Chief Theologian (Senior Agent)
+**Cycle Discovered:** 015
+**Build Status:** IN-DESIGN (BUILD-014: prompt-shield, Pivot_Score 8.75)
 **Level:** 2
 
 ---

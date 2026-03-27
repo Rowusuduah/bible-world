@@ -1,9 +1,9 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 014
-**Total Builds:** 13
-**Builds in Design:** 9 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity)
+**Last Updated:** Cycle 015
+**Total Builds:** 14
+**Builds in Design:** 10 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 2 (BUILD-010 drift-guard — full implementation ready to ship; BUILD-011 spec-drift — prototype written cycle 012)
 **Builds Deployed:** 0
@@ -267,6 +267,29 @@ Each build entry contains:
 **Acquisition Path:** Anthropic (trust/reliability — eval suite quality improves confidence in Claude deployments), Confident AI/DeepEval (natural complementary add-on), Datadog (expanding LLM quality monitoring), GitHub (Copilot quality signal: mutation score as a CI metric)
 **Design Location:** `.Codex/builds/llm-mutation/README.md`
 **Competitive Landscape:** Mutahunter/Pitest/Stryker do mutation testing for code (RED). PromptBench is academic/unmaintained (EACL 2023). No production Python library for LLM prompt semantic mutation testing confirmed (GREEN).
+
+---
+
+---
+
+### BUILD-014: prompt-shield
+**Pattern Source:** PAT-048 (Daniel 5:25-28 — Writing on the Wall / TEKEL Audit) + PAT-049 (Matthew 7:24-27 — Two Builders / Storm Stress Test) + PAT-050 (Proverbs 17:3 — Refining Crucible / Certification)
+**Build Type:** SOFTWARE — Open-Source Python Library / Developer Tool
+**Problem Solved:** LLM prompts are brittle — they work on standard test inputs and fail catastrophically when real users rephrase naturally. No open-source tool measures prompt output consistency across semantically-equivalent paraphrase variants and blocks deployment if brittleness exceeds threshold.
+**Who It Serves:** Senior ML engineers and prompt engineers at companies with LLM features in production; AI platform teams standardizing quality gates; teams who discover brittle prompts from user complaints rather than tests.
+**How It Works:** BrittlenessEngine generates N paraphrase variants per test input at three stress levels (lexical/word-substitution, syntactic/structure-transformation, semantic/full-rephrasing). VariantRunner executes the user's LLM function on each variant. BrittlenessScorer computes BrittlenessScore = proportion of variants where output deviates beyond cosine similarity threshold. BrittleCertificate produced as structured JSON + Markdown artifact. CI gate: `shield ci` exits 0 (ROBUST/CONDITIONAL) or 1 (BRITTLE). FaultLineAnalyzer identifies which variant types cause failure and why. BaselineRegistry tracks brittleness scores over time for regression detection. Decorator API and pytest plugin included.
+**Claude API Role:** Claude (claude-3-5-haiku-20241022) optionally powers LLM-generated paraphrase variants (v0.2) and LLM-as-judge deviation scoring (v0.2). v0.1 uses T5-paraphrase model (local, zero API cost) and sentence-transformers cosine similarity.
+**Capital Required:** ZERO (Python library, T5 model via HuggingFace, sentence-transformers, PyPI — no infrastructure)
+**Pivot_Score:** 8.75 (weighted: Market Pain 9.0 × 30% + Build Feasibility 8.5 × 20% + Novelty 9.0 × 25% + Community Pull 8.5 × 15% + Scripture Anchor 9.0 × 10% = 8.825, conservative round to 8.75)
+**Build Score:** 9.1/10 (feasibility 2.8 + impact 2.9 + completeness 1.9 + biblical fidelity 1.5)
+**Status:** IN-DESIGN (full spec written cycle 015)
+**Agent Responsible:** Chief Builder (Senior Agent) + Chief Technologist (Senior Agent)
+**Cycle Started:** 015
+**Key Differentiator:** The ONLY open-source library that tests prompt OUTPUT CONSISTENCY across semantically-equivalent paraphrase variants. Every other eval tool tests whether specific inputs produce correct outputs. prompt-shield tests whether the SAME SEMANTIC CONTENT expressed differently produces equivalent outputs. The BrittleCertificate is a novel artifact — a deployable proof of robustness.
+**Acquisition Path:** OpenAI (Promptfoo acquisition shows eval portfolio interest; prompt-shield is complementary), Anthropic (trust mission — brittle prompt certification increases enterprise confidence in Claude), Microsoft (Copilot quality gap), Confident AI/DeepEval (natural robustness dimension extension)
+**Design Location:** `.Codex/builds/prompt-shield/`
+**Files Written:** README.md (500+ lines), spec.md (400+ lines), examples/basic_usage.py, examples/ci_integration.py
+**Competitive Landscape:** PromptBench/PromptRobust (academic/research-only, not pip-installable production library — GREEN). DeepEval (no paraphrase robustness — GREEN). Promptfoo (tests specific inputs, not variant consistency — GREEN). Augustus (adversarial attacks, different domain — GREEN). No confirmed production competitor.
 
 ---
 
