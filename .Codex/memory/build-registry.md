@@ -1,9 +1,9 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 009
-**Total Builds:** 8
-**Builds in Design:** 7 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock)
+**Last Updated:** Cycle 010
+**Total Builds:** 9
+**Builds in Design:** 8 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds Deployed:** 0
 
@@ -159,6 +159,28 @@ Each build entry contains:
 **Cycle Started:** 009
 **Key Differentiator:** Judge calibration module — the only tool that validates whether your LLM judge agrees with humans on your specific task before trusting it as a CI gate.
 **Acquisition Path:** OpenAI (security eval = Promptfoo, quality regression eval = prompt-lock), Anthropic (trust evaluation mission), Microsoft (Copilot quality gap)
+
+---
+
+---
+
+### BUILD-009: llm-contract
+**Pattern Source:** PAT-035 (Acts 2:1-13 — The Pentecost Contract)
+**Build Type:** SOFTWARE — Open-Source Python Library / Developer Tool
+**Problem Solved:** LLM function calls lack behavioral contract enforcement. Pydantic validates structure; nothing validates whether output *behaves* as specified — especially across provider switches and silent model updates.
+**Who It Serves:** AI/ML engineers maintaining LLM function calls in production; platform engineers standardizing LLM usage organization-wide; teams that get paged when model updates break behavioral expectations
+**How It Works:** `@contract` decorator applies to any LLM function. Layer 1: Pydantic structural validation. Layer 2: LLM-as-judge semantic rule evaluation. Contract versioning (SemVer for behavior). CI gate via CLI + GitHub Action. SQLite drift logging with rolling violation rate monitoring and alerts.
+**Claude API Role:** Claude powers the LLM judge for semantic rule evaluation (claude-3-5-haiku-20241022 default); Claude Sonnet for high-stakes gates
+**Capital Required:** ZERO (Python library, PyPI distribution, GitHub Actions)
+**Pivot_Score:** 8.30 (second-highest in BibleWorld history; beats cot-coherence 8.00 by 0.30 points)
+**Build Score:** 9.6
+**Status:** IN-DESIGN (full spec written cycle 010)
+**Agent Responsible:** Chief Builder + Senior Agent (Chief Technologist)
+**Cycle Started:** 010
+**Key Differentiator:** The only open-source library that defines, versions, and enforces *behavioral* (not just structural) contracts on LLM function calls — provider-agnostic, CI-integrated, drift-detecting
+**Acquisition Path:** Anthropic (alignment/trust mission), OpenAI (complement Promptfoo), Datadog (LLM behavioral monitoring), Pydantic Labs (natural extension)
+**Design Location:** `.Codex/builds/llm-contract/README.md`
+**v0.1 Plan:** Pure Python; decorator pattern; Pydantic + Claude API; pip install llm-contract; 2-3 week sprint
 
 ---
 

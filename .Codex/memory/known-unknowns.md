@@ -1,8 +1,8 @@
 # BibleWorld Known Unknowns Register
 ## Open Questions the World Is Actively Working On
 
-**Last Updated:** Cycle 000
-**Active Unknowns:** 8
+**Last Updated:** Cycle 010
+**Active Unknowns:** 12
 **Resolved Unknowns:** 0
 
 ---
@@ -76,5 +76,41 @@
 **Assigned To:** Chief Builder + Chief Innovator
 **Status:** OPEN
 **Cycle Added:** 000
+
+---
+
+### KU-009
+**Question:** What is the optimal algorithm for semantic contract validation in llm-contract? Embedding distance? LLM-as-judge (Claude)? Rule-based NLP? Hybrid?
+**Why It Matters:** The choice of semantic validation algorithm determines llm-contract's accuracy, latency, and cost profile. Wrong choice = high false positive rate = engineers distrust the tool.
+**Assigned To:** Senior Agent (Chief Technologist) + Chief Scientist
+**Status:** OPEN
+**Cycle Added:** 010
+
+---
+
+### KU-010
+**Question:** How should "breaking" vs. "non-breaking" behavioral contract changes be formally defined for LLM function calls?
+**Why It Matters:** The SemVer for behavior concept in llm-contract requires a formal specification of what constitutes a breaking change (major version bump) vs. additive change (minor) vs. clarification (patch). Without clear rules, versioning is subjective and the system loses trust.
+**Assigned To:** Chief Engineer + Chief Technologist (Senior)
+**Status:** OPEN
+**Cycle Added:** 010
+
+---
+
+### KU-011
+**Question:** Does Acts 2:14-36 (Peter's structured three-part argument) warrant its own pattern — PAT-036: Citation-Anchored Reasoning — for formal output verification?
+**Why It Matters:** Peter's speech demonstrates: context declaration → evidence with citations → conclusion with required action. This maps to structured LLM outputs that must cite their reasoning. A dedicated pattern could anchor a build around citation verification / grounded generation.
+**Assigned To:** Chief Theologian
+**Status:** OPEN
+**Cycle Added:** 010
+
+---
+
+### KU-012
+**Question:** Are there Romans 1-8 patterns specifically applicable to formal verification of AI systems (the concept of "law" vs. "grace" in software reliability)?
+**Why It Matters:** Romans is on the reading list for cycle 010+. The tension between law (formal specification) and grace (graceful degradation) in Romans maps intriguingly to the debate between hard contract enforcement vs. soft contract warnings in AI systems. Needs exploration.
+**Assigned To:** Chief Theologian + Chief Scientist
+**Status:** OPEN
+**Cycle Added:** 010
 
 ---

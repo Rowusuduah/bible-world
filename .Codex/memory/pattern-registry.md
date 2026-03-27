@@ -1,10 +1,29 @@
 # BibleWorld Pattern Registry
 ## Living Record of All Discovered Biblical Patterns
 
-**Last Updated:** Cycle 009
-**Total Patterns:** 34 (8 seed + 26 discovered)
-**Active Patterns:** 34
-**Level 3 Patterns:** 11 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034)
+**Last Updated:** Cycle 010
+**Total Patterns:** 35 (8 seed + 27 discovered)
+**Active Patterns:** 35
+**Level 3 Patterns:** 12 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035)
+
+---
+
+### PAT-035
+**Scripture:** Acts 2:1-13 — "All of them were filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them... each one heard their own language being spoken... we hear them declaring the wonders of God in our own tongues!"
+**Pattern Type:** COMMUNICATION
+**Pattern Name:** The Pentecost Contract — Many Voices, One Coherent Message
+**Pattern Description:** On the Day of Pentecost, the Holy Spirit simultaneously distributed the same capability to ~120 disciples. Each spoke in a different language, yet every speaker honored the same content contract (τὰ μεγαλεῖα τοῦ θεοῦ — "the wonders of God"). Luke names 15 nations to emphasize the radical surface variance: the form differed maximally, but the message contract was honored perfectly by every node. Secondary support: Acts 2:14-36 — Peter's structured argument (context → evidence citations → conclusion gate) demonstrates what a contract-compliant output looks like.
+**Modern Mapping:** Behavioral contracts for LLM function calls. Multi-model AI pipelines route tasks through GPT-4o, Claude, Gemini, Mistral — different "languages." Each produces different surface output formats. Downstream agents need a coherent behavioral contract honored regardless of which model produced it. No open-source library currently defines, versions, or enforces these contracts at function-call boundaries. llm-contract (BUILD-009) is the application.
+**Infrastructure Status:** EXISTS NOW (Python, Pydantic, LLM APIs — all ready; the library itself does not yet exist)
+**Application Potential:** llm-contract — `@contract` decorator + semantic rules + versioned behavioral contracts + CI gate + drift detection; pip install; provider-agnostic
+**Pattern Score:** 9.1/10 (textual grounding 2.8 + modern relevance 2.8 + specificity 1.8 + novelty 1.7)
+**Discovered By:** Chief Theologian + Pattern Commander
+**Cycle Discovered:** 010
+**Build Status:** IN-DESIGN (BUILD-009)
+**Level:** 3
+**Note:** Enforcement-audited on discovery. Connection is honest — the pattern maps to specific structural behavior (contract honored across diverse nodes), NOT to the spiritual content of Pentecost.
+
+**ANNOTATION — PAT-031 (retroactive from enforcement audit cycle 010):** PAT-031 (Psalm 51 — Confession Chain) maps to the structural form of Psalm 51 (contrition → cleansing → restoration sequence), NOT to its spiritual-repentance content. AI systems do not achieve spiritual restoration. The pattern applies to the three-phase correction structure only. This annotation satisfies the cycle 010 enforcement yellow flag.
 
 ---
 
