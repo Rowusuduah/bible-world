@@ -1,10 +1,10 @@
 # BibleWorld Pattern Registry
 ## Living Record of All Discovered Biblical Patterns
 
-**Last Updated:** Cycle 010
-**Total Patterns:** 35 (8 seed + 27 discovered)
-**Active Patterns:** 35
-**Level 3 Patterns:** 12 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035)
+**Last Updated:** Cycle 011
+**Total Patterns:** 36 (8 seed + 28 discovered)
+**Active Patterns:** 36
+**Level 3 Patterns:** 13 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036)
 
 ---
 
@@ -24,6 +24,24 @@
 **Note:** Enforcement-audited on discovery. Connection is honest — the pattern maps to specific structural behavior (contract honored across diverse nodes), NOT to the spiritual content of Pentecost.
 
 **ANNOTATION — PAT-031 (retroactive from enforcement audit cycle 010):** PAT-031 (Psalm 51 — Confession Chain) maps to the structural form of Psalm 51 (contrition → cleansing → restoration sequence), NOT to its spiritual-repentance content. AI systems do not achieve spiritual restoration. The pattern applies to the three-phase correction structure only. This annotation satisfies the cycle 010 enforcement yellow flag.
+
+### PAT-036
+**Scripture:**
+- Primary: Romans 7:7 — "I would not have known what sin was had it not been for the law. For I would not have known what coveting really was if the law had not said, 'You shall not covet.'"
+- Secondary: Romans 7:18-19 — "For I have the desire to do what is good, but I cannot carry it out. For I do not do the good I want to do, but the evil I do not want to do — this I keep on doing."
+- Completing: Romans 8:2-4 — "...so that the righteous requirement of the law might be fully met in us."
+**Pattern Type:** GOVERNANCE + LIGHT
+**Pattern Name:** The Romans Verification Pattern — Law Exposes; Measurement Enables; Quality Follows
+**Pattern Description:** The law makes sin visible (Romans 7:7) — violations existed before the law but were undetectable. The will-execution gap (Romans 7:18-19) is structural: perfect intent + imperfect execution. Fulfillment requires both the standard and the response (Romans 8:2-4). This three-component structure (reveal / gap / fulfill) describes the complete verification loop.
+**Modern Mapping:** PR semantic intent verification. PR description = the law (measurement standard). Git diff = execution. drift-guard = violation detector. Developer correction = fulfillment. Without the measurement standard, intent drift is invisible. drift-guard makes it detectable pre-merge.
+**Infrastructure Status:** EXISTS NOW (Python, git, Anthropic API, SQLite — all available)
+**Application Potential:** drift-guard — git-native PR semantic intent verifier. Drift score 0.0–1.0. CI gate. SQLite trace log. GitHub Action.
+**Pattern Score:** 9.0/10 (textual grounding 2.9 + modern relevance 2.8 + specificity 1.8 + novelty 1.5)
+**Discovered By:** Chief Theologian + Chief Technologist (Senior)
+**Cycle Discovered:** 011
+**Build Status:** BUILT (BUILD-010: drift-guard)
+**Level:** 3
+**Note:** Application applies to the structural mechanics of law-as-measurement-standard. AI systems do not have sin natures. drift-guard does not provide salvation or grace. The mapping is: measurement standard → violation detection. Romans 7-8's spiritual content (salvation, Holy Spirit) is not claimed for the tool.
 
 ---
 

@@ -1,10 +1,11 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 010
-**Total Builds:** 9
+**Last Updated:** Cycle 011
+**Total Builds:** 10
 **Builds in Design:** 8 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
+**Builds at PROTOTYPE:** 1 (BUILD-010 drift-guard — full implementation written, tests written, ready to ship)
 **Builds Deployed:** 0
 
 ---
@@ -181,6 +182,28 @@ Each build entry contains:
 **Acquisition Path:** Anthropic (alignment/trust mission), OpenAI (complement Promptfoo), Datadog (LLM behavioral monitoring), Pydantic Labs (natural extension)
 **Design Location:** `.Codex/builds/llm-contract/README.md`
 **v0.1 Plan:** Pure Python; decorator pattern; Pydantic + Claude API; pip install llm-contract; 2-3 week sprint
+
+---
+
+---
+
+### BUILD-010: drift-guard
+**Pattern Source:** PAT-036 (Romans 7:7 — The Law Makes Violations Visible)
+**Build Type:** SOFTWARE — Open-Source Python Library / Developer Tool
+**Problem Solved:** AI-assisted PRs create 1.7x more production issues than human PRs due to intent drift: PR descriptions say one thing, AI code does another. No open-source tool verifies whether code changes actually fulfill stated PR intent.
+**Who It Serves:** AI/ML engineers and senior developers at companies using AI-assisted coding (Copilot, Cursor, Claude, Gemini Code). Also: platform engineers, engineering managers, OSS maintainers reviewing AI contributions.
+**How It Works:** Three layers: (1) Intent Parser — extracts structured clauses (adds X, removes Y, ensures Z, does not W) from PR description. (2) Diff Parser — fetches and parses git diff into DiffHunk objects. (3) LLM Verifier — Claude checks each clause against the diff, returns PASS/FAIL/WARN/SKIP with evidence quotes and drift score 0.0–1.0. SQLite trace log persists all verifications. CI gate fails if drift_score exceeds threshold (default 0.30).
+**Claude API Role:** Core — Claude claude-3-5-haiku-20241022 powers the semantic clause verifier. Receives intent clauses + diff text; returns structured JSON verdict with per-clause status and overall drift score.
+**Capital Required:** ZERO (Python library, PyPI, git — no infrastructure)
+**Pivot_Score:** 8.60 (second-highest in BibleWorld history; beats llm-contract 8.30 by 0.30, beats cot-coherence 8.00 by 0.60)
+**Build Score:** 9.3
+**Status:** PROTOTYPE (full implementation written, test suite written, pyproject.toml complete — ready for PyPI)
+**Agent Responsible:** Chief Builder + Senior Agent (Chief Technologist)
+**Cycle Started:** 011
+**Key Differentiator:** The only open-source tool that verifies whether PR code changes fulfill the stated PR intent — pre-merge, with a configurable CI gate, for any git repo.
+**Acquisition Path:** GitHub (native code review integration), Salesforce (complement to internal intent reconstruction system), Microsoft (Copilot quality signal), Linear/Jira (ticket-to-PR intent verification)
+**Design Location:** `.Codex/builds/drift-guard/`
+**Files Written:** drift_guard.py (450+ lines), README.md (300+ lines), tests/test_drift_guard.py (200+ lines), pyproject.toml
 
 ---
 

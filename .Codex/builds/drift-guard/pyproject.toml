@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "drift-guard"
+version = "0.1.0"
+description = "Verify that pull requests do what they say. Git-native PR semantic intent verifier."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "BibleWorld Innovation Lab", email = "lab@bibleworld.dev" }
+]
+keywords = ["ai", "llm", "code-review", "pull-request", "ci-cd", "semantic", "verification"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Version Control :: Git",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "anthropic>=0.40.0",
+]
+
+[project.optional-dependencies]
+fast = ["pydantic>=2.0"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "pydantic>=2.0",
+    "black",
+    "ruff",
+]
+
+[project.scripts]
+drift-guard = "drift_guard:_cli_main"
+
+[project.urls]
+Homepage = "https://github.com/bibleworld/drift-guard"
+Repository = "https://github.com/bibleworld/drift-guard"
+Issues = "https://github.com/bibleworld/drift-guard/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
