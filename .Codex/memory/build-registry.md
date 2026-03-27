@@ -1,9 +1,9 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 008
-**Total Builds:** 7
-**Builds in Design:** 6 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst)
+**Last Updated:** Cycle 009
+**Total Builds:** 8
+**Builds in Design:** 7 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds Deployed:** 0
 
@@ -141,6 +141,24 @@ Each build entry contains:
 **Agent Responsible:** Chief Builder + Chief Technologist
 **Cycle Started:** 002
 **Priority:** #2
+
+---
+
+### BUILD-008: prompt-lock
+**Pattern Source:** PAT-034 (Nehemiah Wall Guards) + PAT-009 (EvalGate) + PAT-012 (Logos Schema)
+**Build Type:** SOFTWARE — Open-Source Python Library / Developer Tool
+**Problem Solved:** LLM engineers ship prompt changes without quality regression checks. No framework-agnostic, git-native tool provides prompt change detection + judge calibration + trace-linked eval scoring in a single CI/CD integration.
+**Who It Serves:** AI/ML engineers at any company shipping LLM features in production. Primary persona: engineers who modify prompts frequently and cannot tell which change caused quality to drop.
+**How It Works:** git diff detects changed prompt files → calibration check validates LLM judge trustworthiness (>80% agreement with human labels) → eval suite runs for changed prompts only → scores compared against configurable thresholds/baseline → CI gate passes or fails → trace logged to SQLite with commit SHA + prompt hash + scores.
+**Claude API Role:** Claude powers the LLM-as-judge scorer AND is the recommended default model for judge calibration (claude-3-5-haiku for eval, claude-3-5-sonnet for high-stakes gates).
+**Capital Required:** ZERO (Python library, PyPI, GitHub Actions — no infrastructure)
+**Pivot_Score:** 8.70 (highest in BibleWorld pivot history; beats cot-coherence 8.00 by 0.70 points)
+**Build Score:** 9.5
+**Status:** IN-DESIGN (full design complete, v0.1 sprint plan written)
+**Agent Responsible:** Chief Builder + Chief Technologist
+**Cycle Started:** 009
+**Key Differentiator:** Judge calibration module — the only tool that validates whether your LLM judge agrees with humans on your specific task before trusting it as a CI gate.
+**Acquisition Path:** OpenAI (security eval = Promptfoo, quality regression eval = prompt-lock), Anthropic (trust evaluation mission), Microsoft (Copilot quality gap)
 
 ---
 

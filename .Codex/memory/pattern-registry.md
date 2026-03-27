@@ -1,10 +1,10 @@
 # BibleWorld Pattern Registry
 ## Living Record of All Discovered Biblical Patterns
 
-**Last Updated:** Cycle 008
-**Total Patterns:** 33 (8 seed + 25 discovered)
-**Active Patterns:** 33
-**Level 3 Patterns:** 10 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028)
+**Last Updated:** Cycle 009
+**Total Patterns:** 34 (8 seed + 26 discovered)
+**Active Patterns:** 34
+**Level 3 Patterns:** 11 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034)
 
 ---
 
@@ -494,5 +494,22 @@ These are the founding patterns that launch the world. Agents will deepen, chall
 **Discovered By:** Chief Innovator + Chief Theologian
 **Cycle Discovered:** 008
 **Build Status:** APPLIED TO BUILD-004 (GrantPilot go-to-market)
+
+---
+
+### PAT-034
+**Scripture:** Nehemiah 4:13-14 — "Therefore I stationed some of the people behind the lowest points of the wall at the exposed places, posting them by families, with their swords, spears and bows."
+**Supporting:** Nehemiah 4:16-17 (workers hold tools AND weapons simultaneously); Ezra 6:11-12 (the decree as immutable policy)
+**Pattern Type:** GOVERNANCE + RESTORATION
+**Level:** 3 (breakthrough) | **Score:** 8.8
+**Pattern Description:** Nehemiah rebuilding Jerusalem's walls stations guards specifically at the lowest, most exposed points (shefalim — the gaps) while workers continue building with tools in one hand and weapons in the other. The rebuild continues AND is protected simultaneously. Guards are stationed at the change points (gaps), not uniformly distributed across the entire wall.
+**Hebrew Note:** "ha-halakkim ha-shefalim" (the low/exposed stretches) — vulnerability due to position in transition, not just physical height. In CI/CD terms: the PR is the shefalim — the gap between tested production and untested change.
+**Modern Mapping:** CI/CD pipeline quality guard specifically targeted at prompt file changes — the gaps where LLM quality regression most commonly enters.
+**Why Level 3:** Standard interpretations focus on perseverance, opposition, and leadership. The tactical insight — guards stationed specifically at change points (not everywhere) — as an architectural principle for CI/CD quality gates has not been published. The "guards at gaps only, not everywhere" design decision directly implies targeted-eval-on-change, which keeps CI costs proportional and is the core differentiator of prompt-lock.
+**Infrastructure Status:** EXISTS NOW — CI/CD pipelines, LLM eval frameworks, Python packaging all exist. The specific combination (prompt change detection + judge calibration + trace ledger) is unbuilt.
+**Application Potential:** prompt-lock — git-native prompt regression testing with judge calibration for any LLM CI/CD pipeline.
+**Discovered By:** Chief Theologian + Chief Technologist (Cycle 009 collaboration)
+**Cycle Discovered:** 009
+**Build Status:** IN-DESIGN (BUILD-008: prompt-lock)
 
 ---
