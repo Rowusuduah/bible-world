@@ -1,10 +1,10 @@
 # BibleWorld Pattern Registry
 ## Living Record of All Discovered Biblical Patterns
 
-**Last Updated:** Cycle 012
-**Total Patterns:** 40 (8 seed + 32 discovered)
-**Active Patterns:** 40
-**Level 3 Patterns:** 15 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038)
+**Last Updated:** Cycle 013
+**Total Patterns:** 44 (8 seed + 36 discovered)
+**Active Patterns:** 44
+**Level 3 Patterns:** 18 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038, PAT-041, PAT-042, PAT-044)
 
 ---
 
@@ -607,5 +607,78 @@ These are the founding patterns that launch the world. Agents will deepen, chall
 **Discovered By:** Chief Theologian + Chief Technologist (Cycle 009 collaboration)
 **Cycle Discovered:** 009
 **Build Status:** IN-DESIGN (BUILD-008: prompt-lock)
+
+---
+
+### PAT-041
+**Scripture:** Revelation 5:1-9 — "Then I saw in the right hand of him who sat on the throne a scroll with writing on both sides and sealed with seven seals. And I saw a mighty angel proclaiming in a loud voice, 'Who is worthy to break the seals and open the scroll?' But no one in heaven or on earth or under the earth could open the scroll or even look inside it... Then one of the elders said to me, 'Do not weep! See, the Lion of the tribe of Judah, the Root of David, has triumphed. He is able to open the scroll and its seven seals.'"
+**Supporting Texts:** Revelation 5:12; Revelation 4:6-8; Revelation 6:1
+**Pattern Type:** GOVERNANCE + STRUCTURE
+**Pattern Name:** The Seven Seals Worthiness Pattern — Sequential Behavioral Authorization
+**Pattern Description:** In Revelation 5, the scroll (operational authority) is sealed with seven seals. No entity may claim authority without verified worthiness through specific demonstrated evidence. Seven seals = seven sequential behavioral verification checkpoints. Four living creatures and twenty-four elders serve as independent verification witnesses. Authorization is binary: worthy (scroll opens) or not worthy (scroll remains sealed). Worthiness is evidence-grounded ("because you were slain"), not capability-claimed.
+**Modern Mapping:** LLM behavioral authorization before model migration. The replacement model must demonstrate worthiness across seven behavioral dimensions before receiving production authorization. The seven behavioral dimensions (structured output consistency, instruction adherence, task completion, semantic accuracy, safety compliance, reasoning coherence, edge case handling) = the seven seals. The parity certificate = the scroll-opening authority. model-parity (BUILD-012) is the implementation.
+**Infrastructure Status:** EXISTS NOW (Python, Claude API, OpenAI API, YAML, SQLite)
+**Application Potential:** model-parity — `pip install model-parity`. YAML test suite. Behavioral parity certificate. CI gate.
+**Pattern Score:** 9.2/10 (textual grounding 2.9 + modern relevance 2.8 + specificity 1.9 + novelty 1.6)
+**Discovered By:** Chief Theologian + Chief Technologist (Senior Agent)
+**Cycle Discovered:** 013
+**Build Status:** IN-DESIGN (BUILD-012: model-parity, Pivot_Score 8.90 — new BibleWorld record)
+**Level:** 3
+**Note:** First Revelation pattern in BibleWorld history. Second-highest Level 3 pattern score (9.2, after PAT-037 at 9.3). Application applies to the structural behavioral authorization mechanism only. The eschatological content (Christ's redemption of humanity, cosmic authority, heavenly worship) is NOT claimed for software. Annotation added per Red Line 1 protocol.
+
+---
+
+### PAT-042
+**Scripture:**
+- Primary: Proverbs 11:1 — "Dishonest scales are an abomination to the Lord, but accurate weights are his delight."
+- Secondary: Proverbs 20:10 — "Differing weights and differing measures — the Lord detests them both."
+- Third: Proverbs 20:23 — "The Lord detests differing weights, and dishonest scales do not please him."
+**Supporting Texts:** Leviticus 19:35-36; Deuteronomy 25:13-15; Amos 8:5
+**Pattern Type:** GOVERNANCE + STRUCTURE
+**Pattern Name:** The Differing Weights Pattern — Consistent Measurement Across Suppliers
+**Pattern Description:** Merchants kept two sets of weights — one heavy (when buying, to receive more) and one light (when selling, to give less). Three Proverbs passages condemn this with escalating language (abomination → detest → detest). The structural violation: applying different measurement standards to different parties. The principle: the same scale, same weights, same measure must be applied regardless of which party is being evaluated. Measurement consistency is the foundation of trustworthy comparison.
+**Modern Mapping:** Cross-model LLM evaluation. The same YAML test suite, same prompts, same evaluation criteria applied identically to Model A and Model B. No special treatment for the incumbent model, no disadvantage for the challenger. One consistent measurement standard enforced by the test format itself. model-parity (BUILD-012) enforces this.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** model-parity YAML test suite format — consistent measurement standard enforced architecturally.
+**Pattern Score:** 8.7/10 (textual grounding 2.8 + modern relevance 2.7 + specificity 1.7 + novelty 1.5)
+**Discovered By:** Chief Theologian
+**Cycle Discovered:** 013
+**Build Status:** IN-DESIGN (BUILD-012: model-parity — supporting pattern)
+**Level:** 3
+**Note:** First Proverbs pattern in BibleWorld history. Three Torah/Prophetic texts provide additional grounding (Leviticus 19, Deuteronomy 25, Amos 8). Application applies to measurement consistency structural principle. No claim that LLM evaluation is a commercial transaction with moral weight in the spiritual sense. The mapping is: consistent measurement standard → trustworthy comparison → valid verdict.
+
+---
+
+### PAT-043
+**Scripture:** Isaiah 46:5 — "To whom will you compare me or count me equal? To whom will you liken me that we may be compared?" Isaiah 46:10 — "I make known the end from the beginning, from ancient times, what is still to come. I say, 'My purpose will stand, and I will do all that I please.'"
+**Supporting Texts:** Isaiah 46:1-7; Isaiah 40:18; Isaiah 41:21-23
+**Pattern Type:** GOVERNANCE + COMMUNICATION
+**Pattern Name:** The Idol Substitution Test Pattern — Behavioral Consistency as Authorization Criterion
+**Pattern Description:** Isaiah 46 presents the substitution challenge: can the proposed replacement actually perform? The idol cannot predict, cannot respond, cannot act reliably. The authorization test is behavioral and predictive: consistent, reliable outputs across time and context. Isaiah 41:21-23 makes the test explicit: "Tell us what the future holds... Do something, whether good or bad." Substitution is only valid if the replacement passes the behavioral consistency test.
+**Modern Mapping:** Model substitution validation. Before claiming a replacement LLM is equivalent, it must pass a predictive consistency test: does it produce stable, reliable outputs across temporal variation, context variation, and behavioral variation on your specific workload? model-parity (BUILD-012) — supporting pattern.
+**Pattern Score:** 8.2/10 (textual grounding 2.5 + modern relevance 2.7 + specificity 1.5 + novelty 1.5)
+**Discovered By:** Chief Theologian
+**Cycle Discovered:** 013
+**Build Status:** SUPPORTING PATTERN for BUILD-012: model-parity
+**Level:** 2
+**Note:** First Isaiah pattern in BibleWorld history. Application applies to the structural criterion of behavioral evidence required before substitution is authorized. No claim that LLMs are gods or idols.
+
+---
+
+### PAT-044
+**Scripture:** Acts 17:11 — "Now the Berean Jews were of more noble character than those in Thessalonica, for they received the message with great eagerness and examined the Scriptures every day to see if what Paul said was true."
+**Supporting Texts:** Acts 17:12; Isaiah 8:20; 1 Thessalonians 5:21 ("test everything; hold fast what is good")
+**Pattern Type:** GOVERNANCE + COMMUNICATION
+**Pattern Name:** The Berean Verification Pattern — Independent Systematic Verification Against a Known Standard
+**Pattern Description:** The Bereans are commended for: (1) receiving the message with openness; (2) examining systematically and regularly (every day); (3) against a specific known standard (the Scriptures); (4) seeking ground truth (to see if what Paul said was true). The protocol: open reception + systematic verification + known standard + daily regularity. Note: the Bereans verified even a trusted source (Paul, an apostle). Trust does not exempt from verification.
+**Modern Mapping:** LLM behavioral testing philosophy. Even when a model claims reliability (vendor benchmarks, marketing claims), teams must verify systematically, regularly, against their own production test standards. model-parity implements the Berean protocol. The `parity watch` command provides continuous Berean verification that runs behavioral checks on any model update.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** model-parity `parity watch` — continuous behavioral monitoring. Also applicable to prompt-lock (regression testing is Berean verification of prompt changes), drift-guard (PR verification), spec-drift (specification compliance monitoring).
+**Pattern Score:** 8.4/10 (textual grounding 2.7 + modern relevance 2.7 + specificity 1.5 + novelty 1.5)
+**Discovered By:** Chief Theologian
+**Cycle Discovered:** 013
+**Build Status:** SUPPORTING PATTERN for BUILD-012: model-parity; also applicable to prompt-lock, drift-guard, spec-drift
+**Level:** 3
+**Note:** Extends Acts coverage (PAT-035 was Acts 2:1-13). 1 Thessalonians 5:21 provides New Testament second anchor. Application applies to the verification protocol structure only. No claim that software testing is a spiritual activity or that engineers are performing acts of worship equivalent to the Bereans' scriptural study.
 
 ---

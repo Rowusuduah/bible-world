@@ -1,8 +1,8 @@
 # BibleWorld Known Unknowns Register
 ## Open Questions the World Is Actively Working On
 
-**Last Updated:** Cycle 010
-**Active Unknowns:** 12
+**Last Updated:** Cycle 013
+**Active Unknowns:** 16
 **Resolved Unknowns:** 0
 
 ---
@@ -112,5 +112,95 @@
 **Assigned To:** Chief Theologian + Chief Scientist
 **Status:** OPEN
 **Cycle Added:** 010
+
+---
+
+### KU-013
+**Question:** What is the optimal handling for large diffs (> 8000 chars) in drift-guard? Should the tool: (a) truncate and warn, (b) chunk and aggregate, (c) summarize at function level?
+**Why It Matters:** drift-guard v0.2 must handle large AI-generated PRs gracefully. Current prototype truncates — this may miss violations in truncated sections.
+**Assigned To:** Chief Engineer + Chief Builder (Senior)
+**Status:** OPEN
+**Cycle Added:** 011
+
+---
+
+### KU-014
+**Question:** How should 'does-not' clauses be weighted differently from 'does' clauses in drift-guard verifier?
+**Why It Matters:** 'does not include X' violations are often more severe than 'includes Y' violations. Asymmetric weighting would improve drift score accuracy.
+**Assigned To:** Chief Technologist (Senior)
+**Status:** OPEN
+**Cycle Added:** 011
+
+---
+
+### KU-015
+**Question:** What is the optimal system prompt for drift-guard's LLM judge? Need 50+ labeled PR/diff pairs.
+**Why It Matters:** The judge prompt directly affects false positive/negative rate. Without labeled data, calibration is guesswork.
+**Assigned To:** Chief Builder (Senior) + Pattern Discovery Director
+**Status:** OPEN
+**Cycle Added:** 011
+
+---
+
+### KU-016
+**Question:** How should Jira/Linear ticket intent integrate with drift-guard v0.2?
+**Why It Matters:** PR descriptions often reference ticket IDs. Enriching drift-guard with ticket context would improve intent extraction quality.
+**Assigned To:** Chief Engineer
+**Status:** OPEN
+**Cycle Added:** 011
+
+---
+
+### KU-017
+**Question:** What is the optimal LLM judge prompt for spec-drift semantic constraint evaluation?
+**Why It Matters:** spec-drift's semantic constraint evaluation quality depends on the judge prompt. Complex constraints ("the response should be empathetic") require careful prompting.
+**Assigned To:** Chief Builder (Senior) + Chief Technologist (Senior)
+**Status:** OPEN
+**Cycle Added:** 012
+
+---
+
+### KU-018
+**Question:** What is the zero-shot baseline calibration strategy for spec-drift when no golden dataset exists?
+**Why It Matters:** Most teams adopting spec-drift will not have labeled examples. The tool must work well out-of-the-box without calibration data.
+**Assigned To:** Chief Scientist + Chief Technologist (Senior)
+**Status:** OPEN
+**Cycle Added:** 012
+
+---
+
+### KU-019
+**Question:** What is the minimum viable YAML test suite for model-parity to be useful? How many test cases per dimension?
+**Why It Matters:** The enrollment problem: teams need to write test cases before model-parity helps them. If the minimum useful suite requires 50 test cases, adoption will be slow. If 5 test cases per dimension (35 total) is sufficient for reliable parity scoring, adoption is much easier.
+**Assigned To:** Chief Builder (Senior) + Chief Scientist
+**Status:** OPEN
+**Cycle Added:** 013
+
+---
+
+### KU-020
+**Question:** How should model-parity handle non-determinism in LLM outputs? Running each test case once may produce unreliable parity scores if the model has high temperature variance.
+**Why It Matters:** A model that sometimes follows instructions and sometimes doesn't will score differently on repeated runs. Should model-parity run each test case N times and average? What is the optimal N vs. cost tradeoff?
+**Assigned To:** Chief Scientist + Chief Technologist (Senior)
+**Status:** OPEN
+**Cycle Added:** 013
+
+---
+
+### KU-021
+**Question:** Should model-parity support partial/incremental parity certificates? (e.g., certify only structured_output and instruction_adherence dimensions for a targeted migration decision)
+**Why It Matters:** Teams may not need all 7 dimensions for every migration. A partial certificate for only the relevant dimensions would reduce cost and time. But partial certificates create a risk of incomplete authorization.
+**Assigned To:** Chief Engineer + Chief Builder (Senior)
+**Status:** OPEN
+**Cycle Added:** 013
+
+---
+
+### KU-022
+**Question:** What is the correct scoring formula when Model B performs BETTER than Model A on some dimensions? Is higher parity score always better, or should model-parity flag improvements as well as regressions?
+**Why It Matters:** If Model B has better safety compliance than Model A, that is not a parity failure — it is an improvement. But the current parity formula (1 - abs(score_a - score_b)) scores this as low parity. Need a directed parity formula that distinguishes improvement from regression.
+**Assigned To:** Chief Scientist + Chief Engineer
+**Status:** OPEN
+**Cycle Added:** 013
 
 ---

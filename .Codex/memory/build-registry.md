@@ -1,9 +1,9 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 012
-**Total Builds:** 11
-**Builds in Design:** 8 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract)
+**Last Updated:** Cycle 013
+**Total Builds:** 12
+**Builds in Design:** 9 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 2 (BUILD-010 drift-guard — full implementation ready to ship; BUILD-011 spec-drift — prototype written cycle 012)
 **Builds Deployed:** 0
@@ -226,6 +226,25 @@ Each build entry contains:
 **Acquisition Path:** Datadog (LLM behavioral monitoring), Anthropic (alignment/safety), Pydantic Labs (natural extension), Confident AI (complement to DeepEval)
 **Design Location:** `.Codex/builds/spec-drift/`
 **Files Written:** prototype.py (240+ lines), README.md (300+ lines)
+
+---
+
+### BUILD-012: model-parity
+**Pattern Source:** PAT-041 (Revelation 5:1-9 — Seven Seals Worthiness Pattern) + PAT-042 (Proverbs 11:1 — Differing Weights Pattern)
+**Build Type:** SOFTWARE — Open-Source Python Library / Developer Tool
+**Problem Solved:** Teams migrating between LLM providers or model versions have no systematic way to verify behavioral equivalence before migration. They discover regressions from user complaints post-migration, not from pre-migration testing. No open-source tool provides structured behavioral dimension scoring + parity certificate + CI gate for migration authorization.
+**Who It Serves:** Senior ML engineers responsible for model migration decisions; platform engineers standardizing LLM usage; cost optimization engineers evaluating cheaper model alternatives; teams responding to model deprecation notices.
+**How It Works:** YAML test suite declares behavioral test cases across 7 dimensions. ParityRunner executes each test case on both Model A and Model B identically (same prompts, same evaluation criteria — consistent weights per PAT-042). Seven DimensionEvaluators score each dimension: structured output consistency, instruction adherence, task completion, semantic accuracy, safety compliance, reasoning coherence, edge case handling. ParityCertificate issues EQUIVALENT/CONDITIONAL/NOT_EQUIVALENT verdict with evidence. CLI: `parity run`, `parity report`, `parity ci`. GitHub Action template included.
+**Claude API Role:** Claude (claude-3-5-haiku-20241022) powers the LLM judge for subjective dimension evaluation (task completion, semantic accuracy, subjective constraint adherence). Third-party judge — not Model A or Model B — enforcing independent verification (PAT-044: Berean Protocol).
+**Capital Required:** ZERO (Python library, PyPI, GitHub Actions)
+**Pivot_Score:** 8.90 (NEW BIBLEWORLD ALL-TIME RECORD — beats prompt-lock 8.70 by 0.20, beats cot-coherence 8.00 by 0.90)
+**Build Score:** 9.2
+**Status:** IN-DESIGN (full spec written cycle 013)
+**Agent Responsible:** Chief Builder (Senior Agent) + Chief Technologist (Senior Agent)
+**Cycle Started:** 013
+**Key Differentiator:** The first and only open-source tool framed as migration authorization rather than general evaluation. The parity certificate concept is novel. Seven-dimension behavioral scoring applied to cross-model comparison is novel. CI gate for migration blocking is novel. Consistent measurement standard (same YAML for both models) enforced architecturally.
+**Acquisition Path:** Anthropic (trust/reliability mission — model-parity increases confidence in Claude migrations), OpenAI (Promptfoo acquisition shows interest in evaluation tooling; model-parity is complementary), Datadog (expanding LLM observability — parity testing is a natural addition), GitHub (model migration authorization in GitHub Actions is a natural Copilot ecosystem feature).
+**Design Location:** `.Codex/builds/model-parity/README.md`
 
 ---
 
