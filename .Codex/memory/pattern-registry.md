@@ -1,10 +1,10 @@
 # BibleWorld Pattern Registry
 ## Living Record of All Discovered Biblical Patterns
 
-**Last Updated:** Cycle 001
-**Total Patterns:** 12 (8 seed + 4 discovered)
-**Active Patterns:** 12
-**Level 3 Patterns:** 2 (PAT-010, PAT-012)
+**Last Updated:** Cycle 002
+**Total Patterns:** 17 (8 seed + 9 discovered)
+**Active Patterns:** 17
+**Level 3 Patterns:** 5 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017)
 
 ---
 
@@ -205,5 +205,78 @@ These are the founding patterns that launch the world. Agents will deepen, chall
 **Discovered By:** Chief Theologian + Chief Technologist collaboration
 **Cycle Discovered:** 001
 **Build Status:** IN-DESIGN (BUILD-002: LogosSchema)
+
+---
+
+### PAT-013
+**Scripture:** Psalm 2:6-7 — "I have set my King on Zion, my holy hill. I will tell of the decree."
+**Pattern Type:** GOVERNANCE + COMMUNICATION
+**Level:** 2 | **Score:** 7.8
+**Pattern Description:** Authority is established through formal, public, irrevocable declaration (decree), not through election, consensus, or conquest. The decree is the protocol that creates and legitimizes power.
+**Modern Mapping:** Smart contracts, corporate governance documents, RBAC systems. For African cooperatives: the absence of formal governance protocols is the #1 cause of cooperative failure.
+**Infrastructure Status:** EXISTS NOW (tooling exists; application to cooperative governance underbuilt)
+**Application Potential:** DecreeDAO — lightweight governance tool for cooperatives and investment clubs
+**Discovered By:** Chief Theologian + Chief Innovator
+**Cycle Discovered:** 002
+**Build Status:** IN-DESIGN (BUILD-003: DecreeDAO)
+
+---
+
+### PAT-014
+**Scripture:** Psalm 2:8 — "Ask of me, and I will make the nations your heritage."
+**Pattern Type:** MULTIPLICATION + COMMUNICATION
+**Level:** 2 | **Score:** 8.2
+**Pattern Description:** The capacity (nations as heritage) already exists. Distribution is request-based. The bottleneck is not value availability but request quality. Maps to any system where value exists but access is gated by formal request processes.
+**Modern Mapping:** Grant applications, API requests, regulatory permits. The resource exists; the bottleneck is the request format.
+**Infrastructure Status:** EXISTS NOW (grant portals exist; AI tooling for request generation is nascent)
+**Application Potential:** GrantPilot — AI grant proposal writer for African organizations
+**Discovered By:** Chief Innovator + Chief Builder
+**Cycle Discovered:** 002
+**Build Status:** IN-DESIGN (BUILD-004: GrantPilot)
+
+---
+
+### PAT-015
+**Scripture:** John 1:35-42 — John refers Andrew to Jesus. Andrew brings Peter.
+**Pattern Type:** STRUCTURE + COMMUNICATION
+**Level:** 3 (breakthrough) | **Score:** 8.4
+**Pattern Description:** The first disciples were recruited through a trust-weighted referral chain, not broadcast. Each node inherits trust from the referring node. The chain is: John (prophet, high trust) → Andrew (first-hand witness) → Peter (family trust). Each link adds a different trust type.
+**Why Level 3:** Trust-weight propagation through referral chains — where each referrer's score is visible and influences deal credibility — has not been applied to diaspora investment deal flow.
+**Modern Mapping:** Trust-weighted deal flow platforms with visible, scored referral chains
+**Infrastructure Status:** NOT YET BUILT
+**Application Potential:** TrustChain — referral-weighted deal flow for diaspora investment clubs
+**Discovered By:** Chief Technologist + Chief Innovator
+**Cycle Discovered:** 002
+**Build Status:** IN-DESIGN (BUILD-005: TrustChain)
+
+---
+
+### PAT-016
+**Scripture:** John 1:39 — "Come and you will see." John 1:46 — "Come and see."
+**Pattern Type:** COMMUNICATION + CREATION
+**Level:** 3 (breakthrough) | **Score:** 8.1
+**Pattern Description:** The conversion mechanism used by both Jesus and Philip is direct experience, not explanation. "Come and see" bypasses persuasion entirely and lets reality demonstrate its own value.
+**Why Level 3:** AI-generated interactive demos from product descriptions (before signup, before explanation) as a standalone tool is novel. Existing demo tools require manual creation.
+**Modern Mapping:** AI-generated interactive product demos for instant prospect experience
+**Infrastructure Status:** EMERGING
+**Application Potential:** DemoFirst — instant product demo generator for SaaS founders
+**Discovered By:** Chief Technologist + Chief Builder
+**Cycle Discovered:** 002
+**Build Status:** IN-DESIGN (BUILD-006: DemoFirst)
+
+---
+
+### PAT-017
+**Scripture:** John 1:47-49 — Jesus demonstrates knowledge of Nathanael before meeting him.
+**Pattern Type:** COMMUNICATION + HEALING
+**Level:** 3 (breakthrough) | **Score:** 8.7
+**Pattern Description:** Demonstrated pre-knowledge of someone's context before they share it collapses trust timelines from weeks to seconds. Nathanael goes from skeptic to believer in one interaction because Jesus demonstrates specific, personal knowledge.
+**Why Level 3:** AI-synthesized contextual briefings for pre-meeting trust acceleration — where the goal is demonstrated understanding, not sales — has not been productized for the diaspora/Africa B2B market.
+**Modern Mapping:** AI pre-meeting intelligence synthesizing publicly available data into contextual briefs
+**Infrastructure Status:** EMERGING (data exists; synthesis tools exist; focused product does not)
+**Application Potential:** KnowFirst — AI pre-meeting intelligence for B2B and diaspora founders
+**Discovered By:** Chief Technologist
+**Cycle Discovered:** 002
+**Build Status:** IN-DESIGN (BUILD-007: KnowFirst)
 
 ---

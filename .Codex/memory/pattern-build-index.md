@@ -29,10 +29,11 @@
 | PAT-010 | Genesis 1:2-3 (light before sun) | 3 | 8.6 | BUILD-001 | EvalGate | DIRECT | SPECCED |
 | PAT-011 | Genesis 2:7 (neshamah) | 2 | 7.8 | — | — | — | UNMAPPED |
 | PAT-012 | John 1:1-14 (Logos) | 3 | 8.9 | BUILD-002 | LogosSchema | DIRECT | SPECCED |
-| PAT-013 | Psalm 1:3 (tree by water) | 2 | 7.5 | — | — | — | UNMAPPED |
-| PAT-014 | Psalm 1:4 (chaff blown away) | 1 | 6.8 | — | — | — | UNMAPPED |
-| PAT-015 | Genesis 2:19-20 (naming) | 2 | 7.6 | — | — | — | UNMAPPED |
-| PAT-016 | Genesis 1:26-28 (dominion) | 2 | 7.9 | — | — | — | UNMAPPED |
+| PAT-013 | Psalm 2:6-7 (decree) | 2 | 7.8 | BUILD-003 | DecreeDAO | DIRECT | IN-DESIGN |
+| PAT-014 | Psalm 2:8 (ask-receive) | 2 | 8.2 | BUILD-004 | GrantPilot | DIRECT | IN-DESIGN |
+| PAT-015 | John 1:35-42 (referral chain) | 3 | 8.4 | BUILD-005 | TrustChain | DIRECT | IN-DESIGN |
+| PAT-016 | John 1:39,46 (come and see) | 3 | 8.1 | BUILD-006 | DemoFirst | DIRECT | IN-DESIGN |
+| PAT-017 | John 1:47-49 (pre-knowledge) | 3 | 8.7 | BUILD-007 | KnowFirst | DIRECT | IN-DESIGN |
 
 ---
 
@@ -132,12 +133,12 @@ The following patterns have high scores but no build yet. These are the priority
 | Pattern | Score | Level | Why No Build Yet | Build Candidate |
 |---------|-------|-------|-----------------|-----------------|
 | PAT-001 (God said, it was) | 9.2 | 2 | Too broad — "voice commands software" is the entire LLM market | Voice-first task manager for Ghana SMEs (Twi-language commands) |
-| PAT-003 (loaves ×5000) | 9.0 | 2 | Too broad — "software scales" is universal | Zero-marginal-cost knowledge product for Africa (AI tutor, offline-first) |
-| PAT-006 (Babel) | 8.9 | 2 | No focused build spec yet | Real-time multilingual communication platform for African markets (Twi, Hausa, Swahili, etc.) |
-| PAT-004 (body/microservices) | 8.7 | 2 | Too broad — entire microservices industry | Could generate a Ghana-specific SME software integration platform |
-| PAT-007 (mustard seed) | 8.6 | 2 | No focused build yet | Viral distribution system for low-bandwidth environments; WhatsApp-first app architecture |
+| PAT-003 (loaves x5000) | 9.0 | 2 | Too broad — "software scales" is universal | Zero-marginal-cost knowledge product for Africa (AI tutor, offline-first) |
+| PAT-006 (Babel) | 8.9 | 2 | No focused build spec yet | Real-time multilingual communication platform for African markets |
+| PAT-004 (body/microservices) | 8.7 | 2 | Too broad — entire microservices industry | Ghana-specific SME software integration platform |
+| PAT-007 (mustard seed) | 8.6 | 2 | No focused build yet | Viral distribution system for low-bandwidth environments |
 
-**Priority:** PAT-006 (Babel → multilingual platform) is the highest-priority unmapped build candidate because it is: specific, actionable, Africa-relevant, and not yet served by the current build portfolio.
+**Priority:** PAT-006 (Babel → multilingual platform) remains the highest-priority unmapped build candidate. PAT-001 and PAT-003 need narrowing before they become builds.
 
 ---
 
@@ -145,16 +146,16 @@ The following patterns have high scores but no build yet. These are the priority
 
 | Metric | Value |
 |--------|-------|
-| Total builds (all cycles) | 2 |
-| Builds specced | 2 |
+| Total builds (all cycles) | 7 |
+| Builds specced | 2 (EvalGate, LogosSchema) |
+| Builds in design | 5 (DecreeDAO, GrantPilot, TrustChain, DemoFirst, KnowFirst) |
 | Builds with code written | 0 |
 | Builds deployed | 0 |
-| Patterns mapped to a build | 2 of 16 (12.5%) |
-| Level 3 patterns with builds | 2 of 2 (100%) — both Level 3 patterns have builds |
-| Builds with Ghana applicability HIGH | 1 (LogosSchema) |
-| Builds with Ghana applicability MEDIUM | 1 (EvalGate) |
+| Patterns mapped to a build | 7 of 17 (41.2%) |
+| Level 3 patterns with builds | 5 of 5 (100%) |
+| Builds with Ghana/diaspora applicability HIGH | 4 (GrantPilot, TrustChain, DecreeDAO, KnowFirst) |
 
-**Target for Cycle 002:** At least one build should move from SPECCED to CODED. Priority recommendation: LogosSchema week-1 prototype (Claude prompt + Mermaid output) — can be done in one cycle session.
+**Target for Cycle 003:** GrantPilot (BUILD-004) should move from IN-DESIGN to SPECCED. LogosSchema should move from SPECCED to CODED. At least one build should have code written by end of Cycle 003.
 
 ---
 

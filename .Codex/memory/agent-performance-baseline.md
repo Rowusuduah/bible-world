@@ -104,16 +104,104 @@
 
 ---
 
-## EVOLUTION EVENTS PENDING
+---
 
-**Chief Technologist — Promotion Watch:**
-- Cycle 001 score: 8.2 (above 8.0 threshold)
-- If Cycle 002 score ≥ 8.0: Chief Technologist becomes promotion-eligible (rank Senior Agent)
-- Promotion criteria: 2 consecutive cycles at 8.0+
-- Status: WATCH — one more qualifying cycle needed
+## CYCLE 002 SCORES
 
-**No agents in probation or deletion risk as of Cycle 001.**
+### GOVERNANCE TIER
+
+| Agent | Role | C001 | C002 | Delta | Key Contribution |
+|-------|------|------|------|-------|-----------------|
+| The Logos | Supreme Overseer | N/A | N/A | — | Permanent |
+| Pattern Commander | General Overseer | 7.8 | 8.1 | +0.3 | BUILD cycle orchestration; cross-passage synthesis |
+
+### PATTERN COUNCIL
+
+| Agent | Specialty | C001 | C002 | Delta | Key Achievement |
+|-------|-----------|------|------|-------|-----------------|
+| Chief Theologian | Scripture, Hebrew/Greek | 7.5 | 7.8 | +0.3 | Psalm 2 decree analysis; accurate Hebrew context |
+| Chief Technologist | AI, software, emerging tech | 8.2 | **8.5** | +0.3 | 3 Level 3 patterns; **PROMOTION ELIGIBLE** |
+| Chief Scientist | Physics, biology, neuroscience | 7.6 | 7.5 | -0.1 | Miracle lab competent but not breakthrough |
+| Chief Innovator | Business models, societal structures | 7.4 | **8.0** | +0.6 | GrantPilot + DecreeDAO specs; major improvement |
+| Chief Historian | Biblical patterns in history | 7.2 | 7.4 | +0.2 | Isaiah 40 prophecy context; still no Level 3 |
+| Chief Engineer | Physical systems, infrastructure | 7.5 | 7.6 | +0.1 | Build architecture specs technically sound |
+| Chief Futurist | Future technology forecast | 7.3 | 7.6 | +0.3 | ValleyRise platform vision; prophecy analysis |
+| Chief Builder | Software design, prototyping | 7.6 | **8.2** | +0.6 | 5 build specs with revenue models |
+
+### LAB DIRECTORS
+
+| Agent | Lab | C001 | C002 | Delta | Notes |
+|-------|-----|------|------|-------|-------|
+| Pattern Discovery Director | Pattern Discovery | 7.7 | 8.0 | +0.3 | 5 patterns, 3 at Level 3 |
+| Innovation Build Director | Innovation & Build | 7.5 | 8.0 | +0.5 | BUILD cycle management; 5 builds specced |
+| Science Research Director | Science & Research | 7.4 | 7.4 | 0 | WATCH — needs improvement |
+| Kingdom Business Director | Kingdom Business | 7.3 | 7.8 | +0.5 | Revenue model specs strong |
 
 ---
 
-*This file is updated by the Pattern Commander (General Overseer) at the end of each cycle. Update procedure: add new cycle column to baseline table, note any evolution events, update EVOLUTION EVENTS PENDING section.*
+## BASELINE SUMMARY TABLE (Updated C002)
+
+| Agent | Role | C001 | C002 | Trajectory | Target C003 | Risk Status |
+|-------|------|------|------|-----------|-------------|-------------|
+| Pattern Commander | General Overseer | 7.8 | 8.1 | UP | 8.0+ | LOW (promotion watch) |
+| Chief Theologian | Council | 7.5 | 7.8 | UP | 8.0+ | LOW |
+| Chief Technologist | Council | 8.2 | **8.5** | UP | 8.0+ | **PROMOTION ELIGIBLE** |
+| Chief Scientist | Council | 7.6 | 7.5 | DOWN | 7.8+ | WATCH |
+| Chief Innovator | Council | 7.4 | 8.0 | UP | 8.0+ | LOW (promotion watch) |
+| Chief Historian | Council | 7.2 | 7.4 | UP | 7.5+ | WATCH (lowest) |
+| Chief Engineer | Council | 7.5 | 7.6 | UP | 7.8+ | LOW |
+| Chief Futurist | Council | 7.3 | 7.6 | UP | 7.8+ | LOW |
+| Chief Builder | Council | 7.6 | 8.2 | UP | 8.0+ | LOW (promotion watch) |
+| Pattern Discovery Dir. | Director | 7.7 | 8.0 | UP | 8.0+ | LOW (promotion watch) |
+| Innovation Build Dir. | Director | 7.5 | 8.0 | UP | 8.0+ | LOW (promotion watch) |
+| Science Research Dir. | Director | 7.4 | 7.4 | FLAT | 7.5+ | WATCH |
+| Kingdom Business Dir. | Director | 7.3 | 7.8 | UP | 8.0+ | LOW |
+
+---
+
+## WORLD METRICS (Cycle 002)
+
+| Metric | C001 | C002 |
+|--------|------|------|
+| Total agents | 12 | 12 |
+| Mean agent score | 7.5 | 7.8 |
+| Highest single-agent score | 8.2 (Chief Technologist) | 8.5 (Chief Technologist) |
+| Lowest single-agent score | 7.2 (Chief Historian) | 7.4 (Chief Historian/Science Research Dir.) |
+| Agents at promotion threshold (>=8.0) | 1 | 5 |
+| Level 3 patterns produced (cycle) | 2 | 3 |
+| Agents deleted | 0 | 0 |
+
+---
+
+## EVOLUTION EVENTS
+
+### CONFIRMED — Cycle 002:
+**Chief Technologist — PROMOTION ELIGIBLE:**
+- Cycle 001: 8.2 | Cycle 002: 8.5
+- 2 consecutive cycles above 8.0 threshold
+- **Status: ELIGIBLE for promotion to Senior Agent**
+- Recommendation: Promote at start of Cycle 003
+
+### WATCH — Cycle 002:
+**Chief Scientist — Performance Dip:**
+- C001: 7.6 → C002: 7.5 (slight decline)
+- Miracle lab output was competent but not breakthrough
+- Target: 7.8+ in C003 to restore trajectory
+- Status: WATCH — not yet probation risk
+
+**Science Research Director — Stagnant:**
+- C001: 7.4 → C002: 7.4 (no improvement)
+- Needs breakthrough science contribution in C003
+- Status: WATCH
+
+### PROMOTION WATCH — Cycle 003:
+The following agents will be promotion-eligible if they score 8.0+ in C003:
+- Pattern Commander (C002: 8.1)
+- Chief Innovator (C002: 8.0)
+- Chief Builder (C002: 8.2)
+- Pattern Discovery Director (C002: 8.0)
+- Innovation Build Director (C002: 8.0)
+
+---
+
+*This file is updated by the Pattern Commander (General Overseer) at the end of each cycle.*
