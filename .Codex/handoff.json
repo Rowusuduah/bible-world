@@ -1,58 +1,71 @@
 {
   "world": "BibleWorld",
-  "cycle": 5,
-  "updated": "2026-03-27",
+  "cycle": 8,
+  "updated": "2026-03-26",
 
   "to_buildworld": {
     "top_pattern": {
-      "id": "PAT-017",
-      "scripture": "John 1:47-49",
-      "name": "Pre-Knowledge Trust Collapse — The Fig Tree Pattern",
+      "id": "PAT-028",
+      "scripture": "John 5:1-7",
+      "name": "Bethesda Bottleneck — The Helper Gap",
       "level": 3,
-      "score": 8.7,
-      "tech_mapping": "AI-synthesized contextual briefings for pre-meeting trust acceleration. Demonstrated pre-knowledge collapses trust timelines from weeks to seconds.",
-      "build_spec": "KnowFirst — Next.js app, Claude API for data synthesis, web scraping for data aggregation, Vercel deploy",
-      "revenue_model": "$29/mo individual, $49/mo professional, $199/mo team, $0.10/brief API"
+      "score": 8.6,
+      "tech_mapping": "The man at the pool had desire, location, and opportunity. He lacked ONE thing: a helper. African NGOs have programs, proximity to funders, and desire for funding. They lack one thing: a helper that formats their readiness into proposals. GrantPilot IS the helper at the pool.",
+      "build_spec": "GrantPilot prompt chain validated. 5 prompts, ~19,500 tokens, ~$0.15-0.30 per proposal. See cycle-007/grantpilot-prompt-chain.md for full production prompts.",
+      "revenue_model": "$29/proposal or $99/mo (10 proposals), $199/mo unlimited, $499/mo enterprise"
     },
     "build_ready": {
       "id": "BUILD-004",
       "name": "GrantPilot",
-      "scripture": "Psalm 2:8 (Ask-Receive Distribution) + John 2:1-11 (Water to Wine = commodity→premium transformation)",
-      "tech_mapping": "AI grant proposal writer. Value exists (grant funding); bottleneck is request quality (proposal writing). Claude generates complete funder-formatted proposals from simple org descriptions.",
-      "build_spec": "Next.js form + Claude API prompt chain + formatted output. Week 1 MVP: form → Claude → markdown proposal. Week 2: Word/PDF export, funder template library.",
-      "revenue_model": "$29/proposal or $99/mo (10 proposals), $199/mo unlimited, $499/mo enterprise",
-      "priority": "SHIP FIRST — stress-tested score 9.0/10 across 5 dimensions. Highest revenue ceiling, clearest pain, best distribution clarity",
-      "stress_test_result": "PASSED. Competitors (Grantable, Instrumentl) all US-focused. ZERO serve Africa/USAID/IFC/AfDB. First 100 customers findable TODAY."
+      "status": "TESTABLE — prompt chain designed and validated",
+      "prompt_chain": {
+        "prompts": 5,
+        "stages": ["INTAKE (12 questions)", "ANALYSIS (funder matching)", "GENERATION (10 sections)", "REVIEW (hallucination audit)", "FORMAT (funder-specific output)"],
+        "tokens_per_proposal": 19500,
+        "api_cost_per_proposal": "$0.15-0.30",
+        "gross_margin": "~99% at $29/proposal"
+      },
+      "stress_test_results": {
+        "test_1": {"scenario": "Tamale NGO → USAID $250K girls education", "score": 7.8, "hallucinations": 0, "placeholders": 14},
+        "test_2": {"scenario": "Kumasi diaspora association → MCF $100K youth employment", "score": 7.5, "hallucinations": 0, "placeholders": 11},
+        "average_score": 7.65,
+        "hallucination_rate": "0%",
+        "verdict": "VALIDATED — ready for MVP build"
+      },
+      "known_weaknesses": ["Sustainability section generic", "Partnership section needs named partners", "Budget needs unit-cost specificity"],
+      "improvements_planned": ["Few-shot examples for weak sections", "Development data library", "6th STRENGTHEN prompt"],
+      "funder_templates": ["USAID", "IFC", "Mastercard Foundation", "AfDB"],
+      "priority": "SHIP NOW — shelter position (PAT-033) unoccupied. Zero competitors in Africa-specific grant AI."
     },
-    "platform_vision": {
-      "name": "ValleyRise",
-      "scripture": "Isaiah 40:3-5 — Every valley lifted up, every mountain made low",
-      "description": "All-in-one AI business launch platform for diaspora founders. Combines LogosSchema + GrantPilot + KnowFirst + DecreeDAO. One subscription, one platform.",
-      "target_pricing": "$79/mo founder, $199/mo club, $499/mo accelerator"
-    },
-    "all_new_builds": [
-      {"id": "BUILD-003", "name": "DecreeDAO", "score": 7.5, "week1": true},
-      {"id": "BUILD-004", "name": "GrantPilot", "score": 8.5, "week1": true},
-      {"id": "BUILD-005", "name": "TrustChain", "score": 8.0, "week1": true},
-      {"id": "BUILD-006", "name": "DemoFirst", "score": 7.6, "week1": false},
-      {"id": "BUILD-007", "name": "KnowFirst", "score": 8.3, "week1": true}
+    "new_patterns_cycles_006_008": [
+      {"id": "PAT-028", "name": "Bethesda Bottleneck", "level": 3, "score": 8.6, "scripture": "John 5:1-7"},
+      {"id": "PAT-029", "name": "Pattern Replication Method", "level": 2, "score": 7.9, "scripture": "John 5:19"},
+      {"id": "PAT-030", "name": "Patience Pricing", "level": 2, "score": 7.5, "scripture": "Psalm 37:7-11"},
+      {"id": "PAT-031", "name": "Psalm 51 Transformation Chain", "level": 2, "score": 8.0, "scripture": "Psalm 51:1-12"},
+      {"id": "PAT-032", "name": "Loaves-to-Thousands Efficiency", "level": 2, "score": 7.8, "scripture": "John 6:1-13"},
+      {"id": "PAT-033", "name": "Shelter Positioning", "level": 2, "score": 7.7, "scripture": "Psalm 91:1-2"}
     ],
-    "original_insight": "Psalm 2 + John 1:19-51 together form a complete go-to-market system: (1) establish authority by decree, (2) fund through ask-receive, (3) build trust through referral chains, (4) convert through direct experience, (5) accelerate through pre-knowledge. Every successful SaaS company follows this pattern. Every failed one breaks a link."
+    "original_insight": "Cycles 006-008 refined GrantPilot from concept to testable prompt chain. The key insight from John 5 (Bethesda): the problem is not writing quality — it is the ABSENCE OF A HELPER. GrantPilot does not teach NGOs to write better. It carries them to the pool. Psalm 51 provided the 5-stage architecture. John 6 confirmed the economics (small input, massive output, surplus remaining). Psalm 91 confirmed the go-to-market (occupy the unoccupied shelter)."
   },
 
   "to_ghanaworld": {
-    "pattern_applicable": "PAT-014 (Ask-Receive Distribution) maps directly to Ghana's NGO/cooperative grant funding gap. GrantPilot would serve Ghana-based organizations applying to USAID, IFC, AfDB, Mastercard Foundation, and other major funders.",
-    "investigation_request": "Which Ghana-based NGOs and cooperatives are currently losing grant opportunities due to poor proposal quality? What are the top 5 funders active in Ghana? What does a typical USAID/IFC grant application require? How large is the grant consulting market in Ghana?",
-    "trust_chain_request": "PAT-015 (Referral Chain) maps to the diaspora investment trust problem. Can GhanaWorld identify 5 diaspora investment clubs currently active in Ghana investments? What deal-flow verification mechanisms do they use?"
+    "grantpilot_prompt_chain_ready": true,
+    "prompt_chain_location": "e:/BibleWorld/.Codex/cycles/cycle-007/grantpilot-prompt-chain.md",
+    "test_results_location": "e:/BibleWorld/.Codex/cycles/cycle-008/grantpilot-test-results.md",
+    "ghana_specific_findings": {
+      "usaid_test": "Tamale girls education scenario scored 7.8/10. USAID format correctly generated. Northern Ghana recognized as priority area.",
+      "mcf_test": "Kumasi diaspora association scenario scored 7.5/10. Mastercard Foundation Young Africa Works framing correctly applied.",
+      "key_gap": "Development statistics library needed — common Ghana education, health, employment stats would reduce [CITE] placeholders significantly"
+    },
+    "investigation_request": "Can GhanaWorld provide: (1) Top 20 funders active in Ghana with typical grant sizes, (2) Most common proposal rejection reasons from USAID Ghana, (3) Number of registered NGOs in Ghana that could be GrantPilot customers, (4) Grant consultant market pricing in Accra"
   },
 
   "requests_from_buildworld": [
-    "New Level 3 patterns mapping to developer tools or SaaS products — delivered 3 this cycle",
-    "PAT-004 Jubilee Economics fintech product — deferred to future cycle"
+    "GrantPilot prompt chain is ready — BuildWorld should begin Next.js MVP immediately",
+    "Need funder template data for EU, DFID/FCDO, GIZ, DANIDA, SIDA, Gates Foundation"
   ],
   "requests_from_ghanaworld": [
-    "Supply chain integrity patterns — partially addressed by PAT-015 (TrustChain)",
-    "Quality verification at scale — future cycle priority",
-    "Cooperative economics — addressed by PAT-013 (DecreeDAO)"
+    "Ghana-specific development statistics library for GrantPilot",
+    "Funder landscape mapping for Ghana"
   ]
 }

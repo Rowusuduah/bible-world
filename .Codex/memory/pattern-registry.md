@@ -1,10 +1,10 @@
 # BibleWorld Pattern Registry
 ## Living Record of All Discovered Biblical Patterns
 
-**Last Updated:** Cycle 005
-**Total Patterns:** 27 (8 seed + 19 discovered)
-**Active Patterns:** 27
-**Level 3 Patterns:** 9 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025)
+**Last Updated:** Cycle 008
+**Total Patterns:** 33 (8 seed + 25 discovered)
+**Active Patterns:** 33
+**Level 3 Patterns:** 10 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028)
 
 ---
 
@@ -409,5 +409,90 @@ These are the founding patterns that launch the world. Agents will deepen, chall
 **Discovered By:** Chief Theologian
 **Cycle Discovered:** 005
 **Build Status:** COMMAND (not a product — a directive)
+
+---
+
+### PAT-028
+**Scripture:** John 5:1-7 — "Sir, I have no one to help me into the pool"
+**Pattern Type:** HEALING + COMMUNICATION
+**Level:** 3 (breakthrough) | **Score:** 8.6
+**Pattern Description:** The man had desire (38 years), location (at the pool), and opportunity (water stirred regularly). The ONLY missing element was a helper to bridge the gap between readiness and action. Jesus identifies this with a single diagnostic question: "Do you want to get well?"
+**Why Level 3:** Maps precisely to the grant funding gap. African NGOs have programs, proximity to funders, and desire. The single missing element is a helper that can format their readiness into the required proposal structure. No existing AI tool frames the problem as a helper-gap rather than a writing-quality gap.
+**Modern Mapping:** AI-assisted application tools where the user HAS the substance but lacks formatting/presentation. GrantPilot, visa helpers, admission essay tools.
+**Infrastructure Status:** EMERGING
+**Application Potential:** Validates GrantPilot's core UX: EXTRACT existing knowledge, do not GENERATE new content.
+**Discovered By:** Chief Theologian + Chief Innovator
+**Cycle Discovered:** 006
+**Build Status:** APPLIED TO BUILD-004 (GrantPilot)
+
+---
+
+### PAT-029
+**Scripture:** John 5:19 — "The Son can do nothing by himself; he can only do what he sees his Father doing"
+**Pattern Type:** CREATION + STRUCTURE
+**Level:** 2 | **Score:** 7.9
+**Pattern Description:** Jesus describes his creative method: pure pattern replication. He observes the Father's pattern and instantiates it in new context. Not copying — seeing underlying structure and reproducing it.
+**Modern Mapping:** Transfer learning, fine-tuning, template-based generation, few-shot prompting. Show the pattern, replicate it.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** GrantPilot prompt engineering: feed Claude winning proposal examples (the Father's pattern), generate new proposals replicating the pattern.
+**Discovered By:** Chief Technologist
+**Cycle Discovered:** 006
+**Build Status:** APPLIED TO BUILD-004 (GrantPilot prompt chain)
+
+---
+
+### PAT-030
+**Scripture:** Psalm 37:7-11 — "The meek will inherit the land"
+**Pattern Type:** TIME + MULTIPLICATION
+**Level:** 2 | **Score:** 7.5
+**Pattern Description:** Psalm 37 contrasts two economic strategies: (1) the wicked exploit quickly for maximum extraction, (2) the righteous price patiently and inherit permanently. The wicked strategy collapses; the righteous strategy compounds.
+**Modern Mapping:** Freemium/low-cost SaaS pricing. Amazon's "your margin is my opportunity." Low price + high volume + long horizon = dominance.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** GrantPilot pricing: $29/proposal undercuts $3K-$10K consultants by 99%. Free tier captures the "meek" segment.
+**Discovered By:** Chief Innovator + Chief Theologian
+**Cycle Discovered:** 006
+**Build Status:** APPLIED TO BUILD-004 (GrantPilot pricing)
+
+---
+
+### PAT-031
+**Scripture:** Psalm 51:1-12 — "Create in me a clean heart, O God"
+**Pattern Type:** RESTORATION + CREATION
+**Level:** 2 | **Score:** 8.0
+**Pattern Description:** Psalm 51 is a 5-stage transformation pipeline: (1) Confession/intake, (2) Cleansing/noise removal, (3) Analysis/root cause, (4) Creation/new output, (5) Restoration/formatted output. Each stage must complete before the next.
+**Modern Mapping:** Multi-stage prompt chains for document generation. Maps directly to intake → preprocessing → analysis → generation → post-processing.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** Architectural blueprint for GrantPilot's 5-prompt chain.
+**Discovered By:** Chief Theologian + Chief Builder
+**Cycle Discovered:** 007
+**Build Status:** APPLIED TO BUILD-004 (GrantPilot prompt chain architecture)
+
+---
+
+### PAT-032
+**Scripture:** John 6:1-13 — Five loaves fed 5,000 with 12 baskets remaining
+**Pattern Type:** MULTIPLICATION
+**Level:** 2 | **Score:** 7.8
+**Pattern Description:** Multiplication ratio ~1:1000. Output EXCEEDS demand — 12 baskets of surplus. Superabundant efficiency. The transformation produces more than requested.
+**Modern Mapping:** AI document generation from minimal input. One 15-minute intake form → 20-page proposal. Surplus: same intake generates proposals for MULTIPLE funders.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** GrantPilot feature: "Apply to Multiple Funders" — one intake, proposals for 3-5 funders.
+**Discovered By:** Chief Innovator
+**Cycle Discovered:** 007
+**Build Status:** FUTURE FEATURE for BUILD-004
+
+---
+
+### PAT-033
+**Scripture:** Psalm 91:1-2 — "He who dwells in the shelter of the Most High"
+**Pattern Type:** GOVERNANCE + TIME
+**Level:** 2 | **Score:** 7.7
+**Pattern Description:** Protection through POSITIONING, not fighting. Eight threats listed, zero fought. All avoided by being in the right place. The shelter already exists; the person's only job is to dwell in it.
+**Modern Mapping:** First-mover advantage in niche markets. The shelter is the market gap. Occupy it before competitors. GrantPilot's Africa-specific niche is the shelter — 17+ competitors in general market, zero in Africa position.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** GrantPilot go-to-market: occupy the Africa grant writing position immediately.
+**Discovered By:** Chief Innovator + Chief Theologian
+**Cycle Discovered:** 008
+**Build Status:** APPLIED TO BUILD-004 (GrantPilot go-to-market)
 
 ---

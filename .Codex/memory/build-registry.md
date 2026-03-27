@@ -1,9 +1,10 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 002
+**Last Updated:** Cycle 008
 **Total Builds:** 7
-**Builds in Design:** 7 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-004 GrantPilot, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst)
+**Builds in Design:** 6 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst)
+**Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds Deployed:** 0
 
 ---
@@ -75,18 +76,25 @@ Each build entry contains:
 ---
 
 ### BUILD-004: GrantPilot
-**Pattern Source:** PAT-014 (Psalm 2:8 — Ask-Receive Distribution)
+**Pattern Source:** PAT-014 (Ask-Receive) + PAT-019 (Water-to-Wine) + PAT-028 (Bethesda Bottleneck) + PAT-029 (Pattern Replication) + PAT-030 (Patience Pricing) + PAT-031 (Psalm 51 Chain) + PAT-032 (Loaves Efficiency) + PAT-033 (Shelter Positioning)
 **Build Type:** SOFTWARE — AI Grant Writing SaaS
 **Problem Solved:** African organizations leave billions in grant funding untapped because they cannot write proposals meeting funder requirements
 **Who It Serves:** Grant consultants (primary), African NGOs, international organizations, accelerators
-**How It Works:** User inputs org description + program + funder. GrantPilot generates complete funder-formatted proposal with all standard sections.
-**Claude API Role:** Core — Claude generates every proposal section and maintains funder preference knowledge
+**How It Works:** 5-prompt chain: INTAKE (12 structured questions) → ANALYSIS (funder matching + gap identification) → GENERATION (all 10 proposal sections) → REVIEW (hallucination check + quality audit) → FORMAT (funder-specific output). Full prompt chain documented in cycle-007/grantpilot-prompt-chain.md
+**Claude API Role:** Core — Claude powers all 5 prompts. ~19,500 tokens per proposal. ~$0.15-0.30 API cost per proposal.
 **Capital Required:** ZERO
-**Build Score:** 8.5
-**Status:** IN-DESIGN
+**Build Score:** 9.0 (stress-tested cycle 005, prompt chain validated cycle 008)
+**Status:** TESTABLE — prompt chain designed, tested on 2 scenarios, 0 hallucinations, avg 7.65/10 quality
 **Agent Responsible:** Chief Builder
 **Cycle Started:** 002
-**Priority:** #1 — Highest revenue ceiling, clearest pain, fastest to build
+**Prompt Chain Completed:** Cycle 007
+**Stress Test Passed:** Cycle 008 (2 scenarios: USAID $250K + MCF $100K)
+**Priority:** #1 — SHIP NOW
+**Pricing:** $29/proposal, $99/mo (10), $199/mo unlimited, $499/mo enterprise
+**Funder Templates:** USAID, IFC, Mastercard Foundation, AfDB (4 active; 8 more planned)
+**Test Results:** USAID scenario 7.8/10, MCF scenario 7.5/10, zero hallucinations both tests
+**Known Weaknesses:** Sustainability section (generic), Partnership section (needs named partners), budget unit costs
+**Improvements Needed:** Few-shot examples for weak sections, development data library, 6th STRENGTHEN prompt
 
 ---
 
