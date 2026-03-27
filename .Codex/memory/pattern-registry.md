@@ -1,10 +1,100 @@
 # BibleWorld Pattern Registry
 ## Living Record of All Discovered Biblical Patterns
 
-**Last Updated:** Cycle 016
-**Total Patterns:** 53 (8 seed + 45 discovered)
-**Active Patterns:** 53
-**Level 3 Patterns:** 24 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038, PAT-041, PAT-042, PAT-044, PAT-045, PAT-046, PAT-048, PAT-049, PAT-051, PAT-052)
+**Last Updated:** Cycle 017
+**Total Patterns:** 58 (8 seed + 50 discovered)
+**Active Patterns:** 58
+**Level 3 Patterns:** 27 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038, PAT-041, PAT-042, PAT-044, PAT-045, PAT-046, PAT-048, PAT-049, PAT-051, PAT-052, PAT-054, PAT-055, PAT-056)
+
+---
+
+### PAT-054
+**Scripture:** Exodus 28:15-21, 28:30 — "Fashion a breastpiece for making decisions — the work of skilled hands... There are to be twelve stones, one for each of the names of the sons of Israel, each engraved like a seal with the name of one of the twelve tribes." / "Also put the Urim and the Thummim in the breastpiece, so they may be over Aaron's heart whenever he enters the presence of the Lord."
+**Pattern Type:** GOVERNANCE
+**Pattern Name:** The Urim and Thummim Step-Gate Pattern — Named Decision Gates and Step-Level Fault Isolation
+**Pattern Description:** The High Priest's breastpiece contains twelve stones — each named, each corresponding to a tribe — arranged in four rows. The Urim and Thummim (oracle mechanism) provides step-specific answers when consulted: not a global verdict, but a named, position-specific response. This is an enumerated, individually interrogable decision mechanism. Each gate can be queried independently. The oracle answers by gate, not by overall conclusion.
+**Modern Mapping:** Multi-step LLM pipeline fault isolation. Each step in a chain is a named decision gate. The FaultLocator is the Urim and Thummim: it interrogates each gate (step) and returns a step-specific fault score. The `@probe` decorator names the gate. The ProbeReport is the oracle's answer: "the fault is at step 'retrieve' (confidence: HIGH)." chain-probe is the breastpiece.
+**Infrastructure Status:** EXISTS NOW (Python, sentence-transformers, SQLite — all available)
+**Application Potential:** chain-probe — FaultLocator, @probe decorator, named step checkpoints, step-level fault_score
+**Pattern Score:** 9.1/10
+**Discovered By:** Chief Theologian (Senior Agent)
+**Cycle Discovered:** 017
+**Build Status:** BUILT (BUILD-016: chain-probe, Pivot_Score 8.85)
+**Level:** 3
+**Note:** Deepest Exodus mining yet. Second Exodus harvest (first was PAT-002 Exodus 31:18 — stone tablets). Exodus 28 is the priestly vestments chapter — rich in structural patterns not yet fully mined.
+**Enforcement Note:** Mapping applies ONLY to the structural mechanism of named decision gates. Divine oracle, High Priest's mediation role, God's presence in the Tabernacle, and the spiritual content of the Urim and Thummim oracle are NOT claimed for software. CLEAR.
+
+---
+
+### PAT-055
+**Scripture:** Ezekiel 33:1-9 — "When I bring the sword against a land, and the people of the land choose one of their men and make him their watchman, and he sees the sword coming against the land and blows the trumpet to warn the people... if the watchman sees the sword coming and does not blow the trumpet to warn the people... I will hold the watchman accountable for their blood."
+**Pattern Type:** GOVERNANCE
+**Pattern Name:** The Watchman Step-Sentinel Pattern — Step-Assigned Accountability and Step-Level Alarm
+**Pattern Description:** The watchman is assigned to a specific post (not a general monitor for the whole system) and sounds an alarm AT HIS POSITION when a threat appears at HIS GATE. The accountability structure is step-specific: if the watchman at post N fails to sound the alarm, the failure belongs to post N. This is not centralized monitoring — it is distributed, step-assigned, step-accountable sentinel architecture.
+**Modern Mapping:** chain-probe's `@probe` decorator assigns a watchman (sentinel) to each step in a pipeline. When that step's output exceeds the fault threshold, the ProbeAlert fires (trumpet sounds). The cascade analysis determines whose post the alarm came from. A step without a probe is a post without a watchman — a dark zone.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** chain-probe — ProbeAlert, @probe step-assignment, dark zone detection in ProbeMap
+**Pattern Score:** 8.9/10
+**Discovered By:** Chief Theologian (Senior Agent)
+**Cycle Discovered:** 017
+**Build Status:** BUILT (BUILD-016: chain-probe, Pivot_Score 8.85)
+**Level:** 3
+**Note:** Second Ezekiel harvest (first was PAT-051 Ezekiel 37:1-10, cycle 016). Ezekiel 33 watchman vs. Ezekiel 37 valley — distinct patterns (sentinel vs. completeness).
+**Enforcement Note:** Mapping applies ONLY to structural post-assignment and alarm function. Ezekiel's prophetic commission, Israel's spiritual condition, divine judgment (sword), and the exile-restoration narrative are NOT claimed for software. CLEAR.
+
+---
+
+### PAT-056
+**Scripture:** 1 Kings 18:30-39 — "Then Elijah said to all the people, 'Come here to me'... He arranged the wood, cut the bull into pieces and laid it on the wood. Then he said to them, 'Fill four large jars with water and pour it on the offering and on the wood.' 'Do it again,' he said, and they did it again. 'Do it a third time,' he ordered, and they did it the third time... Then the fire of the Lord fell."
+**Pattern Type:** CREATION
+**Pattern Name:** The Elijah Staged Evidence Pattern — Systematic Parameter Variation for Step-Level Fault Investigation
+**Pattern Description:** Elijah does not simply call down fire — he structures the test in deliberate, observable, escalating stages. Three water pours, each a discrete parameter change that increases the evidence load. Each pour produces an observable state. By the third pour, the conditions are such that no confounding factor can explain the outcome. This is the oldest systematic multi-condition experiment in Scripture: staged evidence accumulation to isolate the true causal factor.
+**Modern Mapping:** chain-probe's StepReplay implements Elijah's protocol: re-run the failing step with three different parameter sets (temperature=0, top_k=10, prompt_variant). Each run = one water pour. The ReplayReport accumulates evidence about whether the failure is in THIS step or not. FAULT_MITIGATED = fire falls. FAULT_CONFIRMED = fire doesn't fall regardless of conditions = fault confirmed in this step.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** chain-probe — StepReplay, frozen-input re-execution, ReplayResult verdict logic, compare() method
+**Pattern Score:** 9.0/10
+**Discovered By:** Chief Theologian (Senior Agent)
+**Cycle Discovered:** 017
+**Build Status:** BUILT (BUILD-016: chain-probe, Pivot_Score 8.85)
+**Level:** 3
+**Note:** FIRST deep 1 Kings Elijah pattern. PAT-040 was 1 Kings 6-7 (Temple structure — different chapter, different context). 1 Kings 18 is the Carmel contest, one of the most dramatic scenes in the Old Testament. Rich book for future mining.
+**Enforcement Note:** Mapping applies ONLY to Elijah's experimental methodology (staged conditions, observable outcomes per stage). The miraculous fire, God's response to prayer, the defeat of Baal and his prophets, and Elijah's prophetic role are NOT claimed for software. CLEAR.
+
+---
+
+### PAT-057
+**Scripture:** Nehemiah 3:1-5, 28-32 — "Eliashib the high priest and his fellow priests went to work and rebuilt the Sheep Gate... Joiada son of Paseah and Meshullam son of Besodeiah repaired the Jeshanah Gate... Meremoth son of Uriah, the son of Hakkoz, repaired the next section. Next to him Meshullam son of Berekiah... Above the Horse Gate, the priests made repairs, each in front of his own house."
+**Pattern Type:** STRUCTURE
+**Pattern Name:** The Section-by-Section Wall Pattern — Named Section Ownership and Coverage Visualization
+**Pattern Description:** 41 groups rebuild Jerusalem's wall, each assigned a named section. The accountability is named and specific — we know who built what and where they lived relative to their section. This is a named, auditable, section-by-section responsibility map for a complex system under reconstruction. The coverage is complete: no section without an owner is recorded.
+**Modern Mapping:** chain-probe's ProbeMap generates a named, auditable coverage map: which steps have probes (owned sections), which are dark (unassigned). The Sheep Gate = Step 1 (retrieval). Dark zones = sections without a builder — gaps in the wall.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** chain-probe — ProbeMap HTML generator, coverage report (probed/dark ratio), named step ownership
+**Pattern Score:** 8.4/10
+**Discovered By:** Chief Theologian (Senior Agent)
+**Cycle Discovered:** 017
+**Build Status:** BUILT (BUILD-016: chain-probe)
+**Level:** 2
+**Note:** Second Nehemiah harvest. PAT-034 = Nehemiah 4:13-14 (guards at gaps, prompt-lock). PAT-057 = Nehemiah 3 (named section roster, ProbeMap). Genuinely distinct patterns.
+**Enforcement Note:** Section-by-section ownership maps to coverage visualization. Nehemiah's prayer and faith, Israel's post-exile restoration, divine protection — NOT claimed for software. CLEAR.
+
+---
+
+### PAT-058
+**Scripture:** Numbers 9:15-23 — "Whenever the cloud lifted from above the tent, the Israelites set out; wherever the cloud settled, the Israelites encamped. At the Lord's command the Israelites set out, and at his command they encamped... Sometimes the cloud stayed only from evening till morning, and when it lifted in the morning, they set out."
+**Pattern Type:** TIME
+**Pattern Name:** The Cloud Step-Token Pattern — Discrete Step Completion Signal and Halt-on-Failure
+**Pattern Description:** Israel moves one step at a time, the cloud either lifts (move = step complete) or stays (halt = step not complete). Each step is a discrete, authorized-and-completed action before the next begins. When the cloud stays, the halt is attributed to that specific moment, not to a general system failure.
+**Modern Mapping:** chain-probe's step-completion journal records the completion token for each step before the next begins. `halt_on_fault=True` implements the cloud-stays mechanism: when Step N's fault_score exceeds threshold, the chain halts and the failure is attributed to Step N specifically (not to "the pipeline failed").
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** chain-probe — halt_on_fault parameter, step-completion journal, discrete step attribution
+**Pattern Score:** 8.2/10
+**Discovered By:** Chief Theologian (Senior Agent)
+**Cycle Discovered:** 017
+**Build Status:** BUILT (BUILD-016: chain-probe)
+**Level:** 2
+**Note:** Second Numbers harvest. PAT-047 = Numbers 13:25-33 (Twelve Spies divergence, evaluator reliability). PAT-058 = Numbers 9 (cloud step-token, discrete progression). Distinct patterns.
+**Enforcement Note:** Cloud as step-completion signal maps to halt mechanism. God's direct guidance of Israel in the wilderness, divine presence in the cloud, and the Exodus journey's theological significance are NOT claimed for software. CLEAR.
 
 ---
 

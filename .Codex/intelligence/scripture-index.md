@@ -1,9 +1,9 @@
 # BibleWorld Scripture Index
 ## Running Index of All Mined Passages
 
-**Last Updated:** Cycle 015
-**Total Passages Mined:** 65+ (8 seed + 57+ discovered across cycles 001-015)
-**Books with at least one passage mined:** Genesis, Exodus, Leviticus, Numbers, Judges, Nehemiah, Psalms, Proverbs, Isaiah, Daniel (NEW cycle 015), 1 Kings, Matthew (NEW cycle 015), John, Acts, Romans, 1 Corinthians, 1 Thessalonians, Revelation
+**Last Updated:** Cycle 017
+**Total Passages Mined:** 75+ (8 seed + 67+ discovered across cycles 001-017)
+**Books with at least one passage mined:** Genesis, Exodus, Leviticus, Numbers, Judges, Nehemiah, Psalms, Proverbs, Isaiah, Daniel, 1 Kings, Matthew, Luke (NEW cycle 016), John, Acts, Romans, 1 Corinthians, 1 Thessalonians, Hebrews (NEW cycle 016), Ezekiel (NEW cycle 016), Revelation
 
 ---
 
@@ -44,6 +44,14 @@
 | Daniel 5:25-28 | PAT-048 | GOVERNANCE + LIGHT | 3 | 9.1 | ACTIVE | 015 |
 | Matthew 7:24-27 | PAT-049 | STRUCTURE + GOVERNANCE | 3 | 9.0 | ACTIVE | 015 |
 | Proverbs 17:3 | PAT-050 | RESTORATION + GOVERNANCE | 2 | 8.4 | ACTIVE | 015 |
+| Ezekiel 37:1-10 | PAT-051 | RESTORATION + STRUCTURE | 3 | 9.2 | ACTIVE | 016 |
+| Luke 15:4-6 | PAT-052 | GOVERNANCE + RESTORATION | 3 | 8.7 | ACTIVE | 016 |
+| Hebrews 4:13; 9:6-7 | PAT-053 | GOVERNANCE + LIGHT | 2 | 8.3 | ACTIVE | 016 |
+| Exodus 28:15-21, 28:30 | PAT-054 | GOVERNANCE | 3 | 9.1 | ACTIVE | 017 |
+| Ezekiel 33:1-9 | PAT-055 | GOVERNANCE | 3 | 8.9 | ACTIVE | 017 |
+| 1 Kings 18:30-39 | PAT-056 | CREATION | 3 | 9.0 | ACTIVE | 017 |
+| Nehemiah 3:1-5, 28-32 | PAT-057 | STRUCTURE | 2 | 8.4 | ACTIVE | 017 |
+| Numbers 9:15-23 | PAT-058 | TIME | 2 | 8.2 | ACTIVE | 017 |
 
 **Note on Cycle 001 coverage:** Cycle 001 read Genesis 1-2 (in full), Psalm 1 (in full), and John 1:1-18 (the Prologue). The passage index reflects specific verses where distinct patterns were identified; the full chapter context was analyzed even for verses not yielding a standalone pattern entry.
 
@@ -54,7 +62,7 @@
 | Book | Chapters Covered | Patterns Mined | Coverage Status |
 |------|-----------------|----------------|-----------------|
 | Genesis | 1-2 (Cycle 001) | 6 (PAT-001, 006, 009, 010, 011, 015, 016) | PARTIAL — 50 chapters remain |
-| Exodus | 31 (verse 18, Cycle 000 seed) | 1 (PAT-002) | BARELY TOUCHED — major pattern density expected |
+| Exodus | 31 (seed), 28 (cycle 017) | 2 (PAT-002, PAT-054) | PARTIALLY MINED — Exodus 28 is rich (priestly vestments, Tabernacle specs). Exodus 12 (Passover — covenant meal protocols), Exodus 20 (Ten Commandments — immutable spec), Exodus 14 (Red Sea crossing — irreversible migration path) HIGH PRIORITY |
 | Leviticus | 25 (seed) | 1 (PAT-005) | BARELY TOUCHED |
 | Psalms | 1 (Cycle 001) | 2 (PAT-013, 014) | PARTIAL — 149 psalms remain; Psalms 22, 23, 46, 90, 139 are high-priority |
 | Proverbs | 27 (verse 17, seed) | 1 (PAT-008) | BARELY TOUCHED — enormous pattern density expected |

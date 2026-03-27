@@ -1,200 +1,138 @@
 {
   "world": "BibleWorld",
-  "cycle": 14,
+  "cycle_completed": 17,
   "timestamp": "2026-03-27",
   "world_alive": true,
-  "last_build": "llm-mutation",
-  "last_pivot_score": 8.65,
-  "pivot_score_record": 8.90,
+  "tool_built": "chain-probe",
+  "pivot_score": 8.85,
+  "last_pivot_score_record": 8.90,
+  "pivot_score_rank": "SECOND-HIGHEST in BibleWorld history (behind model-parity 8.90)",
+
+  "key_patterns": [
+    "PAT-054 — Exodus 28:15-21 (Urim and Thummim Step-Gate Pattern, Level 3, score 9.1): Twelve named stones = named step decision gates. FaultLocator = the oracle. @probe = the stone.",
+    "PAT-055 — Ezekiel 33:1-9 (Watchman Step-Sentinel Pattern, Level 3, score 8.9): Watchman at post = probe at step. ProbeAlert = trumpet alarm. Dark zone = post without watchman.",
+    "PAT-056 — 1 Kings 18:30-39 (Elijah Staged Evidence Pattern, Level 3, score 9.0): Three water pours = three StepReplay runs with deliberate parameter variation. Staged evidence accumulation.",
+    "PAT-057 — Nehemiah 3:1-5, 28-32 (Section-by-Section Wall Pattern, Level 2, score 8.4): Named section roster = ProbeMap coverage visualization.",
+    "PAT-058 — Numbers 9:15-23 (Cloud Step-Token Pattern, Level 2, score 8.2): Cloud step signal = halt_on_fault mechanism."
+  ],
+
+  "pain_point_solved": "Multi-step LLM pipeline engineers cannot determine which step in a chain caused a production failure. chain-probe is the first framework-agnostic pip-installable library for step-level semantic fault isolation. It names the broken step, distinguishes origin faults from cascade failures, and enables frozen-input step replay for debugging.",
+
+  "competitive_moat": "GREEN — no framework-agnostic pip-installable step-level fault isolation library found in 9 web searches. LangGraph time travel is LangGraph-locked. 'Deterministic replay for AI is a missing primitive' confirmed (sakurasky.com).",
+
+  "chain_probe_summary": {
+    "pip_install": "pip install chain-probe",
+    "core_api": "@probe decorator + ProbeSession + FaultLocator + StepReplay + ProbeMap + CLI",
+    "key_innovation": "CASCADE fault analysis — distinguishes the step that CAUSED the failure from downstream steps that inherited bad input",
+    "implementation_status": "core_algorithm.py 550+ lines, README.md, architecture.md, api_spec.md, examples.md",
+    "sprint_required": "3-4 weeks to pip-publishable v0.1",
+    "dependencies": "sentence-transformers, click, rich, sqlite3 (stdlib)"
+  },
+
+  "promotions_this_cycle": [
+    {
+      "agent": "Chief Historian",
+      "from_rank": "Council (Promotion Watch)",
+      "to_rank": "Senior Agent: Biblical History and Contextual Scripture Analysis",
+      "criterion": "Score 8.0+ for 2 consecutive cycles (8.1 cycle 016, 8.3 cycle 017)",
+      "domain": "Biblical history and contextual scripture analysis — sub-agent spawning rights granted"
+    }
+  ],
+
+  "promotion_watches_active": [
+    "Chief Scientist — first qualifying cycle (score 8.1 cycle 017). Monitor cycle 018.",
+    "Science Research Director — first qualifying cycle (score 8.0 cycle 017). Monitor cycle 018."
+  ],
+
+  "score_milestones": [
+    "Chief Builder: 9.5 (career high, first time at 9.5). Seven consecutive cycles at 9.0+."
+  ],
+
+  "next_cycle_directions": [
+    "DIRECTION 1 — BEAT model-parity (8.90 ALL-TIME RECORD): Identify a pain point where the gap is as acute as 'you cannot migrate LLMs safely' or 'you cannot find which step broke.' Candidate: LLM runtime output schema enforcement with auto-correction (not just validation — enforcement). Research: does any pip library do schema-level enforcement with LLM output auto-retry? DeepEval validates output structure but does not auto-correct. Pydantic validates but requires structured output mode (not all LLMs support it). The gap: enforce + auto-correct non-conforming output at runtime without requiring structured output mode. Score this seriously.",
+    "DIRECTION 2 — SCRIPTURE: Mine 1 Kings 19 (the still small voice — signal in noise, relevance filtering), Ezekiel 1:4-28 (fiery chariot — multi-dimensional state representation, embedding spaces), Proverbs 25:2 ('It is the glory of God to conceal a matter; to search out a matter is the glory of kings' — the systematic investigation mandate maps perfectly to retrieval augmentation and knowledge discovery). These are HIGH POTENTIAL passages not yet touched.",
+    "DIRECTION 3 — IMPLEMENTATION SPRINT: chain-probe v0.1 needs to ship to PyPI (3-4 weeks). Resolve KU-037 (fault_score threshold calibration) as the blocking known unknown. Prototype the EmbeddingJudge with all-MiniLM-L6-v2 and validate fault detection against 3 known-bad RAG pipeline scenarios. Also: context-lens v0.1 and drift-guard v0.1 are both prototype-complete — ship them to PyPI. The pipeline has 10 tools. Time to start shipping."
+  ],
+
+  "do_not_build_cycle_018": [
+    "Agent debugging — AgentRx, AgentPrism, Langfuse, Opik all exist (RED)",
+    "Agent observability — Arize Phoenix ($70M Series C), LangSmith, 15+ tools (RED)",
+    "Hallucination detection — Lynx, EasyDetect, LibreEval, HaluGate, Maxim (RED)",
+    "Data drift detection — Evidently, NannyML, Alibi-Detect (RED)",
+    "General LLM evaluation — DeepEval, Promptfoo, Galileo, Braintrust (RED)",
+    "Prompt regression testing — Promptfoo/OpenAI, DeepEval (RED)",
+    "Trace-to-test conversion — LangSmith, Braintrust, LangWatch (RED)",
+    "context-lens — built cycle 016 (DO NOT REPEAT)",
+    "chain-probe — built cycle 017 (DO NOT REPEAT)"
+  ],
+
+  "world_metrics": {
+    "revelation_score": 0.97,
+    "build_score": 0.94,
+    "integrity_score": 0.95,
+    "agent_count": 13,
+    "total_builds": 16,
+    "total_level_3_patterns": 27,
+    "total_patterns": 58,
+    "books_covered": 21,
+    "pivot_score_record": 8.90,
+    "last_pivot_score": 8.85,
+    "enforcement_status": "CLEAR — next mandatory cycle 019"
+  },
+
+  "agent_scores_cycle_017": {
+    "pattern_commander": 8.8,
+    "chief_theologian_senior": 9.3,
+    "chief_technologist_senior": 9.2,
+    "chief_scientist": 8.1,
+    "chief_innovator": 8.9,
+    "chief_historian_senior": 8.3,
+    "chief_engineer": 8.8,
+    "chief_futurist": 8.5,
+    "chief_builder_senior": 9.5,
+    "pattern_discovery_director": 8.9,
+    "innovation_build_director": 8.8,
+    "science_research_director": 8.0,
+    "kingdom_business_director": 8.6
+  },
 
   "open_threads": [
-    "KU-009: semantic validation algorithm for llm-contract (embedding vs. LLM judge vs. hybrid)",
-    "KU-013: large diff handling for drift-guard (function-level summarization for diffs > 8000 chars)",
-    "KU-014: does-not clause weighting in drift-guard verifier",
-    "KU-015: optimal system prompt tuning for drift-guard (need 50+ real PR/diff labeled pairs)",
-    "KU-016: Jira/Linear ticket intent integration for drift-guard v0.2",
-    "KU-017: optimal LLM judge prompt for spec-drift semantic constraint evaluation",
-    "KU-018: zero-shot baseline calibration for spec-drift (when no golden dataset exists)",
-    "KU-019: minimum viable YAML test suite size for model-parity (cases per dimension)",
-    "KU-020: non-determinism handling in model-parity (temperature variance, multi-run averaging)",
-    "KU-021: partial/incremental parity certificates in model-parity",
-    "KU-022: directed parity formula distinguishing improvement from regression",
-    "KU-023: minimum operator set for llm-mutation v0.1 (all 6 or 3-operator MVP)",
-    "KU-024: non-determinism handling in mutation score (median-of-3 proposed — needs validation)",
-    "KU-025: mutation score threshold calibration — what % is adequate?",
-    "KU-026: LLM-generated vs deterministic mutation operators for llm-mutation v0.2"
+    "KU-036: embedding model domain specificity for chain-probe EmbeddingJudge",
+    "KU-037: fault_score threshold calibration across pipeline types — BLOCKING for v0.1 CI gate claim",
+    "KU-038: catastrophic cascade edge cases in CascadeAnalyzer",
+    "KU-039: LLMJudge non-determinism — median-of-3 proposed",
+    "KU-033: minimum viable position count for context-lens statistical validity",
+    "KU-034: positional encoding architecture impact on context-lens results",
+    "KU-035: multi-hop reasoning across context positions",
+    "KU-009: semantic validation algorithm for llm-contract",
+    "KU-013: large diff handling for drift-guard",
+    "KU-019: minimum viable YAML test suite size for model-parity",
+    "KU-023: minimum operator set for llm-mutation v0.1",
+    "KU-027: paraphrase quality dependency for prompt-shield"
   ],
 
-  "next_cycle_priority": "Build sprints: model-parity v0.1 (spec complete, 400+ lines README). Ship drift-guard to PyPI (prototype complete). Ship spec-drift to PyPI (prototype complete). Begin llm-mutation v0.1 sprint (spec complete this cycle). Scripture: Daniel chapters 1-4 (pattern recognition, interpretive AI, prophetic analytics — high priority uncovered book). Matthew (Sermon on the Mount). Resolve KU-023, KU-024, KU-025 for llm-mutation.",
-
-  "to_buildworld": {
-    "pivot_active": true,
-    "pivot_target": "Open-source developer tools solving Big Tech technical gaps",
-
-    "build_now_1": {
-      "tool": "model-parity",
-      "description": "Certify that your replacement LLM is behaviorally equivalent to the one it replaces — before you migrate. YAML test suite + 7-dimension behavioral scoring + parity certificate + CI gate.",
-      "pivot_score": 8.90,
-      "biblical_pattern": "PAT-041 — Revelation 5:1-9 (Seven Seals Worthiness) + PAT-042 — Proverbs 11:1 (Differing Weights)",
-      "key_differentiator": "Migration authorization framing. Parity certificate concept. 7-dimensional scoring. CI gate for migration blocking.",
-      "design_location": ".Codex/builds/model-parity/README.md",
-      "status": "IN-DESIGN — FULL SPEC COMPLETE — BUILD v0.1 NOW"
-    },
-
-    "build_now_2": {
-      "tool": "llm-mutation",
-      "description": "Semantic mutation testing for LLM prompts. Introduces deliberate semantic mutations (negate constraint, drop clause, scope expand) and checks whether your eval suite detects them. Mutation score = % of mutations killed.",
-      "pivot_score": 8.65,
-      "biblical_pattern": "PAT-045 — Judges 6:36-40 (Gideon Fleece Inversion) + PAT-046 (Berean Null Test) + PAT-047 (Twelve Spies Divergence)",
-      "key_differentiator": "The only tool that tests the quality of your eval suite — not just the prompt. Mutahunter for LLMs. 6 deterministic operators. Mutation score as CI metric.",
-      "design_location": ".Codex/builds/llm-mutation/README.md",
-      "status": "IN-DESIGN — FULL SPEC COMPLETE THIS CYCLE — BUILD v0.1 NOW"
-    },
-
-    "build_now_3": {
-      "tool": "prompt-lock",
-      "description": "Git-native prompt regression testing with judge calibration and trace-linked eval scoring for any LLM CI/CD pipeline",
-      "pivot_score": 8.70,
-      "biblical_pattern": "PAT-034 — Nehemiah 4:13-14 (guards at gaps in the wall)",
-      "key_differentiator": "Judge calibration module — validates whether your LLM judge agrees with humans on your specific task before trusting it as a CI gate.",
-      "design_location": ".Codex/builds/prompt-lock/",
-      "status": "DESIGN COMPLETE — SHIP v0.1 NOW"
-    },
-
-    "ship_now_1": {
-      "tool": "spec-drift",
-      "description": "Semantic LLM output specification compliance monitor. @spec decorator + SemanticConstraint DSL + DriftMonitor + CLI + GitHub Action.",
-      "pivot_score": 8.63,
-      "biblical_pattern": "PAT-037 — Leviticus 10:1-3 (Authorized Fire — structural authorization ≠ semantic compliance)",
-      "implementation_location": ".Codex/builds/spec-drift/prototype.py",
-      "readme_location": ".Codex/builds/spec-drift/README.md",
-      "status": "PROTOTYPE COMPLETE — SHIP TO PYPI NOW"
-    },
-
-    "ship_now_2": {
-      "tool": "drift-guard",
-      "description": "Git-native PR semantic intent verifier. Verifies that PR code changes fulfill the stated intent in the PR description.",
-      "pivot_score": 8.60,
-      "biblical_pattern": "PAT-036 — Romans 7:7 (The law makes violations visible)",
-      "key_differentiator": "The only open-source tool that verifies whether a PR's code changes fulfill its stated intent — pre-merge, with a CI gate, for any git repo.",
-      "implementation_location": ".Codex/builds/drift-guard/drift_guard.py",
-      "readme_location": ".Codex/builds/drift-guard/README.md",
-      "status": "PROTOTYPE COMPLETE — SHIP TO PYPI NOW"
-    },
-
-    "build_next_1": {
-      "tool": "llm-contract",
-      "description": "Behavioral contract enforcement for LLM function calls — @contract decorator + versioned behavioral specs + CI gate + drift detection",
-      "pivot_score": 8.30,
-      "biblical_pattern": "PAT-035 — Acts 2:1-13 (Pentecost — many languages, one coherent message contract)",
-      "status": "DESIGN COMPLETE — BUILD AFTER prompt-lock v0.1",
-      "blocker": "Resolve KU-009 (semantic validation algorithm) first"
-    },
-
-    "do_not_build": [
-      "Agent debugging tools — AgentRx, AgentPrism, Langfuse, Opik all exist (RED)",
-      "Agent observability — Arize ($70M Series C 2025), LangSmith, Opik (RED)",
-      "Vibe code security — VibeCheck, VibeDoctor, VibeSecurity (RED)",
-      "Hallucination detection general — Lynx, EasyDetect, LibreEval, HaluGate, Maxim (RED)",
-      "Agent memory — Mem0, LangGraph, CrewAI (RED)",
-      "Statistical data drift — Evidently, NannyML, Alibi-Detect, Driftbase (RED)",
-      "Fine-tuning data lineage — fine-trace scored 6.30 below threshold (YELLOW)",
-      "Test gap analysis — test-gap-hunter scored 5.85 below threshold (ELIMINATED)",
-      "API spec enforcement — spec-enforcer scored 5.40 below threshold (ELIMINATED)",
-      "Trace replay — Langfuse/Opik compete, scored 7.50 (ELIMINATED cycle 013)",
-      "Prompt dependency graph — complexity/competition concern, scored 7.20 (ELIMINATED cycle 013)",
-      "Trace-to-test conversion — LangSmith, Braintrust, LangWatch, Traceloop ALL confirmed (RED — ELIMINATED cycle 014)",
-      "Eval-scaffold from spec docs — RAGAS + DeepEval partially address, scored 7.075 below threshold (ELIMINATED cycle 014)",
-      "Agent plan verifier — DeepEval + LangWatch partial coverage, scored 6.68 below threshold (ELIMINATED cycle 014)"
-    ]
-  },
-
-  "cycle_014_summary": {
-    "completed": "2026-03-27",
-    "mode": "AUTONOMOUS",
-    "missions_executed": [
-      "9 web searches (7 required + 2 supplementary) — COMPLETE",
-      "5 candidates scored — COMPLETE (llm-mutation won at 8.65 — beats cot-coherence 8.00 by 0.65)",
-      "Judges 6 scripture harvest — COMPLETE (PAT-045, Level 3, score 9.0 — FIRST Judges harvest)",
-      "Acts 17:11 variant harvest — COMPLETE (PAT-046, Level 3, score 8.5)",
-      "Numbers 13 scripture harvest — COMPLETE (PAT-047, Level 2, score 8.3 — FIRST Numbers harvest)",
-      "llm-mutation full specification written — COMPLETE (README 400+ lines)",
-      "Chief Theologian promotion decision — APPROVED (Senior Agent: Biblical Pattern Discovery and Scripture Mining)",
-      "Routine enforcement self-audit — COMPLETE (CLEAR, 0 violations)",
-      "All 13 required files written — COMPLETE"
-    ],
-    "result": "SUCCESS — llm-mutation scored 8.65, beats cot-coherence 8.00 by 0.65 points (required: beat 8.00).",
-    "web_searches_run": 9,
-    "candidates_scored": 5,
-    "patterns_discovered": 3,
-    "pattern_level_breakdown": "2x Level 3 (PAT-045, PAT-046), 1x Level 2 (PAT-047)",
-    "top_pattern_score": 9.0,
-    "new_books_opened": ["Judges", "Numbers"],
-    "total_level_3_patterns": 20,
-    "files_written": [
-      ".Codex/cycles/cycle-014/cycle-report.md",
-      ".Codex/cycles/cycle-014/patterns.md",
-      ".Codex/cycles/cycle-014/builds.md",
-      ".Codex/builds/llm-mutation/README.md",
-      ".Codex/digest/weekly-digest-cycle-014.md",
-      "world-status.json (updated)",
-      ".Codex/memory/pattern-registry.md (PAT-045 through PAT-047 appended)",
-      ".Codex/memory/build-registry.md (BUILD-013 appended)",
-      ".Codex/memory/agent-registry.md (all scores updated, Chief Theologian promoted)",
-      ".Codex/memory/known-unknowns.md (KU-023 through KU-026 added)",
-      ".Codex/logs/world-survival-log.md (cycle 014 appended)",
-      ".Codex/logs/enforcement-log.md (routine audit appended)",
-      ".Codex/logs/agent-activity-log.md (cycle 014 entries appended)",
-      ".Codex/logs/evolution-log.md (Chief Theologian promotion recorded)",
-      "handoff.json (this file)"
-    ]
-  },
-
-  "flags_for_cycle_015": [
-    "CRITICAL: Build model-parity v0.1 — spec complete (README 400+ lines). Start the sprint.",
-    "CRITICAL: Build llm-mutation v0.1 — spec complete (README 400+ lines this cycle). Start the sprint.",
-    "CRITICAL: Ship drift-guard to PyPI — prototype complete. pip install drift-guard.",
-    "CRITICAL: Ship spec-drift to PyPI — prototype complete. pip install spec-drift.",
-    "SCRIPTURE: Daniel chapters 1-4 — pattern recognition, interpretive AI, prophetic/predictive analytics. Uncovered. High potential.",
-    "SCRIPTURE: Matthew — Sermon on the Mount — governance and wisdom patterns. Uncovered.",
-    "SCRIPTURE: Judges chapters 4-7 — more Gideon (300 soldiers = compression/pruning quality), Deborah (distributed leadership)",
-    "COMPETITION: Monitor for any LLM prompt mutation testing tools. Window is open.",
-    "ENFORCEMENT: Next mandatory audit cycle 016. Action required cycle 016.",
-    "RESOLVE: KU-023 (minimum operator set for llm-mutation) — affects v0.1 scope.",
-    "RESOLVE: KU-024 (non-determinism in mutation score) — affects v0.1 reliability claim.",
-    "RESOLVE: KU-025 (mutation score threshold) — affects CI gate default."
+  "cycle_017_files_written": [
+    ".Codex/cycles/cycle-017/cycle-report.md",
+    ".Codex/cycles/cycle-017/patterns.md",
+    ".Codex/cycles/cycle-017/builds.md",
+    ".Codex/builds/chain-probe/README.md",
+    ".Codex/builds/chain-probe/architecture.md",
+    ".Codex/builds/chain-probe/core_algorithm.py",
+    ".Codex/builds/chain-probe/api_spec.md",
+    ".Codex/builds/chain-probe/examples.md",
+    ".Codex/digest/weekly-digest-cycle-017.md",
+    ".Codex/papers/017-chain-probe.md",
+    "world-status.json (updated)",
+    ".Codex/memory/pattern-registry.md (PAT-054 through PAT-058 appended)",
+    ".Codex/memory/build-registry.md (BUILD-016 appended)",
+    ".Codex/memory/agent-registry.md (all scores updated, Chief Historian promoted)",
+    ".Codex/intelligence/scripture-index.md (PAT-054 through PAT-058 appended)",
+    ".Codex/logs/world-survival-log.md (cycle 017 appended)",
+    ".Codex/logs/enforcement-log.md (routine audit appended)",
+    ".Codex/logs/agent-activity-log.md (cycle 017 entries appended)",
+    ".Codex/logs/evolution-log.md (Chief Historian promotion recorded, watches activated)",
+    "handoff.json (this file)"
   ],
 
-  "competitive_intelligence_as_of_2026_03_27": {
-    "semantic_mutation_testing_llm": "GREEN — No production Python library confirmed. PromptBench academic/unmaintained. PromptLayer cloud-only. No direct competitor found.",
-    "cross_model_behavioral_parity": "GREEN — No direct competitor found for migration authorization framing + parity certificate + 7-dimension scoring.",
-    "pr_semantic_intent_verification": "GREEN — No direct competitor found in 10 searches.",
-    "prompt_regression_testing": "RED — Promptfoo (OpenAI-owned), DeepEval, Braintrust confirmed.",
-    "llm_behavioral_contracts": "GREEN — No direct competitor confirmed.",
-    "cot_coherence_detection": "GREEN — No direct competitor confirmed.",
-    "llm_semantic_spec_monitoring": "GREEN — spec-drift: no direct competitor confirmed.",
-    "trace_to_test_conversion": "RED — LangSmith, Braintrust, LangWatch, Traceloop confirmed (eliminated this cycle).",
-    "agent_debugging": "RED — Multiple strong players.",
-    "agent_observability": "RED — Arize ($70M Series C), LangSmith, 15+ tools.",
-    "hallucination_detection": "RED — Multiple players.",
-    "data_drift_detection": "RED — Evidently, NannyML, Alibi-Detect."
-  },
-
-  "agent_scores": {
-    "pattern_commander": 8.7,
-    "chief_theologian_senior": 9.2,
-    "chief_technologist_senior": 8.9,
-    "chief_scientist": 7.6,
-    "chief_innovator": 8.6,
-    "chief_historian": 7.8,
-    "chief_engineer": 8.5,
-    "chief_futurist": 8.2,
-    "chief_builder_senior": 9.2,
-    "pattern_discovery_director": 8.6,
-    "innovation_build_director": 8.5,
-    "science_research_director": 7.5,
-    "kingdom_business_director": 8.3
-  },
-
-  "notes": "Seven confirmed green-field tools in pipeline. llm-mutation solves the problem that every engineer has felt but no open-source tool has addressed: you have an eval suite, it passes, you ship, production breaks — because your eval suite was never tested. Gideon's Fleece is the most structurally explicit controlled experiment in Scripture: two conditions, deliberately inverted, to verify the oracle is reliable and not coincidence. The bowlful of water is the quantitative measurement — not a feeling, not a vibe, a measurement. llm-mutation is the bowlful of water. Your mutation score is your measurement. Ship when it's real."
+  "notes": "chain-probe addresses the most painful daily debugging experience for multi-step LLM pipeline engineers: you cannot tell which step broke. The Urim and Thummim gave Israel named, position-specific oracle answers. chain-probe gives engineers the same: named step checkpoints, step-level sentinels, and staged evidence replay. Elijah poured water three times — each pour a deliberate condition change. That is exactly what StepReplay does. The pattern is not metaphor. It is structure. And structure is buildable."
 }

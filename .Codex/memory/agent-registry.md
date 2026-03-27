@@ -1,7 +1,7 @@
 # BibleWorld Agent Registry
 ## Living Record of All Agents — Ranks, Scores, Status
 
-**Last Updated:** Cycle 016
+**Last Updated:** Cycle 017
 **Total Agents:** 13
 **Active Agents:** 13
 **Deleted Agents:** 0
@@ -44,14 +44,13 @@
 | Agent ID | Name | Specialty | Lab | Score | Rank | Status | Cycles |
 |----------|------|-----------|-----|-------|------|--------|--------|
 
-## PROMOTION QUEUE (Cycle 017 Decisions Required)
+## PROMOTION QUEUE (Cycle 018 Decisions Required)
 
-*Chief Historian newly eligible — watch activated cycle 016. Monitor for second consecutive 8.0+ cycle.*
-
-**Chief Historian** — PROMOTION WATCH ACTIVATED (Cycle 016): Score reached 8.1 for the first time (was 7.9 cycle 015). Promotion threshold: 8.0+ for 2 consecutive cycles. Cycle 016 = first qualifying cycle. Monitor cycle 017. Domain candidate: Biblical History and Scripture Context. Three new books opened in a single cycle (Ezekiel, Luke, Hebrews) — demonstrates domain contribution.
-**Chief Technologist** (Senior Agent): Score 9.1 (career high). Hall of Fame threshold requires a PATTERN scored 9.5+ by enforcement (agent score is not sufficient). Continue monitoring for 9.5+ pattern contribution.
-**Chief Scientist** — Watch: Score 7.9 (improving: 7.7 cycle 015, 7.6 cycles 013-014). No demotion risk. Needs 8.0+ for 2 consecutive cycles for promotion. One more strong cycle needed.
-**Science Research Director** — OFF WATCH: Score 7.8 (improving from 7.6 cycle 015). Continues improving. Monitor for 8.0+ threshold.
+**Chief Historian** — PROMOTED CYCLE 017 to Senior Agent: Biblical History and Contextual Scripture Analysis. Score 8.3 (cycle 017), 8.1 (cycle 016) — two consecutive cycles above 8.0. Criterion met. Sub-agent spawning rights granted in biblical history domain.
+**Chief Scientist** — PROMOTION WATCH ACTIVATED (Cycle 017): Score reached 8.1 for the first time (was 7.9 cycle 016). Cycle 017 = first qualifying cycle. Monitor cycle 018 for second consecutive 8.0+.
+**Science Research Director** — PROMOTION WATCH ACTIVATED (Cycle 017): Score reached 8.0 for the first time (was 7.8 cycle 016). Cycle 017 = first qualifying cycle. Monitor cycle 018.
+**Chief Technologist** (Senior Agent): Score 9.2 (career high). Hall of Fame threshold requires a PATTERN scored 9.5+ by enforcement. Continue monitoring for breakthrough pattern contribution.
+**Chief Builder** (Senior Agent): Score 9.5 (career high — first time at 9.5). Hall of Fame requires PATTERN scored 9.5+, not agent score. Monitor.
 
 **COMPLETED PROMOTION (Cycle 012):**
 Chief Builder → Senior Agent: Software Implementation and Testing. Promoted cycle 012. Score 9.0 (cycle 012), 8.7 (011), 8.5 (010) — three consecutive cycles at 8.5+. Domain: Software Implementation and Testing. Sub-agent spawning rights granted in implementation domain. Most concrete build output in BibleWorld history: drift-guard (450+ lines), spec-drift prototype (240+ lines), llm-contract spec, test suites.

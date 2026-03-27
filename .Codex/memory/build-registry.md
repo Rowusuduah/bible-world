@@ -1,12 +1,30 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 016
-**Total Builds:** 15
+**Last Updated:** Cycle 017
+**Total Builds:** 16
 **Builds in Design:** 10 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
-**Builds at PROTOTYPE:** 3 (BUILD-010 drift-guard — full implementation ready to ship; BUILD-011 spec-drift — prototype written cycle 012; BUILD-015 context-lens — full implementation written cycle 016)
+**Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-016: chain-probe
+**Pattern Source:** PAT-054 (Exodus 28:15-21 — Urim and Thummim) + PAT-055 (Ezekiel 33:1-9 — Watchman) + PAT-056 (1 Kings 18:30-39 — Elijah Staged Evidence)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** Multi-step LLM pipeline engineers cannot determine which step in a chain caused a production failure. Existing tools (Langfuse, DeepEval, Promptfoo) either trace execution metadata without semantic evaluation, or evaluate only the final output without step-level fault isolation. LangGraph time travel offers step replay but is LangGraph-locked.
+**Who It Serves:** ML engineers building RAG pipelines, multi-step agent loops, and sequential LLM chains. Every team with LLM in production (57.3% of AI teams, March 2026 — LangChain State of Agent Engineering).
+**How It Works:** `@probe` decorator wraps any step function, captures frozen input snapshots, records outputs. FaultLocator runs a three-level cascade (keyword judge → embedding judge → optional LLM judge) and computes fault_score per step. CascadeAnalyzer distinguishes ORIGIN faults from CASCADE faults. StepReplay re-runs any step with frozen inputs + parameter overrides. ProbeMap generates HTML coverage visualization. 5-command CLI.
+**Key Technical Innovation:** CASCADE fault analysis — distinguishing the step that CAUSED the failure from downstream steps that INHERITED bad input. Without this, engineers blame the last step. chain-probe finds the first step.
+**Capital Required:** ZERO (Python + sentence-transformers + SQLite stdlib)
+**Build Score:** 9.1/10
+**Pivot_Score:** 8.85 (SECOND-HIGHEST in BibleWorld history, behind model-parity 8.90)
+**Status:** PROTOTYPE
+**Agent Responsible:** Chief Builder (Senior Agent)
+**Cycle Started:** 017
+**Implementation:** core_algorithm.py (550+ lines), README.md, architecture.md, api_spec.md, examples.md
+**Competitive Moat:** GREEN — no framework-agnostic pip-installable step-level semantic fault isolation library confirmed. LangGraph time travel is LangGraph-locked. "Deterministic replay for AI is a missing primitive" — sakurasky.com. Gap confirmed in 9 web searches.
 
 ---
 
