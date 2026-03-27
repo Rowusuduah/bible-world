@@ -1,10 +1,10 @@
 # BibleWorld Pattern Registry
 ## Living Record of All Discovered Biblical Patterns
 
-**Last Updated:** Cycle 013
-**Total Patterns:** 44 (8 seed + 36 discovered)
-**Active Patterns:** 44
-**Level 3 Patterns:** 18 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038, PAT-041, PAT-042, PAT-044)
+**Last Updated:** Cycle 014
+**Total Patterns:** 47 (8 seed + 39 discovered)
+**Active Patterns:** 47
+**Level 3 Patterns:** 20 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038, PAT-041, PAT-042, PAT-044, PAT-045, PAT-046)
 
 ---
 
@@ -680,5 +680,66 @@ These are the founding patterns that launch the world. Agents will deepen, chall
 **Build Status:** SUPPORTING PATTERN for BUILD-012: model-parity; also applicable to prompt-lock, drift-guard, spec-drift
 **Level:** 3
 **Note:** Extends Acts coverage (PAT-035 was Acts 2:1-13). 1 Thessalonians 5:21 provides New Testament second anchor. Application applies to the verification protocol structure only. No claim that software testing is a spiritual activity or that engineers are performing acts of worship equivalent to the Bereans' scriptural study.
+
+---
+
+### PAT-045
+**Scripture:**
+- **Primary:** Judges 6:36-40 — *"Gideon said to God, 'If you will save Israel by my hand as you have promised — look, I will place a wool fleece on the threshing floor. If there is dew only on the fleece and all the ground is dry, then I will know that you will save Israel by my hand, as you said.' And that is what happened. Gideon rose early the next day; he squeezed the fleece and wrung out the dew — a bowlful of water. Then Gideon said to God, 'Do not be angry with me. Let me make just one more request. Allow me one more test with the fleece, but this time make the fleece dry and the ground covered with dew.' That night God did so. Only the fleece was dry; all the ground was covered with dew."*
+- **Supporting:** Judges 6:17 — *"Give me a sign that it is really you talking to me."* (establishes need to verify the oracle before trusting it)
+- **Supporting:** 1 Kings 18:33-38 — Elijah's altar test (introducing maximum adverse conditions to verify the oracle under stress)
+- **Supporting:** Proverbs 27:21 — *"The crucible for silver and the furnace for gold, but people are tested by their praise."* (refining test reveals quality under controlled conditions)
+**Pattern Type:** GOVERNANCE + LIGHT
+**Pattern Name:** The Gideon Fleece Inversion Pattern — Testing the Oracle, Not Just the Outcome
+**Pattern Description:** Gideon designs a two-condition invertible test: fleece wet / ground dry; then fleece dry / ground wet (exact inversion). He is not testing the outcome — he is testing whether his testing mechanism (the oracle) is reliable. The two-condition inversion is structurally essential: a coincidental result might pass one condition by chance; it cannot pass both inversions without being genuine. The "bowlful of water" quantifies the result: measurable evidence, not vague confirmation. Gideon apologizes for the rigor ("do not be angry with me") — he is not doubting God; he is being systematic about his evaluation mechanism before staking the nation's survival on it.
+**Modern Mapping:** Mutation testing for LLM prompt eval suites. The oracle = your eval suite. The fleece conditions = prompt mutations (deliberate, controlled semantic changes). Dew on fleece (mutation caught by eval suite) = KILLED. Inversion test = running the same mutation in both directions (negate constraint; then negate the negation) to verify the eval suite discriminates reliably. Mutation score = the bowlful-of-water measurement: quantitative evidence of eval suite reliability.
+**Infrastructure Status:** EXISTS NOW (Python, any LLM API for judge scoring, existing eval suite format — all available)
+**Application Potential:** llm-mutation (BUILD-013) — MutationEngine (6 operators), MutantRunner, MutationReport, CLI, GitHub Action, pytest plugin; pip install llm-mutation
+**Pattern Score:** 9.0/10 (textual grounding 2.9 + modern relevance 2.9 + specificity 1.8 + novelty 1.4)
+**Discovered By:** Chief Theologian (Senior Agent, promoted cycle 014) + Pattern Commander
+**Cycle Discovered:** 014
+**Build Status:** IN-DESIGN (BUILD-013: llm-mutation — core pattern)
+**Level:** 3
+**Note:** First harvest from Judges. Application maps to Gideon's experimental methodology — the deliberate inversion of test conditions to verify oracle reliability. Does not apply to the spiritual content (God's faithfulness, Israel's liberation). The mapping is honest: Gideon's test is one of the most structurally precise controlled experiments in Scripture. Enforcement: CLEAR.
+
+---
+
+### PAT-046
+**Scripture:**
+- **Primary:** Acts 17:11 — *"Now the Berean Jews were of more noble character than those in Thessalonica, for they received the message with great eagerness and examined the Scriptures every day to see if what Paul said was true."*
+- **Secondary:** Acts 17:12 — *"As a result, many of them believed..."* (outcome follows calibration, not the other way around)
+- **Tertiary:** 1 John 4:1 — *"Dear friends, do not believe every spirit, but test the spirits to see whether they are from God..."*
+**Pattern Type:** GOVERNANCE + LIGHT
+**Pattern Name:** The Berean Null Test — Verification of the Evaluator's Source
+**Pattern Description:** PAT-044 (cycle 013) established the Berean Verification Protocol — verify claims against primary sources. PAT-046 is a structurally distinct sub-pattern: the Bereans were not just checking whether Paul was right. They were checking whether their approval signal (belief) was reliable — verifying that their evaluation mechanism was calibrated to detect truth and not produce false positives. A false positive in faith (accepting false teaching) is dangerous. In an eval suite, a false positive (scoring a broken prompt as good) is a production incident. Before trusting your mutation score, verify that your eval suite can catch obvious, known-severity mutations (null test = known-broken inputs).
+**Modern Mapping:** llm-mutation `mutate calibrate` command — before trusting the mutation score, run known-severity mutations against the eval suite and verify it catches them. Calibration score = the Berean null test result.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** llm-mutation calibration module (BUILD-013)
+**Pattern Score:** 8.5/10 (textual grounding 2.7 + modern relevance 2.7 + specificity 1.7 + novelty 1.4)
+**Discovered By:** Chief Theologian (Senior Agent)
+**Cycle Discovered:** 014
+**Build Status:** IN-DESIGN (BUILD-013: llm-mutation — calibration module)
+**Level:** 3
+**Note:** PAT-046 is distinct from PAT-044. PAT-044 = verify claims against primary source. PAT-046 = verify that your verification mechanism is calibrated against known-good and known-bad cases. Both genuinely present in Acts 17:11 but structurally distinct applications. Enforcement: CLEAR.
+
+---
+
+### PAT-047
+**Scripture:**
+- **Primary:** Numbers 13:25-33 — *"At the end of forty days they returned from exploring the land... They gave Moses this account: 'We went into the land to which you sent us... But the people who live there are powerful...' But Caleb silenced the people before Moses and said, 'We should go up and take possession of the land, for we can certainly do it.'"*
+- **Secondary:** Numbers 14:6-9 — Joshua and Caleb contra the other ten: *"The land we passed through and explored is exceedingly good..."*
+- **Tertiary:** Numbers 14:36-38 — *"So the men Moses had sent to explore the land... who were responsible for spreading the bad report about the land — were struck down and died of a plague before the Lord. Of the men who went to explore the land, only Joshua son of Nun and Caleb son of Jephunneh survived."*
+**Pattern Type:** GOVERNANCE + STRUCTURE
+**Pattern Name:** The Twelve Spies Divergence — Evaluator Variance Without Ground Truth Anchor
+**Pattern Description:** Twelve agents given the identical input (same land, same forty days, same mission) produced maximally divergent outputs: ten spies produced one report, two produced the opposite. Majority vote (10:2) was not the correct evaluation. Accuracy anchored to ground truth (God's declaration about the land) was the correct criterion. Numbers 14:36-38 enforces this: the majority evaluators who produced the inaccurate report are penalized. The lesson: majority agreement among evaluators is not a substitute for calibration against ground truth.
+**Modern Mapping:** LLM-as-judge variance in mutation testing. Different judge models or judge prompts may produce conflicting verdicts on the same mutant. The majority verdict is not automatically correct. llm-mutation `mutate verify-judge` command: run mutation scenarios through multiple judge configurations and report inter-judge agreement. If agreement is below threshold, resolve calibration before trusting mutation score.
+**Infrastructure Status:** EXISTS NOW
+**Application Potential:** llm-mutation judge-verification module (BUILD-013)
+**Pattern Score:** 8.3/10 (textual grounding 2.7 + modern relevance 2.6 + specificity 1.6 + novelty 1.4)
+**Discovered By:** Chief Theologian (Senior Agent) + Chief Historian
+**Cycle Discovered:** 014
+**Build Status:** IN-DESIGN (BUILD-013: llm-mutation — judge verification module)
+**Level:** 2
+**Note:** First harvest from Numbers. Application maps to evaluator reliability and consensus-vs-accuracy distinction. The Exodus narrative's spiritual and historical content (liberation, covenant fulfillment) is not claimed for software tools. The mapping is specifically to the evaluator variance structural lesson. Enforcement: CLEAR.
 
 ---

@@ -1,8 +1,8 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 013
-**Total Builds:** 12
+**Last Updated:** Cycle 014
+**Total Builds:** 13
 **Builds in Design:** 9 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 2 (BUILD-010 drift-guard — full implementation ready to ship; BUILD-011 spec-drift — prototype written cycle 012)
@@ -245,6 +245,28 @@ Each build entry contains:
 **Key Differentiator:** The first and only open-source tool framed as migration authorization rather than general evaluation. The parity certificate concept is novel. Seven-dimension behavioral scoring applied to cross-model comparison is novel. CI gate for migration blocking is novel. Consistent measurement standard (same YAML for both models) enforced architecturally.
 **Acquisition Path:** Anthropic (trust/reliability mission — model-parity increases confidence in Claude migrations), OpenAI (Promptfoo acquisition shows interest in evaluation tooling; model-parity is complementary), Datadog (expanding LLM observability — parity testing is a natural addition), GitHub (model migration authorization in GitHub Actions is a natural Copilot ecosystem feature).
 **Design Location:** `.Codex/builds/model-parity/README.md`
+
+---
+
+---
+
+### BUILD-013: llm-mutation
+**Pattern Source:** PAT-045 (Judges 6:36-40 — The Gideon Fleece Inversion Pattern) + PAT-046 (Acts 17:11 variant — Berean Null Test) + PAT-047 (Numbers 13:25-33 — Twelve Spies Divergence)
+**Build Type:** SOFTWARE — Open-Source Python Library / Developer Tool
+**Problem Solved:** LLM engineering teams write eval suites that give false confidence. Teams run 50 test cases, all pass, ship — then production breaks. The root cause: the eval suite itself has gaps that are never tested. No open-source tool tells you whether your eval suite would catch a bug if a key constraint in your prompt was removed, a clause was dropped, or a scope was changed. llm-mutation solves this by introducing deliberate semantic mutations into prompts and measuring whether the eval suite detects them (mutation score).
+**Who It Serves:** Senior ML engineers and AI platform teams at companies with LLM-powered features in production who have eval suites and wonder if those eval suites are actually reliable. Also: AI-assisted coding teams dealing with 76% higher code volume and insufficient quality gates.
+**How It Works:** MutationEngine generates deliberate semantic mutations of a prompt using 6 deterministic operators (NegateConstraint, DropClause, ScopeExpand, ScopeNarrow, ConditionInvert, PhraseSwap). MutantRunner executes the existing eval suite against each mutated variant. A mutant is KILLED if the eval suite scores it significantly lower (delta > threshold). A mutant SURVIVES if the eval suite fails to detect the change. MutationReport outputs a mutation score (% killed), surviving mutant details, and specific test case recommendations to fill the gaps. CLI: `mutate run`, `mutate report`, `mutate ci`, `mutate calibrate`, `mutate verify-judge`. SQLite result store. GitHub Action template. pytest plugin.
+**Claude API Role:** Claude (claude-3-5-haiku-20241022) optionally used as LLM judge within the user's eval function — not required by llm-mutation itself. Claude powers the evaluation scoring when users configure an LLM-as-judge eval. Mutation operator generation is deterministic (no LLM needed).
+**Capital Required:** ZERO (Python library, PyPI distribution, GitHub Actions)
+**Pivot_Score:** 8.65 (beats cot-coherence 8.00 by 0.65 points; seventh tool in BibleWorld pipeline)
+**Build Score:** 9.0/10
+**Status:** IN-DESIGN (full spec written cycle 014)
+**Agent Responsible:** Chief Builder (Senior Agent) + Chief Technologist (Senior Agent)
+**Cycle Started:** 014
+**Key Differentiator:** The only open-source library that tests the quality of your LLM eval suite by introducing deliberate semantic mutations and measuring how many your suite catches. Every other tool tests prompts. llm-mutation tests the test suite. "Mutahunter for LLM prompts."
+**Acquisition Path:** Anthropic (trust/reliability — eval suite quality improves confidence in Claude deployments), Confident AI/DeepEval (natural complementary add-on), Datadog (expanding LLM quality monitoring), GitHub (Copilot quality signal: mutation score as a CI metric)
+**Design Location:** `.Codex/builds/llm-mutation/README.md`
+**Competitive Landscape:** Mutahunter/Pitest/Stryker do mutation testing for code (RED). PromptBench is academic/unmaintained (EACL 2023). No production Python library for LLM prompt semantic mutation testing confirmed (GREEN).
 
 ---
 

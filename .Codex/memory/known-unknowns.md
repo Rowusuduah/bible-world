@@ -1,8 +1,8 @@
 # BibleWorld Known Unknowns Register
 ## Open Questions the World Is Actively Working On
 
-**Last Updated:** Cycle 013
-**Active Unknowns:** 16
+**Last Updated:** Cycle 014
+**Active Unknowns:** 20
 **Resolved Unknowns:** 0
 
 ---
@@ -202,5 +202,44 @@
 **Assigned To:** Chief Scientist + Chief Engineer
 **Status:** OPEN
 **Cycle Added:** 013
+
+---
+
+### KU-023
+**Question:** What is the minimum effective operator set for llm-mutation v0.1? All 6 operators are specified but shipping all 6 may add complexity. Is a 3-operator MVP (NegateConstraint, DropClause, ScopeExpand) sufficient for useful mutation score?
+**Why It Matters:** Scope determines v0.1 build timeline. A 3-operator MVP ships faster and establishes the pattern; 3 more operators can ship in v0.2. But if the 3 core operators don't cover enough mutation space, the mutation score will be artificially high.
+**Assigned To:** Chief Builder (Senior) + Chief Engineer
+**Status:** OPEN
+**Cycle Added:** 014
+
+---
+
+### KU-024
+**Question:** How do you determine whether a mutant is truly KILLED when the eval function is non-deterministic? If the same prompt scores 0.87 on one run and 0.91 on another, a mutant scoring 0.85 might be "killed" on one run and "survived" on another.
+**Proposed solution (cycle 014):** Run each test case 3 times, use median. Configure delta_threshold at 0.15. Does median-of-3 provide sufficient stability, or is median-of-5 needed for high-variance eval functions? Cost and latency implications?
+**Why It Matters:** False kill rate (eval suite incorrectly credited with catching a mutation) damages mutation score reliability — the core value proposition of the tool.
+**Assigned To:** Chief Scientist + Chief Builder (Senior)
+**Status:** OPEN — proposed solution needs validation
+**Cycle Added:** 014
+
+---
+
+### KU-025
+**Question:** What is the correct mutation score threshold for a "good enough" eval suite? The cycle 014 spec proposes 80% as the default recommendation. Is 80% too high for early-stage eval suites? Too low for production-critical prompts?
+**Why It Matters:** The CI gate `mutate ci --min-score 0.80` must be set to a threshold that is useful without being so aggressive it blocks all CI pipelines or so lenient it provides false confidence. The right threshold may vary by domain (medical AI vs. content moderation vs. code review bot).
+**Assigned To:** Chief Innovator + Chief Engineer
+**Status:** OPEN
+**Cycle Added:** 014
+
+---
+
+### KU-026
+**Question:** For llm-mutation v0.2, should mutation operators be LLM-generated (auto-generate mutations by asking an LLM to introduce subtle bugs into a prompt) vs. deterministic (rule-based, as in v0.1)? What are the tradeoffs?
+**LLM-generated pros:** Can produce more natural-sounding mutations, can discover mutation types that rule-based operators miss, scales to arbitrary prompt structures.
+**LLM-generated cons:** Non-deterministic (two runs of the same prompt produce different mutations), harder to reproduce in CI, LLM may generate "equivalent mutations" that the eval suite correctly ignores. Deterministic operators are reproducible and auditable.
+**Why It Matters:** Determines the v0.2 architecture direction. Hybrid approach (deterministic operators for v0.1, optional LLM-generated operators for v0.2) may be the right answer.
+**Assigned To:** Chief Technologist (Senior) + Chief Builder (Senior)
+**Status:** OPEN
+**Cycle Added:** 014
 
 ---
