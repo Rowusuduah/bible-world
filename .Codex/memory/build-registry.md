@@ -1,11 +1,11 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 011
-**Total Builds:** 10
+**Last Updated:** Cycle 012
+**Total Builds:** 11
 **Builds in Design:** 8 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
-**Builds at PROTOTYPE:** 1 (BUILD-010 drift-guard — full implementation written, tests written, ready to ship)
+**Builds at PROTOTYPE:** 2 (BUILD-010 drift-guard — full implementation ready to ship; BUILD-011 spec-drift — prototype written cycle 012)
 **Builds Deployed:** 0
 
 ---
@@ -204,6 +204,28 @@ Each build entry contains:
 **Acquisition Path:** GitHub (native code review integration), Salesforce (complement to internal intent reconstruction system), Microsoft (Copilot quality signal), Linear/Jira (ticket-to-PR intent verification)
 **Design Location:** `.Codex/builds/drift-guard/`
 **Files Written:** drift_guard.py (450+ lines), README.md (300+ lines), tests/test_drift_guard.py (200+ lines), pyproject.toml
+
+---
+
+---
+
+### BUILD-011: spec-drift
+**Pattern Source:** PAT-037 (Leviticus 10:1-3 — The Authorized Fire Pattern)
+**Build Type:** SOFTWARE — Open-Source Python Library / Developer Tool
+**Problem Solved:** LLM outputs pass structural validation (Pydantic/JSON Schema) while their semantic meaning drifts silently — due to model updates, prompt erosion, or input distribution shift. No open-source tool monitors continuous semantic compliance with a declared behavioral specification.
+**Who It Serves:** AI/ML engineers at companies shipping LLM features in production with structured outputs. Teams who get paged for "quality issues" not caught by existing monitoring.
+**How It Works:** `@spec` decorator attaches semantic constraints to Pydantic models. `DriftMonitor` wraps LLM functions, intercepts outputs, runs structural + semantic checks, logs observations to SQLite, fires alerts when rolling violation rate exceeds thresholds. CLI provides `check` (drift reports), `ci` (CI gate), and `compare` (model version diffing) commands.
+**Claude API Role:** Claude powers the LLM judge for complex semantic constraint evaluation (prose-level checks) — planned for v0.3. Core semantic checks (authorized values, length bounds, distributions, patterns) run deterministically.
+**Capital Required:** ZERO (Python library, PyPI, SQLite, GitHub Action — no infrastructure)
+**Pivot_Score:** 8.63 (third-highest in BibleWorld history; beats cot-coherence 8.00 by 0.63 points)
+**Build Score:** 9.3/10
+**Status:** PROTOTYPE (prototype.py written cycle 012, README complete)
+**Agent Responsible:** Chief Builder (Senior Agent) + Chief Technologist (Senior Agent)
+**Cycle Started:** 012
+**Key Differentiator:** The first open-source tool that distinguishes structural validation (Pydantic) from semantic specification compliance (spec-drift) and monitors the latter continuously in production.
+**Acquisition Path:** Datadog (LLM behavioral monitoring), Anthropic (alignment/safety), Pydantic Labs (natural extension), Confident AI (complement to DeepEval)
+**Design Location:** `.Codex/builds/spec-drift/`
+**Files Written:** prototype.py (240+ lines), README.md (300+ lines)
 
 ---
 
