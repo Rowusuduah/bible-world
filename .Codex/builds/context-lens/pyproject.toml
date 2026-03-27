@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "context-lens"
+version = "0.1.0"
+description = "Test whether your LLM retrieves information from every position in its context window."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "BibleWorld", email = "bibleworld@example.com" }]
+keywords = [
+    "llm",
+    "context-window",
+    "lost-in-the-middle",
+    "rag",
+    "evaluation",
+    "testing",
+    "ai",
+    "machine-learning",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.9"
+
+# Zero hard dependencies — context-lens works with any LLM provider.
+# Install the provider SDK(s) you use separately.
+dependencies = []
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.20.0"]
+openai = ["openai>=1.0.0"]
+yaml = ["pyyaml>=6.0"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "ruff",
+    "mypy",
+    "anthropic>=0.20.0",
+    "pyyaml>=6.0",
+]
+all = [
+    "anthropic>=0.20.0",
+    "openai>=1.0.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+context-lens = "context_lens:_cli_main"
+
+[project.urls]
+Homepage = "https://github.com/bibleworld/context-lens"
+Repository = "https://github.com/bibleworld/context-lens"
+Issues = "https://github.com/bibleworld/context-lens/issues"
+Changelog = "https://github.com/bibleworld/context-lens/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["context_lens*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--tb=short"
+
+[tool.ruff]
+line-length = 120
+select = ["E", "F", "I"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = false
+ignore_missing_imports = true

@@ -1,11 +1,11 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 015
-**Total Builds:** 14
+**Last Updated:** Cycle 016
+**Total Builds:** 15
 **Builds in Design:** 10 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
-**Builds at PROTOTYPE:** 2 (BUILD-010 drift-guard — full implementation ready to ship; BUILD-011 spec-drift — prototype written cycle 012)
+**Builds at PROTOTYPE:** 3 (BUILD-010 drift-guard — full implementation ready to ship; BUILD-011 spec-drift — prototype written cycle 012; BUILD-015 context-lens — full implementation written cycle 016)
 **Builds Deployed:** 0
 
 ---
@@ -290,6 +290,27 @@ Each build entry contains:
 **Design Location:** `.Codex/builds/prompt-shield/`
 **Files Written:** README.md (500+ lines), spec.md (400+ lines), examples/basic_usage.py, examples/ci_integration.py
 **Competitive Landscape:** PromptBench/PromptRobust (academic/research-only, not pip-installable production library — GREEN). DeepEval (no paraphrase robustness — GREEN). Promptfoo (tests specific inputs, not variant consistency — GREEN). Augustus (adversarial attacks, different domain — GREEN). No confirmed production competitor.
+
+---
+
+### BUILD-015: context-lens
+**Pattern Source:** PAT-051 (Ezekiel 37:1-10 — Valley of Dry Bones, positional completeness) + PAT-052 (Luke 15:4-6 — Lost Sheep, no acceptable loss) + PAT-053 (Hebrews 4:13 + 9:6-7 — High Priest systematic coverage)
+**Build Type:** SOFTWARE — Open-Source Python Library / Developer Tool
+**Problem Solved:** LLMs silently fail to retrieve information buried in the middle of long contexts (lost-in-the-middle problem, confirmed by EMNLP 2025 and production engineers in 2025-2026). No open-source tool systematically tests whether a model retrieves information reliably at every context window position before deployment. Teams discover this failure from user complaints, not pre-deployment tests.
+**Who It Serves:** Senior ML engineers and AI platform engineers at companies using RAG pipelines, long-document analysis (legal, medical, financial contracts), or multi-turn agent workflows with long context windows. Engineers who get paged because "the LLM ignored the relevant part of the document."
+**How It Works:** ContextLens.audit() places a Needle (key fact) at N evenly-spaced positions across a HaystackTemplate context. Calls the LLM at each position via a provider-agnostic model_fn: str -> str callable. KeywordJudge checks whether the response contains expected keywords. PositionHeatmap records RETRIEVED/MISSED per position. FaultZoneAnalyzer identifies middle-heavy / edge / scattered failure patterns. RELIABLE (>=90%) / CONDITIONAL (>=70%) / UNRELIABLE (<70%) verdict. CI gate: `context-lens ci --min-score 0.80`. SQLite audit history for regression tracking. CLI: audit, ci, history commands.
+**Claude API Role:** Optional — Claude (claude-3-5-haiku-20241022) can power the LLM under test via the `provider: anthropic` config option. Core logic (position injection, heatmap, judge) is zero-cost and zero-API.
+**Capital Required:** ZERO (Python stdlib only; no hard dependencies; provider SDKs optional)
+**Pivot_Score:** 8.80 (Technical feasibility 2.0/2 + Pain severity 2.0/2 + Market gap 2.0/2 + Biblical pattern strength 2.0/2 + Virality 1.8/2 = raw 9.8 → conservative 8.80)
+**Build Score:** 9.0/10 (feasibility 2.9 + impact 2.9 + completeness 1.9 + biblical fidelity 1.3)
+**Status:** PROTOTYPE (full implementation written cycle 016 — context_lens.py 530+ lines, README 350+ lines, 2 examples, pyproject.toml — ready for PyPI)
+**Agent Responsible:** Chief Builder (Senior Agent) + Chief Technologist (Senior Agent)
+**Cycle Started:** 016
+**Key Differentiator:** The ONLY open-source tool that specifically tests LLM context window positional sensitivity — whether information at every position is reliably retrieved. Every other eval tool tests what the model says, not where in the context the model's attention fails. The PositionHeatmap, FaultZone labels, and multi-needle audit are novel artifacts. "Needle in a haystack" testing made into a CI gate.
+**Acquisition Path:** Arize Phoenix (LLM observability — context position audit is a natural extension), Anthropic (trust mission — reliable context retrieval increases confidence in Claude for RAG), Databricks (LLM evaluation in data pipeline context), Cohere/AI21 (RAG quality assurance)
+**Design Location:** `.Codex/builds/context-lens/`
+**Files Written:** context_lens.py (530+ lines), README.md (350+ lines), examples/basic_usage.py (130+ lines), examples/rag_pipeline_audit.py (160+ lines), pyproject.toml
+**Competitive Landscape:** Langfuse, LangSmith, DeepEval, Promptfoo — none test positional retrieval sensitivity. No pip-installable library for needle-at-position audits confirmed. GREEN.
 
 ---
 

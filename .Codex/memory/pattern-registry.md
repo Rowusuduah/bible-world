@@ -1,10 +1,62 @@
 # BibleWorld Pattern Registry
 ## Living Record of All Discovered Biblical Patterns
 
-**Last Updated:** Cycle 015
-**Total Patterns:** 50 (8 seed + 42 discovered)
-**Active Patterns:** 50
-**Level 3 Patterns:** 22 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038, PAT-041, PAT-042, PAT-044, PAT-045, PAT-046, PAT-048, PAT-049)
+**Last Updated:** Cycle 016
+**Total Patterns:** 53 (8 seed + 45 discovered)
+**Active Patterns:** 53
+**Level 3 Patterns:** 24 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038, PAT-041, PAT-042, PAT-044, PAT-045, PAT-046, PAT-048, PAT-049, PAT-051, PAT-052)
+
+---
+
+### PAT-051
+**Scripture:** Ezekiel 37:1-10 — "The hand of the Lord was on me, and he brought me out by the Spirit of the Lord and set me in the middle of a valley; it was full of bones. He led me back and forth among them... So I prophesied as I was commanded. And as I prophesied, there was a noise, a rattling sound, and the bones came together, bone to bone."
+**Pattern Type:** RESTORATION + STRUCTURE
+**Pattern Name:** The Valley of Dry Bones Pattern — Positional Completeness and Full-Range Restoration
+**Pattern Description:** The Spirit of God leads the prophet "back and forth among them" — a position-complete, bidirectional traversal of all bones at all positions. Restoration is exhaustive, not edge-biased. Every bone at every position receives the breath. The structural key is the explicit positional coverage: middle bones are visited as deliberately as edge bones. The restoration protocol is COMPLETE, not partial. No position is a dead zone.
+**Modern Mapping:** LLM context window positional coverage testing. LLMs systematically ignore information buried in the middle of long contexts (lost-in-the-middle problem, confirmed by EMNLP 2025). context-lens (BUILD-015) audits whether every position in the context window is reliably reached — it walks "back and forth" through the context, testing retrieval at each position, identifying fault zones (dry bones not yet reached by attention).
+**Infrastructure Status:** EXISTS NOW (Python, any LLM API, SQLite — all available)
+**Application Potential:** context-lens — PositionHeatmap audit, FaultZone detection, CI gate RELIABLE/CONDITIONAL/UNRELIABLE verdict, SQLite history.
+**Pattern Score:** 9.2/10 (textual grounding 2.9 + modern relevance 2.9 + specificity 1.9 + novelty 1.5)
+**Discovered By:** Chief Theologian (Senior Agent)
+**Cycle Discovered:** 016
+**Build Status:** BUILT (BUILD-015: context-lens, Pivot_Score 8.80)
+**Level:** 3
+**Note:** FIRST Ezekiel harvest. Ezekiel coverage activated.
+**Enforcement Note:** Mapping applies ONLY to the structural positional-completeness mechanics. Spiritual content (national restoration of Israel, resurrection, New Covenant, Holy Spirit) NOT claimed for software. CLEAR.
+
+---
+
+### PAT-052
+**Scripture:** Luke 15:4-6 — "Suppose one of you has a hundred sheep and loses one of them. Doesn't he leave the ninety-nine in the open country and go after the lost sheep until he finds it? And when he finds it, he joyfully puts it on his shoulders and goes home."
+**Pattern Type:** RESTORATION + GOVERNANCE
+**Pattern Name:** The Lost Sheep Pattern — Every Element Counts; None May Be Silently Dropped
+**Pattern Description:** The shepherd does not accept 99% retrieval. One lost sheep is not acceptable loss — it triggers a specific, deliberate search until recovery. The structural principle: completeness is a requirement, not a threshold. The fault zone (the missing sheep) is the actionable signal, not an acceptable loss metric.
+Secondary: Luke 15:8-9 (Lost Coin) — "she lights a lamp, sweeps the house and searches carefully until she finds it." The sweep is exhaustive — every position in the house is searched.
+**Modern Mapping:** context-lens CI gate — one UNRELIABLE fault zone is not acceptable. The gate fails on any UNRELIABLE verdict. The lost sheep IS the production failure mode — one needle at the wrong position fails silently. Fault zone labels provide specific remediation guidance (reorder chunks, reduce context size, add positional emphasis).
+**Infrastructure Status:** EXISTS NOW (maps to context-lens fault zone detection and CI gate)
+**Pattern Score:** 8.7/10 (textual grounding 2.8 + modern relevance 2.7 + specificity 1.7 + novelty 1.5)
+**Discovered By:** Chief Theologian (Senior Agent)
+**Cycle Discovered:** 016
+**Build Status:** CONCEPT (informs context-lens v0.3 remediation suggestions)
+**Level:** 3
+**Note:** FIRST Luke harvest. Luke coverage activated.
+**Enforcement Note:** Mapping applies ONLY to the structural completeness principle. God's love for sinners, joy of heaven over repentance, the Parable's spiritual context NOT claimed for software. CLEAR.
+
+---
+
+### PAT-053
+**Scripture:** Hebrews 4:13 — "Nothing in all creation is hidden from God's sight. Everything is uncovered and laid bare before the eyes of him to whom we must give account." / Hebrews 9:6-7 — "The priests entered regularly into the outer room to carry on their ministry. But only the high priest entered the inner room, and that only once a year..."
+**Pattern Type:** GOVERNANCE + STRUCTURE
+**Pattern Name:** The High Priest Coverage Pattern — Systematic Position Coverage as Priestly Duty
+**Pattern Description:** Two structural principles: (1) Complete coverage is the target state — "nothing is hidden" (Hebrews 4:13). (2) The inner room (middle position) requires deliberate, intentional entry — routine priests never enter it (Hebrews 9:6-7). Systematic coverage of all positions requires the equivalent of the High Priest deliberately entering the inner room.
+**Modern Mapping:** context-lens RELIABLE verdict as the "nothing is hidden" state. The audit's deliberate testing of middle positions is the High Priest entering the inner room — positions that standard queries never deliberately access. The PositionHeatmap maps to the access structure: outer room (edges, routinely accessed) and inner room (middle positions, deliberately accessed only by the audit).
+**Pattern Score:** 8.3/10 (textual grounding 2.5 + modern relevance 2.6 + specificity 1.6 + novelty 1.6)
+**Discovered By:** Chief Theologian (Senior Agent)
+**Cycle Discovered:** 016
+**Build Status:** CONCEPT (supporting context-lens narrative framing)
+**Level:** 2
+**Note:** FIRST Hebrews harvest. Hebrews coverage activated.
+**Enforcement Note:** Christ as High Priest, atonement, the New Covenant, the Tabernacle's fulfillment in Christ — NOT claimed for software. Coverage depth principle only. CLEAR.
 
 ---
 

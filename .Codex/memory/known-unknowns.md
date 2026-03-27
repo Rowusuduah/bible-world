@@ -1,8 +1,8 @@
 # BibleWorld Known Unknowns Register
 ## Open Questions the World Is Actively Working On
 
-**Last Updated:** Cycle 014
-**Active Unknowns:** 20
+**Last Updated:** Cycle 016
+**Active Unknowns:** 23
 **Resolved Unknowns:** 0
 
 ---
@@ -241,5 +241,32 @@
 **Assigned To:** Chief Technologist (Senior) + Chief Builder (Senior)
 **Status:** OPEN
 **Cycle Added:** 014
+
+---
+
+### KU-033
+**Question:** What is the minimum viable position count for context-lens to produce statistically valid retrieval scores? The current default is 10 positions. Is 5 sufficient for early-stage audits? Would 20 positions be required for statistically rigorous CI gates?
+**Why It Matters:** If 10 positions is the right minimum, teams can run a context-lens audit in 10 LLM calls (~30-60 seconds). If 20 is required, that doubles the cost and latency. The tradeoff between statistical validity and audit speed determines adoption.
+**Assigned To:** Chief Scientist + Chief Builder (Senior)
+**Status:** OPEN
+**Cycle Added:** 016
+
+---
+
+### KU-034
+**Question:** How should context-lens handle models with fundamentally different positional encoding architectures (e.g., ALiBi vs. RoPE vs. absolute position embeddings)? Should position fractions map to exact token offsets, or are chunk indices sufficient?
+**Why It Matters:** The HaystackTemplate currently uses chunk index to approximate position. For precise positional testing, token offset would be more accurate. But this requires tokenizer access (adds a dependency). Chunk-based approximation may be "good enough" for production use.
+**Assigned To:** Chief Engineer + Chief Technologist (Senior)
+**Status:** OPEN
+**Cycle Added:** 016
+
+---
+
+### KU-035
+**Question:** Is there a relationship between context-lens retrieval score and task difficulty? A model might score 90% on simple fact retrieval (one-hop) but 60% on multi-hop reasoning that requires combining facts from multiple context positions.
+**Why It Matters:** If this relationship is strong, context-lens should support multi-needle compound queries (where answering requires information from two different positions). v0.2 scope question.
+**Assigned To:** Chief Scientist + Chief Futurist
+**Status:** OPEN
+**Cycle Added:** 016
 
 ---
