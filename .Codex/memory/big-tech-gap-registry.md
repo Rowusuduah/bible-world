@@ -297,15 +297,63 @@ FINDING-018:
 
 ---
 
+```
+FINDING-024:
+  Company: All (arXiv 2602.16666, Feb 2026 — Rabanser, Kapoor et al.)
+  Category: GAP (DOCUMENTED BY ACADEMIC RESEARCHERS — NO TOOL EXISTS)
+  Specific Problem: AI agent consistency across runs is measurable (12 reliability metrics defined) but no pip library implements ConsistencyScore (semantic pass^k) as a CI-gateable metric with task-criticality-tier thresholds. τ-bench documents 80% pass^1 → 25% pass^8. CV scores: Claude (15.2%), GPT-5 (32.2%), Llama (47.0%). Direct feature request: Promptfoo GitHub issue #5947 "Support pass^N metric for evaluating consistency across repeated test runs" — filed, unimplemented.
+  Evidence Source: arXiv 2602.16666, arXiv 2603.25764, τ-bench (Sierra 2026), Promptfoo issue #5947
+  BibleWorld Pattern Match: PAT-062 (Numbers 23:19 — The Perfect Consistency Standard Pattern, Level 3, score 9.2/10)
+  Match Quality: STRUCTURAL — "Does he speak and then not act?" is the k-run comparison protocol
+  Solo-Builder Feasible: YES — 6-8 weeks, Python, sentence-transformers, no GPU required
+  Time to Prototype: 6-8 weeks to PyPI v0.1
+  Pivot_Score: 8.65
+  Status: GREEN — AgentAssay (adjacent, different question confirmed); no direct competitor for semantic ConsistencyScore + criticality tiers
+  Tool Name: semantic-pass-k
+  Note: Window estimate 3-6 months. Promptfoo feature request shows the market knows it needs this. Build now.
+```
+
+```
+FINDING-025:
+  Company: All
+  Category: GAP (emerging — YELLOW)
+  Specific Problem: AI agent memory provenance tracking — persistent memory enables long-horizon tasks but introduces hallucinated recall, memory poisoning (OWASP ASI06 2026), and compounding bias. No pip library tracks memory provenance with audit trail and rollback.
+  Evidence Source: OWASP Top 10 for Agents 2026; "Agentic Memory Poisoning" (Medium Jan 2026); Microsoft Security Blog Feb 2026 "AI Recommendation Poisoning"
+  BibleWorld Pattern Match: PAT-034 (sealed scroll / covenant records — provenance and integrity)
+  Match Quality: STRUCTURAL
+  Solo-Builder Feasible: YES
+  Time to Prototype: 5-7 weeks
+  Pivot_Score: 7.375
+  Status: YELLOW — papers and standards emerging; SuperLocalMemory (paper, not tool); some crowding
+  Note: Lower priority than semantic-pass-k (7.375 vs 8.65). Monitor for window.
+```
+
+```
+FINDING-026:
+  Company: All (YC RFS 2026, Pragmatic Engineer March 2026)
+  Category: THESIS (market validation)
+  Specific Problem: 73% of engineering teams use AI coding tools daily; 55% use agents regularly; only 3% "highly trust" output accuracy. Trust gap is the #1 adoption barrier for enterprise AI agent deployment. Tools that measure and improve trust score are the infrastructure layer.
+  Evidence Source: Developer survey (claude5.ai Feb 2026); Pragmatic Engineer survey (Mar 2026)
+  BibleWorld Pattern Match: All BibleWorld reliability tools (chain-probe, context-lens, cot-fidelity, semantic-pass-k, prompt-lock)
+  Match Quality: MARKET VALIDATION
+  Solo-Builder Feasible: YES
+  Time to Prototype: N/A (validates existing tools)
+  Pivot_Score: N/A (market signal — validates entire BibleWorld tool pipeline)
+  Note: [WEB-FRESH 2026-03-31] Developer survey data confirms the trust gap is the primary market driver for ALL BibleWorld reliability tools. The pipeline of 18 builds collectively addresses this market.
+```
+
+---
+
 ## SUMMARY STATISTICS
 
-- Total findings: 18
-- STRUCTURAL matches: 13
+- Total findings: 26
+- STRUCTURAL matches: 15
 - THEMATIC matches: 3
-- MARKET_VALIDATION: 1
-- MAYBE feasible: 1
+- MARKET_VALIDATION: 2
+- MAYBE feasible: 2
+- YELLOW: 2
 - Companies researched: [OpenAI, Google, Meta, Apple, Microsoft, Anthropic, a16z, Sequoia, YC]
-- Kill gate status: **ALREADY EXCEEDS minimum** (need 5+, have 13 STRUCTURAL)
+- Kill gate status: **EXCEEDS minimum** (need 5+, have 15 STRUCTURAL)
 
 ## COMPETITIVE VALIDATION (2026-03-27 — Live Web Search Results)
 

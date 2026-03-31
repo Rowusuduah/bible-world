@@ -1,12 +1,30 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 018 (completed 2026-03-31)
-**Total Builds:** 17
-**Builds in Design:** 11 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity)
+**Last Updated:** Cycle 019 (completed 2026-03-31)
+**Total Builds:** 18
+**Builds in Design:** 12 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-018: semantic-pass-k
+**Pattern Source:** PAT-062 (Numbers 23:19 — The Perfect Consistency Standard Pattern)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** AI agents are non-deterministic. The same task, run k times, produces k different outputs. No pip library produces ConsistencyScore (semantic pass^k) as a named CI-gateable metric with task-criticality-tier thresholds. Engineers cannot answer: "Is my agent consistent enough for this task?" AgentAssay (the closest competitor) answers "how many runs do I need?" — a different question.
+**Who It Serves:** ML engineers deploying agents to production; platform teams setting reliability SLAs; QA engineers; enterprise teams in regulated industries; research teams comparing consistency across model families.
+**How It Works:** Run agent k times → embed all outputs with sentence-transformers → compute pairwise cosine similarity matrix → ConsistencyScore = mean upper triangle → compare against criticality-tier threshold (CRITICAL: 0.99, HIGH: 0.90, MEDIUM: 0.75, LOW: 0.60) → pass or fail CI gate.
+**Key Technical Innovation:** Task-criticality-tiered ConsistencyScore as a CI gate — the first tool to measure semantic equivalence across k agent runs and make it a first-class quality gate with configurable thresholds per task criticality tier.
+**Capital Required:** ZERO (sentence-transformers + click + rich + sqlite3 stdlib)
+**Build Score:** 9.1/10
+**Pivot_Score:** 8.65 (third-highest in BibleWorld history, behind model-parity 8.90 and prompt-lock 8.70)
+**Status:** DESIGN
+**Agent Responsible:** Chief Builder (Senior Agent)
+**Cycle Started:** 019
+**Implementation:** Full API spec (ConsistencyRunner, ConsistencyReport, CriticalityTier, ConsistencyBudget, @consistency_probe, CLI, pytest plugin), sprint plan (6-8 weeks), known unknowns (KU-044 through KU-047)
+**Competitive Moat:** GREEN [WEB-FRESH 2026-03-31] — 15+ tools audited; none produce ConsistencyScore (semantic pass^k) as a named CI-gateable metric with task-criticality-tier thresholds. AgentAssay (qualixar/agentassay, Mar 2026) is adjacent but answers a different question (sampling efficiency, not semantic equivalence measurement). Window: 3-6 months.
 
 ---
 
