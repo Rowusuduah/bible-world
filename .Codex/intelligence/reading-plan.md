@@ -104,6 +104,48 @@ Secondary: Psalm 6 (distress and recovery — "the LORD has heard my weeping" �
 Tertiary: John 3:22-4:42 (woman at the well — multi-turn dialogue, semantic memory, "living water" as self-generating resource)
 Pivot Priority: Daniel 3 (the fiery furnace — adversarial pressure, refusing to bow, preservation under maximum stress — adversarial robustness testing)
 
+---
+
+## CYCLE 021 READING RECORD
+
+**Date Completed:** 2026-03-31
+**Cycle Type:** BIG_TECH_GAP_ANALYSIS (Type H)
+
+### Scripture Read This Cycle:
+- Genesis 7:1-24 (The Flood — threshold triggers, sealed invariance, dual-source trigger, 40-day accumulation, 150-day saturation)
+- Psalm 6:1-10 (Distress and Recovery — sustained degradation, "how long?", discontinuous recovery)
+- John 3:22-4:42 (Woman at the Well — multi-turn disambiguation, living water, hidden history verification, conversation-driven propagation)
+- Daniel 3:1-30 (The Fiery Furnace — maximum adversarial pressure, behavioral commitment invariant, furnace attestation protocol)
+
+### Coverage Status:
+- Genesis: Chapters 1-7 complete. Chapter 8 (waters recede, ark rests on Ararat — system recovery, new equilibrium) is next.
+- Psalms: Psalms 1-6 complete. Psalm 7 is next.
+- John: Chapters 1-4 (through 4:42) complete. John 4:43 onwards is next.
+- Daniel: Chapters 2-3 complete. Daniel 4 (Nebuchadnezzar's tree dream — hierarchical structure, pruning patterns) is next.
+
+### Next Reading Session (Cycle 022):
+Primary: Genesis 8 (waters recede — system recovery, state transition to new equilibrium, raven/dove probe protocol)
+Secondary: Psalm 7 (appeal to judge — formal adjudication protocol)
+Tertiary: John 4:43-5:47 (healing at the pool — interruption-driven healing, "pick up your mat" — state change command)
+Pivot Priority: Daniel 4 (Nebuchadnezzar's tree — hierarchical architecture, the tree cut down but stump preserved — pruning with root preservation)
+
+### Patterns Discovered Cycle 021:
+- PAT-070 (Genesis 7 — Sealed Invariance Pattern, Level 3, 8.5/10) — BUILD-020: invariant-probe
+- PAT-071 (John 4:16-18 — Hidden History Verification Pattern, Level 3, 8.2/10) — BUILD-021: session-lens
+- PAT-072 (Genesis 7:11 — Dual Flood Source Pattern, Level 2, 7.2/10) — invariant-probe feature
+- PAT-073 (Daniel 3:26-27 — Furnace Attestation Protocol, Level 2, 7.5/10) — iprobe attest
+- PAT-074 (Psalm 6:6-9 — Recovery Discontinuity Pattern, Level 1, 6.5/10) — concept only
+
+### Unmined Remaining:
+- Genesis 7:4 — "Seven days from now I will send rain" — countdown protocol, deadline with zero ambiguity
+- Genesis 7:16 — "The LORD shut him in" — external sealing by a non-agent actor (immutable closure pattern)
+- Genesis 8 — Raven sent, dove sent, olive leaf, dry ground — probe protocol for state detection (not yet read)
+- John 4:43-5:47 — Not yet read
+- Daniel 4 — Not yet read
+- Numbers 23:7-10 — First Balaam oracle (declarative programming / outputs without explicit algorithms) — still unmined
+- Daniel 2:22 — "He reveals deep and hidden things; he knows what lies in darkness" — inverse interpretability
+- Genesis 6:3 — Grace period / deprecation schedule
+
 ### Patterns Discovered Cycle 020:
 - PAT-065 (Genesis 6:14-16 — Exact Specification Pattern, Level 1, 7.0/10) — roadmap (llm-contract v2)
 - PAT-066 (Genesis 6:8-9 — Righteous Selection Pattern, Level 2, 7.8/10) — reinforces prompt-lock

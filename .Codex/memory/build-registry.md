@@ -1,12 +1,48 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 020 (completed 2026-03-31)
-**Total Builds:** 19
-**Builds in Design:** 12 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k)
+**Last Updated:** Cycle 021 (completed 2026-03-31)
+**Total Builds:** 21
+**Builds in Design:** 14 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-021: session-lens [PIVOT-PHASE CYCLE 021]
+**Pattern Source:** PAT-071 (John 4:16-18 — The Hidden History Verification Pattern)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** Long-session AI agents accumulate history in context windows / memory stores. No tool verifies that the agent's recalled history matches ground truth at the event level. Anthropic's cache bug (March 2026) produced 10-20x cost inflation because session memory integrity failed — agents behaved as if prior context was missing. Cache miss events, vector store ordering errors, context truncation, and hallucinated recall all go undetected.
+**Who It Serves:** ML engineers using long-session agents, RAG teams with multi-turn workflows, platform engineers managing session caching infrastructure.
+**How It Works:** Takes a ground truth session transcript (JSON). Auto-generates probe questions across 4 types (recall, ordering, attribution, negation). Runs agent against each probe with history injected as context. Scores: SessionMemoryFidelity = fraction of ground truth events accurately recalled. Reports cache_miss_events, hallucinated_events, ordering_errors.
+**Key Technical Innovation:** First pip-installable tool to test multi-turn session memory fidelity for AI agents — SessionMemoryFidelity as a named, CI-gateable metric with per-event breakdown. Distinct from RAGAS/DeepEval (single-turn RAG) and TruLens (no session history fidelity).
+**Capital Required:** ZERO (anthropic/openai SDK + sentence-transformers + click + rich + numpy + pyyaml)
+**Build Score:** 8.8/10
+**Pivot_Score:** 7.90
+**Status:** DESIGN
+**Agent Responsible:** Chief Builder (Senior Agent)
+**Cycle Started:** 021
+**Implementation:** API spec (HistoryProbe, SessionLens, MemoryReport), CLI (slens run/show/gate/export-probes), pytest plugin, sprint plan (6-7 weeks), known unknowns (KU-057 through KU-059)
+**Competitive Moat:** GREEN [WEB-FRESH 2026-03-31] — RAGAS (single-turn RAG evaluation, different), DeepEval groundedness (single-turn, different), TruLens 5 metrics (no session fidelity, different). Window: 4-6 months.
+
+---
+
+### BUILD-020: invariant-probe [PIVOT-PHASE CYCLE 021]
+**Pattern Source:** PAT-070 (Genesis 7 — The Sealed Invariance Pattern)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** AI agents are not tested for behavioral invariance under irrelevant environmental perturbations. When environment variables, system time, API latency, or connection strings change in ways that SHOULD NOT affect agent behavior — does the agent still behave the same? No pip library answers this. The Claude Code database deletion incident (March 2026) is the canonical failure: agent behavior was NOT invariant to a connection string change.
+**Who It Serves:** Platform engineers deploying agents to production; QA engineers building reliability suites; enterprise teams needing behavioral certification before production rollout; DevOps teams adding agent behavioral invariance checks to CI/CD pipelines.
+**How It Works:** Define EnvironmentMatrix (set of environmental perturbations: TimeShift, LatencyInjection, EnvVarMutation, ToolAvailabilityChange, ConnectionStringMutation). Run agent across all perturbation conditions. Embed all outputs (sentence-transformers). Compute InvarianceScore = mean cosine similarity across all perturbed outputs vs. baseline. Report drift_map and dangerous_pairs. `iprobe attest` mode: post-task surface verification (zero-damage certificate) per PAT-073 (Daniel 3 furnace attestation protocol).
+**Key Technical Innovation:** First pip-installable tool to provide InvarianceScore (behavioral invariance measure) for AI agents across environmental perturbation matrices. Includes `iprobe attest` (post-task zero-damage attestation). CI-gateable. LLM-agnostic.
+**Capital Required:** ZERO (sentence-transformers + anthropic/openai SDK + click + rich + numpy + pyyaml)
+**Build Score:** 9.0/10
+**Pivot_Score:** 8.175
+**Status:** DESIGN
+**Agent Responsible:** Chief Builder (Senior Agent)
+**Cycle Started:** 021
+**Implementation:** Full API spec (InvariantSuite, EnvironmentMatrix, InvarianceReport, AttestationReport, @invariance_probe), CLI (iprobe run/show/gate/attest/estimate), pytest plugin, sprint plan (8 weeks), known unknowns (KU-053 through KU-056)
+**Competitive Moat:** GREEN [WEB-FRESH 2026-03-31] — Arize Phoenix (observation, not invariance), Langfuse (tracing, not invariance), AgentPrism (visualization, not invariance), Braintrust (evaluation, not invariance), Hypothesis (deterministic code only). Window: 4-6 months.
 
 ---
 

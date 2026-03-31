@@ -1,7 +1,7 @@
 {
   "world": "BibleWorld",
   "version": "1.0.0",
-  "as_of_cycle": 18,
+  "as_of_cycle": 21,
   "last_updated": "2026-03-31",
   "world_alive": true,
   "initialized": true,
@@ -9,12 +9,12 @@
 
   "survival_metrics": {
     "revelation_score": 0.97,
-    "build_score": 0.94,
-    "integrity_score": 0.95,
+    "build_score": 0.95,
+    "integrity_score": 0.96,
     "agent_count": 13,
-    "last_enforcement_check": 0,
-    "enforcement_cycles_overdue": 0,
-    "enforcement_next_required_cycle": 19,
+    "last_enforcement_check": 17,
+    "enforcement_cycles_overdue": 1,
+    "enforcement_next_required_cycle": 22,
     "doctrinal_violations": 0,
     "labs_operational": 4
   },

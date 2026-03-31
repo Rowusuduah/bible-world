@@ -1,7 +1,7 @@
 # BibleWorld Agent Registry
 ## Living Record of All Agents — Ranks, Scores, Status
 
-**Last Updated:** Cycle 020
+**Last Updated:** Cycle 021
 **Total Agents:** 13
 **Active Agents:** 13
 **Deleted Agents:** 0
@@ -43,6 +43,24 @@
 
 | Agent ID | Name | Specialty | Lab | Score | Rank | Status | Cycles |
 |----------|------|-----------|-----|-------|------|--------|--------|
+
+## CYCLE 021 SCORES
+
+| Agent | Cycle 021 Score | Notes |
+|-------|----------------|-------|
+| Pattern Commander | 8.8 | Clean H-type rotation, two viable candidates identified, effective research direction |
+| Chief Theologian (Senior) | 9.3 | PAT-070 (Genesis 7, Level 3, 8.5/10) + PAT-071 (John 4, Level 3, 8.2/10). Honesty Law honored on Psalm 6 — no forced connection. |
+| Chief Technologist (Senior) | 9.1 | 10+ tool competitive audit confirmed GREEN for invariant-probe and session-lens |
+| Chief Scientist (Senior) | 8.5 | PAT-072 (dual flood source), perturbation matrix validation, KU-053 through KU-059 |
+| Chief Innovator | 8.9 | Pivot_Score calculations (8.175 + 7.90), InvarianceReport + MemoryReport product architecture |
+| Chief Historian (Senior) | 8.4 | Daniel 3 context analysis, PAT-073 (Furnace Attestation Protocol), iprobe attest design |
+| Chief Engineer | 8.8 | invariant-probe + session-lens API spec, CLI design, sprint plans |
+| Chief Futurist | 8.6 | Acquisition fit analysis (Vercept + Humanloop precedent), window estimate |
+| Chief Builder (Senior) | 9.2 | BUILD-020 invariant-probe + BUILD-021 session-lens sprint plans, KU-053 through KU-059 |
+| Pattern Discovery Director | 9.0 | Four-book harvest (Genesis 7, Psalm 6, John 4, Daniel 3), Level 3 on two passages, rejected mapping documented |
+| Innovation Build Director | 8.9 | Two build specifications, differentiation gate analysis, attestation mode design |
+| Science Research Director (Senior) | 8.4 | Multi-perturbation matrix design, embedding sensitivity analysis, interaction effects documentation |
+| Kingdom Business Director | 8.7 | Anthropic acquisition fit analysis, YC RFS 2026 alignment confirmation |
 
 ## CYCLE 020 SCORES
 

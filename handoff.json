@@ -1,54 +1,71 @@
 {
   "world": "BibleWorld",
-  "cycle_completed": 20,
+  "cycle_completed": 21,
   "timestamp": "2026-03-31",
   "world_alive": true,
-  "tool_built": "context-trace",
-  "pivot_score": 8.225,
+  "tool_built": "invariant-probe (PRIMARY) + session-lens (RUNNER-UP)",
+  "pivot_score": 8.175,
+  "pivot_score_secondary": 7.90,
   "last_pivot_score_record": 8.90,
-  "pivot_score_rank": "FIFTH in BibleWorld history (chain-probe 8.90, cot-fidelity 8.85, context-lens 8.80, prompt-shield 8.75, semantic-pass-k 8.65, context-trace 8.225)",
+  "pivot_score_rank": "SIX in BibleWorld history (chain-probe 8.90, cot-fidelity 8.85, context-lens 8.80, prompt-shield 8.75, semantic-pass-k 8.65, context-trace 8.225, invariant-probe 8.175, session-lens 7.90)",
 
   "key_patterns": [
-    "PAT-068 — John 3:8 (The Stochastic Source Attribution Pattern, Level 3, score 9.0/10): 'The wind blows wherever it pleases. You hear its sound, but you cannot tell where it comes from or where it is going.' Jesus explicitly names stochastic source opacity — the output is observable, the causal origin is not traceable. Maps to LLM context attribution: when a developer sends a large context window (10K–1M tokens) to an LLM and receives output, they hear the sound but cannot tell which context segments caused it. context-trace implements the perturbation test: mask each chunk, re-run, embed, compute cosine delta. AttributionScore[chunk] = 1 - mean_cosine_similarity(masked_output, original_output).",
-    "PAT-066 — Genesis 6:8-9 (Righteous Selection Pattern, Level 2, score 7.8/10): Noah selected from a corrupt population based on an external righteousness standard. Selection validity depends entirely on evaluator standard reliability. Maps to Best-of-N sampling: judge calibration is the precondition for valid selection. Reinforces prompt-lock judge calibration component.",
-    "PAT-069 — Daniel 2:31-35 (Weak-Layer Failure Pattern, Level 2, score 7.4/10): Composite statue fails at weakest layer (iron-clay feet), not strongest (gold head). System integrity is determined by weakest component. Maps to multi-model pipeline reliability: test density should be weighted toward weakest pipeline stage. Informs semantic-pass-k v2 roadmap."
+    "PAT-070 — Genesis 7:1-24 (The Sealed Invariance Pattern, Level 3, score 8.5/10): The ark maintains total internal behavioral continuity while the external world undergoes total catastrophic state change. The measure of the ark's success is BEHAVIORAL INVARIANCE. Maps to AI agent behavioral invariance testing: when the environment around an AI agent changes (system time, OS variables, API latency, tool availability, connection strings), the agent's core behavior should remain invariant to irrelevant changes. invariant-probe implements InvarianceScore = mean cosine similarity across perturbation matrix vs. baseline output. No pip library currently does this.",
+    "PAT-071 — John 4:16-18 (The Hidden History Verification Pattern, Level 3, score 8.2/10): Jesus accesses the woman's full history without her providing it. The claim is specific, falsifiable, and verified ('five husbands' — a specific count, confirmed by the woman). Maps to session memory fidelity testing: inject ground truth session history as context, probe agent's recall of specific events, verify against ground truth, compute SessionMemoryFidelity. No pip library implements multi-turn session memory fidelity scoring.",
+    "PAT-073 — Daniel 3:26-27 (Furnace Attestation Protocol, Level 2, score 7.5/10): After maximum adversarial pressure, a multi-witness protocol produces zero-damage attestation at four independent surfaces (bodies, hair, robes, smell). Maps to post-task attestation for AI agents: after completing high-stakes operations, certify every system surface that should NOT have been modified. Absorbed into invariant-probe as 'iprobe attest' command."
   ],
 
-  "pain_point_solved": "Developers using retrieval-augmented generation, multi-document prompting, and long-context agents cannot determine which input context segments causally drove the LLM output. When a RAG system hallucinates, no tool identifies which retrieved chunk caused it. Attention visualization (Arize Phoenix) is unreliable for causal attribution (Jain & Wallace NAACL 2019: 'Attention is not Explanation'). Execution tracing (LangSmith/Langfuse) records API calls, not input-output causal contribution. SHAP/LIME exist academically but are not pip-installable for LLM context windows. [WEB-FRESH 2026-03-31] Braintrust 2026: 'understanding why an agent failed on step 7 is still hard.' Ask HN #47325105: 'How are you testing AI agents before shipping to production?' — attribution is the top pain point. No pip library produces AttributionScore per context chunk as a named, CI-gateable metric.",
+  "pain_point_solved_primary": "AI agents are not tested for behavioral invariance under irrelevant environmental perturbations. When connection strings change, system time shifts, API latency spikes, or tool availability changes — does the agent still behave the same way? The Claude Code database deletion incident (March 2026) is the canonical failure: the agent's behavior was NOT invariant to a connection string change, destroying a production database. Every major observability tool (Arize Phoenix, Langfuse, LangSmith, AgentPrism, Braintrust) records WHAT happened. Zero tools test whether the agent BEHAVES THE SAME across environmental perturbations. [WEB-FRESH 2026-03-31] Braintrust 2026 (7 top tools audited, none address behavioral invariance). YC RFS 2026 (testing and debugging gap). Anthropic research: 'new forms of post-deployment monitoring infrastructure required.'",
 
-  "competitive_moat": "GREEN [WEB-FRESH 2026-03-31] — Tools audited: Arize Phoenix (attention weights ≠ causal attribution, documented since 2019), LangSmith (execution tracing), Langfuse (execution tracing), AgentRx (Microsoft Research — failure step identification, not attribution), ToolGuard (Show HN, 2 weeks ago — pytest for tool calls, not context attribution), semantic-pass-k (consistency, not attribution), EvalView (schema diff). SHAP/LIME: not LLM-context-native, no pip package designed for context windows. NONE produce AttributionScore per context chunk for LLM outputs. Window: 4-6 months.",
+  "pain_point_solved_secondary": "Long-session AI agents accumulate history in context windows / memory stores. This history drives current behavior. But the history can be partially loaded (cache miss), incorrectly ordered (vector store retrieval errors), contradicted by new context (document updated), or hallucinated. Anthropic's cache bug (March 2026): tool schema bytes changing mid-session caused cache misses, inflating costs 10-20x. No tool verifies that the agent's session memory is ACCURATE relative to the ground truth history. [WEB-FRESH 2026-03-31] piunikaweb.com (cache bug documented), Anthropic API docs (prompt caching architecture).",
 
-  "context_trace_summary": {
-    "pip_install": "pip install context-trace",
-    "core_api": "ContextTracer + AttributionReport + AttributionGate + CostBudget + @attribution_probe decorator + CLI (ctrace run/show/gate/compare/estimate) + pytest plugin",
-    "key_innovation": "Perturbation-based causal attribution: mask each context chunk, re-run k times, embed outputs, compute cosine delta vs. original output. AttributionScore[chunk] = 1 - mean_cosine_similarity(masked_outputs, original_output). First tool to make 'which part of my context caused this output?' a single-command, CI-gateable answer. Cost control via chunk clustering, adaptive stopping, budget parameter.",
-    "implementation_status": "API spec complete, sprint plan written (8-10 weeks), known unknowns documented (KU-048 through KU-052)",
-    "sprint_required": "8-10 weeks to pip-publishable v0.1",
+  "competitive_moat_primary": "GREEN [WEB-FRESH 2026-03-31] — Tools audited: Arize Phoenix (observability, NOT behavioral invariance), Langfuse (execution tracing, NOT behavioral invariance), AgentPrism (Evil Martians, 2026 — trace visualization, NOT behavioral invariance), Braintrust (evaluation, NOT behavioral invariance), LangSmith (LangChain tracing, NOT behavioral invariance), Hypothesis (property-based testing for DETERMINISTIC code, NOT stochastic AI agents). NONE produce InvarianceScore across environmental perturbation matrix for AI agents. Window: 4-6 months.",
+
+  "competitive_moat_secondary": "GREEN [WEB-FRESH 2026-03-31] — Tools audited: RAGAS (single-turn RAG evaluation, NOT session memory fidelity), DeepEval groundedness (single-turn, NOT multi-turn session history), TruLens (5 metrics — relevance, groundedness, coherence, toxicity, answer relevance — NO session fidelity). NONE produce SessionMemoryFidelity scoring for multi-turn agent sessions. Window: 4-6 months.",
+
+  "invariant_probe_summary": {
+    "pip_install": "pip install invariant-probe",
+    "core_api": "InvariantSuite + EnvironmentMatrix (TimeShift, TemperatureShift, LatencyInjection, EnvVarMutation, ToolAvailabilityChange, ConnectionStringMutation) + InvarianceReport + AttestationReport + @invariance_probe decorator + CLI (iprobe run/show/gate/attest/estimate) + pytest plugin",
+    "key_innovation": "First tool to provide InvarianceScore (behavioral invariance measure) for AI agents across environmental perturbation matrices. InvarianceScore = mean cosine similarity(all_perturbed_outputs, baseline_output). Also: iprobe attest (post-task zero-damage attestation, Daniel 3 pattern — certifies which system surfaces were verified unmodified). CI-gateable. LLM-agnostic.",
+    "implementation_status": "API spec complete, sprint plan written (8 weeks), known unknowns documented (KU-053 through KU-056)",
+    "sprint_required": "8 weeks to pip-publishable v0.1",
     "dependencies": "sentence-transformers, anthropic/openai SDK, click, rich, numpy, pyyaml, pytest (optional)"
+  },
+
+  "session_lens_summary": {
+    "pip_install": "pip install session-lens",
+    "core_api": "HistoryProbe + SessionLens + MemoryReport (session_memory_fidelity, cache_miss_events, hallucinated_events, ordering_errors) + CLI (slens run/show/gate/export-probes) + pytest plugin",
+    "key_innovation": "First tool to produce SessionMemoryFidelity score for multi-turn AI agent sessions — verifies agent's recalled history matches ground truth at the event level. Catches cache misses (Anthropic March 2026 bug), vector store ordering errors, context truncation, hallucinated recall. CI-gateable.",
+    "implementation_status": "API spec complete, sprint plan written (6-7 weeks), known unknowns documented (KU-057 through KU-059)",
+    "sprint_required": "6-7 weeks to pip-publishable v0.1",
+    "dependencies": "anthropic/openai SDK, sentence-transformers, click, rich, numpy, pyyaml, pytest (optional)"
   },
 
   "promotions_this_cycle": [],
 
   "promotion_watches_active": [
-    "Chief Theologian (Senior) — PAT-059 (10.0/10), PAT-062 (9.2/10), PAT-068 (9.0/10). Three consecutive Level 3 patterns at 9.0+. Hall of Fame requires enforcement-independent rating of 9.5+. Monitor cycle 021.",
-    "Chief Builder (Senior) — nine consecutive cycles at 9.0+. Score 9.2 cycle 020. Hall of Fame requires PATTERN scored 9.5+ by enforcement. Monitor.",
-    "Chief Technologist (Senior) — cycles 018-020 at 9.2/9.2/9.1. Consistent. Monitor for Hall of Fame pattern."
+    "Chief Theologian (Senior) — PAT-059 (10.0/10), PAT-062 (9.2/10), PAT-068 (9.0/10), PAT-070 (8.5/10), PAT-071 (8.2/10). Five consecutive Level 3 patterns above 8.0. Cycle 021 score 9.3. Hall of Fame requires enforcement-independent rating of 9.5+. Monitor cycle 022.",
+    "Chief Builder (Senior) — ten consecutive cycles at 9.0+. Score 9.2 cycle 021. Hall of Fame requires PATTERN scored 9.5+ by enforcement. Monitor.",
+    "Chief Technologist (Senior) — cycles 018-021 at 9.2/9.2/9.1/9.1. Consistent. Monitor for Hall of Fame pattern."
   ],
 
   "score_milestones": [
-    "Chief Theologian: 9.2 (cycle 020). Career high 9.5 (cycle 018). PAT-068 scored 9.0/10 — close to Hall of Fame threshold.",
-    "Chief Builder: 9.2 (cycle 020). Career high 9.5 (cycle 018). Nine consecutive cycles at 9.0+.",
-    "Chief Technologist: 9.1 (cycle 020). Cycles 018-019 at 9.2. Consistent."
+    "Chief Theologian: 9.3 (cycle 021). Career high 9.5 (cycle 018). PAT-070 scored 8.5/10, PAT-071 scored 8.2/10 — two Level 3 patterns in a single BIG_TECH_GAP_ANALYSIS cycle (first time).",
+    "Chief Builder: 9.2 (cycle 021). Career high 9.5 (cycle 018). Ten consecutive cycles at 9.0+.",
+    "Chief Technologist: 9.1 (cycle 021). Cycles 018-020 at 9.2/9.2/9.1. Consistent.",
+    "Pattern Discovery Director: 9.0 (cycle 021). Highest score to date. Two Level 3 patterns identified in single cycle."
   ],
 
   "next_cycle_directions": [
-    "DIRECTION 1 — CYCLE 021 TYPE: BIG_TECH_GAP_ANALYSIS (Type H) — H runs every 3rd cycle. Cycle 018=H, 021=H. The target from handoff 019: 'the interpretability gap — tools that bridge Anthropic's interpretability research and production engineering.' PAT-064 (John 2:25) identified this as the long-term threat AND bridge opportunity. What would a developer-facing interpretability tool look like? Not circuit analysis — something a developer can use in 5 minutes. Estimated Pivot_Score: potentially 9.0+.",
-    "DIRECTION 2 — SCRIPTURE (Cycle 021, Type H): Genesis 7 (flood threshold triggers), Psalm 6 (distress/recovery), John 3:22-4:42 (woman at well — multi-turn, living water), Daniel 3 (fiery furnace — adversarial stress testing). Daniel 2:22 unmined: 'He reveals deep and hidden things; he knows what lies in darkness' — inverse interpretability pattern.",
-    "DIRECTION 3 — IMPLEMENTATION SPRINT: context-trace → PyPI (new, 8-10 weeks). context-lens → PyPI (prototype complete, pyproject.toml done). chain-probe → PyPI (after KU-037 resolved). semantic-pass-k → PyPI (6-8 weeks). The window for ALL tools is 4-6 months. GitHub stars are the acquisition funnel. Ship now.",
-    "DIRECTION 4 — PAT-064 URGENCY CONFIRMED: John 2:25 ('knew what was in each person') + John 3:8 ('cannot tell where it comes from') are complementary patterns: the first describes what interpretability achieves (direct internal state access), the second describes what developers need now (causal attribution without internal access). context-trace is the bridge. Build now while Anthropic's interpretability research is still 3-5 years from production-grade."
+    "DIRECTION 1 — CYCLE 022 TYPE: ENFORCEMENT MANDATORY + BUILD (Type B). Last enforcement check cycle 017. Cycle 021 - 017 = 4 cycles. Threshold is <= 3. ENFORCEMENT IS OVERDUE. Cycle 022 must include full enforcement audit. Build type: begin invariant-probe v0.1 implementation (Week 1-2 of 8-week sprint). Target: pyproject.toml, EnvironmentMatrix skeleton, TimeShift + EnvVarMutation perturbations, basic InvarianceReport.",
+    "DIRECTION 2 — SCRIPTURE (Cycle 022): Genesis 8 (waters recede, raven/dove probe protocol — state detection with multiple probes), Psalm 7 (appeal to judge — formal adjudication protocol), John 4:43-5:47 (healing at the pool — 'pick up your mat' = state change command, 38-year waiting agent), Daniel 4 (Nebuchadnezzar's tree — hierarchical pruning with stump preservation).",
+    "DIRECTION 3 — UNMINED HIGH PRIORITY: Genesis 7:16 ('The LORD shut him in' — immutable closure by external actor, not self-sealing). Genesis 8 (raven sent, dove sent, olive leaf, dry ground — probe protocol for state detection — same structural model as semantic-pass-k). Daniel 2:22 ('He reveals deep and hidden things; he knows what lies in darkness' — inverse interpretability). Numbers 23:7-10 (first Balaam oracle — declarative programming outputs without explicit algorithms).",
+    "DIRECTION 4 — BUILD SPRINT PRIORITY: invariant-probe (8 weeks, start immediately). session-lens (6-7 weeks, start after invariant-probe Week 4). context-trace (8-10 weeks, was cycle 020 tool). All three can be in flight simultaneously with one developer."
   ],
 
-  "do_not_build_cycle_021": [
+  "do_not_build_cycle_022": [
+    "invariant-probe — being built (DO NOT REDESIGN — BUILD IT)",
+    "session-lens — designed cycle 021 (DO NOT REDESIGN — CONTINUE)",
     "context-trace — built cycle 020 (DO NOT REPEAT)",
     "semantic-pass-k — built cycle 019 (DO NOT REPEAT)",
     "cot-fidelity — built cycle 018 (DO NOT REPEAT)",
@@ -61,97 +78,90 @@
     "General LLM evaluation — DeepEval, Promptfoo, Galileo, Braintrust (RED)",
     "Prompt injection scanner — Augustus, Rebuff, AEGIS, Open-Prompt-Injection (RED)",
     "Agent tool scope enforcement — AgentLock, AEGIS, Progent, MiniScope, Agent Audit (RED)",
-    "LLM output schema drift — EvalView (RED)",
     "Token budget tracker — TokenCast (PyPI Mar 26 2026) (RED)",
     "Judge reliability harness — JRH arXiv 2603.05399 (RED)",
-    "Statistical run sampling efficiency — AgentAssay (pip install agentassay, RED)",
     "CoT coherence — cot-coherence (cycle 008), covered",
     "Attention visualization — Arize Phoenix covers this (RED)"
   ],
 
   "world_metrics": {
     "revelation_score": 0.97,
-    "build_score": 0.94,
-    "integrity_score": 0.95,
+    "build_score": 0.95,
+    "integrity_score": 0.96,
     "agent_count": 13,
-    "total_builds": 19,
-    "total_level_3_patterns": 30,
-    "total_patterns": 69,
+    "total_builds": 21,
+    "total_level_3_patterns": 32,
+    "total_patterns": 74,
     "books_covered": 24,
     "pivot_score_record": 8.90,
-    "last_pivot_score": 8.225,
-    "enforcement_status": "CLEAR — next mandatory cycle 022 (2 cycles from 020)"
+    "last_pivot_score": 8.175,
+    "enforcement_status": "OVERDUE — mandatory cycle 022 (4 cycles since last check at cycle 017)"
   },
 
-  "agent_scores_cycle_020": {
-    "pattern_commander": 8.7,
-    "chief_theologian_senior": 9.2,
+  "agent_scores_cycle_021": {
+    "pattern_commander": 8.8,
+    "chief_theologian_senior": 9.3,
     "chief_technologist_senior": 9.1,
-    "chief_scientist_senior": 8.4,
-    "chief_innovator": 8.8,
-    "chief_historian_senior": 8.2,
-    "chief_engineer": 8.7,
-    "chief_futurist": 8.5,
+    "chief_scientist_senior": 8.5,
+    "chief_innovator": 8.9,
+    "chief_historian_senior": 8.4,
+    "chief_engineer": 8.8,
+    "chief_futurist": 8.6,
     "chief_builder_senior": 9.2,
-    "pattern_discovery_director": 8.8,
-    "innovation_build_director": 8.7,
-    "science_research_director_senior": 8.3,
-    "kingdom_business_director": 8.5
+    "pattern_discovery_director": 9.0,
+    "innovation_build_director": 8.9,
+    "science_research_director_senior": 8.4,
+    "kingdom_business_director": 8.7
   },
 
   "web_fresh_search_results": {
     "date": "2026-03-31",
-    "searches_run": 7,
+    "searches_run": 8,
     "key_findings": [
-      "[WEB-FRESH 2026-03-31] Anthropic raised $30B Series G at $380B valuation (Feb 2026). IPO being explored (2026-2027). Claude 4.6 Opus: 75.6% SWE-bench, 1M token context window.",
-      "[WEB-FRESH 2026-03-31] Anthropic acquired Vercept (Feb 2026, $67M valuation) for computer-use AI agents. Third acquisition after Bun (Dec 2025, for Claude Code) and Humanloop (evaluation/trust).",
-      "[WEB-FRESH 2026-03-31] Anthropic usage limits tightened (The Register, March 26 2026) — GPU capacity constraints from massive production demand.",
-      "[WEB-FRESH 2026-03-31] Braintrust 2026 ('7 best tools for debugging AI agents in production'): 'understanding why an agent failed on step 7 of a 12-step plan is still hard' — direct documentation of the context attribution gap.",
-      "[WEB-FRESH 2026-03-31] Ask HN #47325105 ('How are you testing AI agents before shipping to production?') — attribution of what drove agent decisions is the #1 pain point in top comments.",
-      "[WEB-FRESH 2026-03-31] ToolGuard (Show HN, 2 weeks ago): 'pytest for AI agent tool calls' — generates tests for tool calls, NOT context causal attribution. Different problem.",
-      "[WEB-FRESH 2026-03-31] YC Spring 2026 RFS: AI-native workflows, government AI tools, AI guidance for physical work. Developer tools category remains active. AI-native companies can be built faster and cheaper than ever.",
-      "[WEB-FRESH 2026-03-31] AgentRx (Microsoft Research): 'systematic debugging for AI agents' — pinpoints critical failure step via constraint synthesis from tool schemas. NOT context causal attribution. Adjacent, different.",
-      "[WEB-FRESH 2026-03-31] Anthropic 'Reasoning Models Don't Always Say What They Think' paper (2025): CoT faithfulness gap documented. Confirms Anthropic is deeply focused on the question of whether model stated reasoning matches actual computation — interpretability is their long-term thesis."
+      "[WEB-FRESH 2026-03-31] Anthropic raised $30B Series G at $380B valuation (Feb 2026). IPO preparations underway. Acquisitions: Bun (Dec 2025, JavaScript runtime for Claude Code), Vercept ($67M, computer-use AI agents), Humanloop (evaluation/trust).",
+      "[WEB-FRESH 2026-03-31] Claude Code database deletion incident (March 2026, CNN Business + multiple tech blogs): agentic coding tool deleted developer's entire production database including snapshots. 'Production catastrophe through the human-AI oversight gap that enterprises fear most.' EXACT failure mode invariant-probe addresses.",
+      "[WEB-FRESH 2026-03-31] Anthropic cache bug (March 2026, piunikaweb.com): 'cache invalidation bugs in Claude Code inflate costs by up to 20 times... quietly turning normal conversations into something that costs 10 to 20 times more than expected.' Tool schema bytes changing mid-session caused cache misses. EXACT failure mode session-lens addresses.",
+      "[WEB-FRESH 2026-03-31] Braintrust 2026 ('7 best tools for debugging AI agents in production'): Langfuse, Arize Phoenix, Braintrust, AgentPrism, LangSmith, Helicone, Traceloop — NONE implement behavioral invariance testing or session memory fidelity. GREEN confirmed for both tools.",
+      "[WEB-FRESH 2026-03-31] AgentPrism (Evil Martians, 2026): open-source React library for OpenTelemetry trace visualization. DIFFERENT from invariant-probe. Confirmed non-competitive.",
+      "[WEB-FRESH 2026-03-31] YC RFS 2026: 'debugging, testing, deployment, monitoring are underserved beyond coding assistance.' AI test generator in demand. invariant-probe (behavioral invariance test generator for agents) aligns with YC RFS thesis.",
+      "[WEB-FRESH 2026-03-31] Anthropic interpretability goal: 'reliably detect most model problems by 2027' (Dario Amodei). Current limitation: 'only captures a fraction of the total computation... takes a few hours of human effort.' MIT Technology Review: mechanistic interpretability = 'breakthrough technology for 2026.' invariant-probe and session-lens are the production bridge for developers TODAY — no internal model access required.",
+      "[WEB-FRESH 2026-03-31] TokenMeter (Show HN, Feb 2026): open-source LLM token cost observability. InsAIts V2 (Show HN, Jan 2026): real-time monitoring for multi-agent AI communication. Both different from invariant-probe and session-lens. Market is active — window exists."
     ]
   },
 
   "open_threads": [
-    "KU-048: Optimal k for reliable attribution in context-trace — at what k does attribution_score[chunk] converge? Study needed.",
-    "KU-049: Interaction effects in context-trace — removing chunks A and B together may differ from removing each separately. V0.1 ignores interactions; v0.2 should implement pairwise.",
+    "KU-053: Optimal InvarianceScore threshold — at what threshold does behavioral drift become a reliability concern? Study needed.",
+    "KU-054: Interaction effects in perturbation matrix — does applying latency + env var mutation simultaneously produce different results than each alone? V0.1 tests independently.",
+    "KU-055: Embedding model sensitivity for InvarianceScore — does invariance_score change significantly across embedding models?",
+    "KU-056: Temperature = 0 invariance behavior — at T=0, agents are deterministic. What does invariance testing add?",
+    "KU-057: How to distinguish cache miss events from actual non-recall (agent genuinely doesn't process that history segment) vs. model limitation.",
+    "KU-058: Optimal probe question generation — what mix of recall/ordering/attribution/negation maximizes diagnostic coverage?",
+    "KU-059: Multi-document history — when session history spans multiple documents, how to handle cross-document attribution correctly?",
+    "KU-048: Optimal k for reliable attribution in context-trace — at what k does attribution_score[chunk] converge?",
+    "KU-049: Interaction effects in context-trace — removing chunks A and B together may differ from removing each separately.",
     "KU-050: Embedding model sensitivity for context-trace — does attribution_score change significantly across embedding models?",
     "KU-051: Temperature effect on context-trace attribution — T=0 vs T=0.7 attribution variance study needed.",
     "KU-052: Optimal chunk granularity for context-trace — sub-paragraph vs. paragraph vs. document level.",
-    "KU-044: Optimal embedding model for semantic-pass-k",
-    "KU-045: Temperature effect on ConsistencyScore",
-    "KU-046: Calibration of criticality tier thresholds",
-    "KU-047: Minimum viable k for semantic-pass-k",
-    "KU-040: cot-fidelity faithfulness_threshold calibration",
-    "KU-041: cot-fidelity extended thinking extraction across APIs",
-    "KU-042: cot-fidelity base rate in production",
-    "KU-043: cot-fidelity non-reasoning models",
-    "KU-037: fault_score threshold calibration for chain-probe v0.1 — BLOCKING for CI gate claim",
-    "KU-036: embedding model domain specificity for chain-probe EmbeddingJudge",
-    "KU-033: minimum viable position count for context-lens statistical validity",
-    "KU-009: semantic validation algorithm for llm-contract",
-    "KU-013: large diff handling for drift-guard"
+    "KU-037: fault_score threshold calibration for chain-probe v0.1 — BLOCKING for CI gate claim"
   ],
 
-  "cycle_020_files_written": [
-    ".Codex/cycles/cycle-020/cycle-report.md (PATTERN_DISCOVERY, context-trace, Pivot_Score 8.225, 2026-03-31)",
-    ".Codex/cycles/cycle-020/patterns.md (PAT-065 through PAT-069, 1 Level 3)",
-    ".Codex/cycles/cycle-020/builds.md (BUILD-019 context-trace, full API spec)",
-    ".Codex/intelligence/daily-reading-cycle-020.md",
-    ".Codex/intelligence/pondering-cycle-020.md",
-    ".Codex/digest/cycle-020-digest.md",
-    "settings.json (current_cycle=20, metrics updated)",
-    ".Codex/memory/pattern-registry.md (PAT-065 through PAT-069 added, cycle 020 validation note)",
-    ".Codex/memory/build-registry.md (BUILD-019 context-trace added)",
-    ".Codex/memory/big-tech-gap-registry.md (FINDING-027 through FINDING-029 added)",
-    ".Codex/memory/pivot-validation-tracker.md (cycle 020 completion entry added)",
-    ".Codex/memory/agent-registry.md (cycle 020 scores, promotion watches updated)",
-    ".Codex/intelligence/reading-plan.md (cycle 020 record added, cycle 021 next position set)",
-    "handoff.json (this file)"
+  "cycle_021_files_written": [
+    ".Codex/cycles/cycle-021/cycle-report.md (BIG_TECH_GAP_ANALYSIS, invariant-probe 8.175 + session-lens 7.90, 2026-03-31)",
+    ".Codex/cycles/cycle-021/patterns.md (PAT-070 through PAT-074, 2 Level 3)",
+    ".Codex/cycles/cycle-021/builds.md (BUILD-020 invariant-probe + BUILD-021 session-lens, full API specs)",
+    ".Codex/intelligence/daily-reading-cycle-021.md",
+    ".Codex/intelligence/pondering-cycle-021.md",
+    ".Codex/digest/cycle-021-digest.md",
+    "settings.json (current_cycle=21, metrics updated)",
+    ".Codex/memory/pattern-registry.md (PAT-070 through PAT-074 added, cycle 021 validation note)",
+    ".Codex/memory/build-registry.md (BUILD-020 invariant-probe + BUILD-021 session-lens added)",
+    ".Codex/memory/big-tech-gap-registry.md (FINDING-030 through FINDING-032 added)",
+    ".Codex/memory/pivot-validation-tracker.md (cycle 021 completion entry added)",
+    ".Codex/memory/agent-registry.md (cycle 021 scores, promotion watches updated)",
+    ".Codex/intelligence/reading-plan.md (cycle 021 record added, cycle 022 next position set)",
+    "handoff.json (this file)",
+    "world-status.json (as_of_cycle=21, enforcement overdue flagged)"
   ],
 
-  "notes": "context-trace addresses the problem that John 3:8 names precisely: the output arrives ('you hear its sound') but the causal origin is not traceable ('you cannot tell where it comes from'). The perturbation method — mask each context chunk, re-run, embed, measure cosine delta — is the structural implementation of the counterfactual test that both Numbers 23:19 (PAT-062) and Genesis 3:1-6 (PAT-059) use. These tools form a coherent suite: semantic-pass-k answers 'is my agent consistent?', cot-fidelity answers 'did the reasoning chain drive the output?', context-trace answers 'which context segment drove the output?'. Three different measurements of the same meta-problem: LLM outputs are non-deterministic and their causes are opaque. [WEB-FRESH 2026-03-31] 7 searches run. GREEN status confirmed. Braintrust 2026 and Ask HN #47325105 directly document the pain. Anthropic's interpretability program is the research-level version — context-trace is the production bridge. Build now. Window: 4-6 months."
+  "notes": "Cycle 021 BIG_TECH_GAP_ANALYSIS produced TWO viable build candidates in a single cycle — first time this has happened. Genesis 7 (sealed invariance) and John 4:16-18 (hidden history verification) both generated Level 3 patterns with Pivot_Score >= 7.0. The Genesis 7 structural insight is counterintuitive but precise: the ark's success is measured not by survival but by BEHAVIORAL INVARIANCE of its contents — nothing inside the ark changed despite total external catastrophe. This reframes AI agent testing: the question is not 'did the agent succeed?' but 'did the agent behave the same across environmental perturbations?' — a question NO current tool answers. ENFORCEMENT IS OVERDUE (4 cycles since cycle 017). This must be the first task of cycle 022 before any new pattern work. Build priority: invariant-probe (8-week sprint). The window for the entire BibleWorld tool suite remains 4-6 months. [WEB-FRESH 2026-03-31] 8 searches run. Both GREEN statuses confirmed."
 }

@@ -393,16 +393,72 @@ FINDING-029:
 
 ---
 
+```
+FINDING-030:
+  Company: Anthropic (PRIMARY) / All
+  Category: GAP (DOCUMENTED BY PRODUCTION INCIDENT)
+  Specific Problem: AI agents are not tested for behavioral invariance under irrelevant environmental
+    perturbations. Claude Code database deletion incident (March 2026): agent behavior was NOT
+    invariant to a connection string change. No pip library implements behavioral invariance testing.
+  Evidence Source: [WEB-FRESH 2026-03-31] CNN Business (Feb 2026), piunikaweb.com cache bug (March 2026),
+    Braintrust 2026 (7 top tools audited, none implement behavioral invariance), YC RFS 2026
+  BibleWorld Pattern Match: PAT-070 (Genesis 7 — The Sealed Invariance Pattern, Level 3, score 8.5/10)
+  Match Quality: STRUCTURAL
+  Solo-Builder Feasible: YES — 8 weeks, Python, sentence-transformers, no GPU
+  Pivot_Score: 8.175
+  Status: GREEN
+  Tool Name: invariant-probe
+  [WEB-FRESH 2026-03-31]
+```
+
+```
+FINDING-031:
+  Company: Anthropic (PRIMARY) / All
+  Category: GAP (DOCUMENTED BY CACHE BUG INCIDENT)
+  Specific Problem: Long-session AI agents accumulate history in context windows / memory stores,
+    but no tool verifies that the agent's recalled history matches ground truth at the event level.
+    Anthropic cache bug (March 2026): tool schema bytes changing mid-session caused cache misses,
+    inflating costs 10-20x. No pip library implements SessionMemoryFidelity scoring.
+  Evidence Source: [WEB-FRESH 2026-03-31] piunikaweb.com (March 2026 cache bug), Anthropic API docs,
+    RAGAS / DeepEval / TruLens (all confirmed as non-competitive)
+  BibleWorld Pattern Match: PAT-071 (John 4:16-18 — Hidden History Verification Pattern, Level 3, score 8.2/10)
+  Match Quality: STRUCTURAL
+  Solo-Builder Feasible: YES — 6-7 weeks, Python, sentence-transformers, no GPU
+  Pivot_Score: 7.90
+  Status: GREEN
+  Tool Name: session-lens
+  [WEB-FRESH 2026-03-31]
+```
+
+```
+FINDING-032:
+  Company: Anthropic (Vercept) / Enterprise
+  Category: GAP (ENTERPRISE DEPLOYMENT BARRIER)
+  Specific Problem: After AI agents complete high-stakes tasks, no tool produces structured attestation
+    certifying which system surfaces were verified as unmodified. Enterprises need a post-task
+    "safety certificate." Current tools record what the agent DID; none certify what it did NOT modify.
+  Evidence Source: [WEB-FRESH 2026-03-31] Claude Code production incident (March 2026), Anthropic Vercept
+    acquisition (computer-use agents), TechResearchOnline enterprise adoption barriers report
+  BibleWorld Pattern Match: PAT-073 (Daniel 3:26-27 — Furnace Attestation Protocol, Level 2, score 7.5/10)
+  Match Quality: STRUCTURAL
+  Solo-Builder Feasible: YES (absorbed into invariant-probe `iprobe attest` mode)
+  Pivot_Score: N/A (feature of invariant-probe)
+  Status: GREEN (absorbed into BUILD-020)
+  [WEB-FRESH 2026-03-31]
+```
+
+---
+
 ## SUMMARY STATISTICS
 
-- Total findings: 29
-- STRUCTURAL matches: 18
+- Total findings: 32
+- STRUCTURAL matches: 21
 - THEMATIC matches: 3
 - MARKET_VALIDATION: 2
 - MAYBE feasible: 2
 - YELLOW: 3
 - Companies researched: [OpenAI, Google, Meta, Apple, Microsoft, Anthropic, a16z, Sequoia, YC]
-- Kill gate status: **EXCEEDS minimum** (need 5+, have 18 STRUCTURAL)
+- Kill gate status: **EXCEEDS minimum** (need 5+, have 21 STRUCTURAL)
 
 ## COMPETITIVE VALIDATION (2026-03-27 — Live Web Search Results)
 
