@@ -71,6 +71,7 @@ include = ["context_lens*"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "--tb=short"
+pythonpath = ["."]
 
 [tool.ruff]
 line-length = 120

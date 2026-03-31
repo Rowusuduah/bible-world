@@ -1,7 +1,7 @@
 {
   "world": "BibleWorld",
   "version": "1.0.0",
-  "last_updated_cycle": 0,
+  "last_updated_cycle": 18,
   "memory_files": {
     "pattern_registry": ".Codex/memory/pattern-registry.md",
     "build_registry": ".Codex/memory/build-registry.md",

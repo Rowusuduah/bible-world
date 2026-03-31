@@ -32,7 +32,7 @@ import sqlite3
 import textwrap
 import time
 from dataclasses import dataclass, field, asdict
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Callable, Optional
 
@@ -108,6 +108,9 @@ class HaystackTemplate:
             if i == needle_index:
                 parts.append(f"\n\n[KEY INFORMATION]: {needle_content}\n\n")
             parts.append(self.filler_text)
+
+        if needle_index >= repetitions:
+            parts.append(f"\n\n[KEY INFORMATION]: {needle_content}\n\n")
 
         return "\n".join(parts)
 
@@ -358,7 +361,7 @@ class ContextLens:
             raise ValueError("positions must be >= 2 (at least start and end).")
 
         t_start = time.time()
-        timestamp = datetime.utcnow().isoformat() + "Z"
+        timestamp = datetime.now(UTC).isoformat().replace("+00:00", "Z")
 
         position_fractions = [i / (positions - 1) for i in range(positions)]
         results: list[PositionResult] = []

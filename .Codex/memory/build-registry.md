@@ -1,12 +1,32 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 017
-**Total Builds:** 16
-**Builds in Design:** 10 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield)
+**Last Updated:** Cycle 018 (completed 2026-03-31)
+**Total Builds:** 17
+**Builds in Design:** 11 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-017: cot-fidelity
+**Pattern Source:** PAT-059 (Genesis 3:1-6 — The Unfaithful Reasoning Chain Pattern) + PAT-061 (Psalm 3:4-6 — Tested-Channel Confidence Pattern)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** Reasoning models (Claude 3.7+, GPT-o3, Gemini 2.0 Thinking) produce chain-of-thought reasoning that is often unfaithful to their actual computation — documented by Anthropic's 2025 paper "Reasoning Models Don't Always Say What They Think." Engineers review reasoning chains to debug wrong outputs, but if the chain was not causally active, they are debugging a decoy. Safety teams use CoT monitoring to detect misaligned behavior, but if the CoT is unfaithful, the monitoring is blind. No pip library measures CoT faithfulness.
+**Who It Serves:** ML engineers and safety researchers deploying reasoning models (Claude 3.7+, GPT-o3, Gemini 2.0 Thinking). Every team using extended thinking or chain-of-thought prompting for quality-critical tasks. Safety teams at Anthropic, OpenAI, Google, Microsoft.
+**How It Works:** Counterfactual suppression test — run the model with the reasoning chain present in context, run again with the reasoning chain stripped. Embed both outputs with sentence-transformers. Compute cosine similarity. If similarity is high (outputs nearly identical), the stated reasoning was not causally active — it was unfaithful. faithfulness_score = 1 - cosine_similarity. CLI + `@faithfulness_probe` decorator + FidelityDrift for continuous monitoring + FidelityDecomposer for step-level chain analysis.
+**Key Technical Innovation:** Counterfactual suppression test — treating the reasoning chain as a causal hypothesis and testing it empirically. First tool to operationalize the CoT faithfulness / CoT coherence distinction as a measurement.
+**Capital Required:** ZERO (Python + sentence-transformers + SQLite stdlib)
+**Build Score:** 9.0/10
+**Pivot_Score:** 8.85 (ties cycle 017 chain-probe; second-highest in BibleWorld history, 0.05 below all-time record)
+**Status:** DESIGN
+**Agent Responsible:** Chief Builder (Senior Agent)
+**Cycle Started:** 018
+**Implementation:** API spec, sprint plan, competitive analysis, known unknowns (KU-040 through KU-043)
+**Competitive Moat:** GREEN — no framework-agnostic pip-installable CoT faithfulness library found. DeepEval measures coherence (not faithfulness). LangSmith/Langfuse trace logging (not faithfulness). chain-probe measures pipeline step faults (not model reasoning faithfulness). AgentRx measures agent step constraint violations (not faithfulness). Gap confirmed in 7 web searches.
+
+---
 
 ---
 

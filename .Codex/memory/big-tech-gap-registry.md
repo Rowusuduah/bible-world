@@ -252,14 +252,60 @@ FINDING-015:
 
 ---
 
+```
+FINDING-016:
+  Company: All (Microsoft Research — AgentRx paper, March 2026)
+  Category: GAP (newly emerged)
+  Specific Problem: Agent debugging is now formal research problem. Microsoft published AgentRx framework (March 2026) for "critical failure step" identification via executable constraint synthesis from tool schemas. Confirms production agent debugging is a documented unmet need.
+  Evidence Source: Microsoft Research blog, March 2026 — "Systematic debugging for AI agents: Introducing the AgentRx framework"
+  BibleWorld Pattern Match: PAT-054 (Urim and Thummim Step-Gate Pattern) — chain-probe
+  Match Quality: STRUCTURAL — AgentRx published AFTER chain-probe was designed (cycle 017). chain-probe addresses same root cause.
+  Solo-Builder Feasible: YES — chain-probe already designed
+  Time to Prototype: chain-probe already at PROTOTYPE stage
+  Pivot_Score: 8.85 (chain-probe scored this, cycle 017)
+  Note: AgentRx is constraint-based and requires tool schema availability. chain-probe is semantic (no schema required). Different approach, same problem.
+```
+
+```
+FINDING-017:
+  Company: All (Gartner, HN community)
+  Category: CHALLENGE (confirmed by community)
+  Specific Problem: "AI agents: Less capability, more reliability, please" — HN thread March 2026. Gartner predicts 40% of AI agent projects fail by 2027. Ask HN "How are you testing AI agents before shipping to production?" active March 2026. Community is building reliability tools organically — market is live.
+  Evidence Source: HN thread id=43535653, HN thread id=47325105, Gartner prediction
+  BibleWorld Pattern Match: All reliability-focused BibleWorld tools
+  Match Quality: MARKET VALIDATION
+  Solo-Builder Feasible: YES
+  Time to Prototype: N/A (validates existing tools)
+  Pivot_Score: N/A (market signal, not new tool)
+```
+
+```
+FINDING-018:
+  Company: Anthropic (PRIMARY TARGET — Cycle 018)
+  Category: GAP (DOCUMENTED BY ANTHROPIC'S OWN RESEARCHERS)
+  Specific Problem: CoT faithfulness gap — reasoning models produce reasoning chains that are unfaithful to their actual computation. Anthropic paper "Reasoning Models Don't Always Say What They Think" (Yanda Chen, Joe Benton et al., 2025): "If the CoT is not faithful, we cannot depend on our ability to monitor CoT in order to detect misaligned behaviors." Multiple arXiv papers confirm: "Lie to Me: How Faithful Is CoT" (Mar 2026), "CoT Reasoning In The Wild Is Not Always Faithful" (Mar 2026), "Mechanistic Evidence for Faithfulness Decay" (Feb 2026). ZERO pip libraries measure this at runtime.
+  Evidence Source: Anthropic 2025 paper (PDF confirmed), 3 corroborating arXiv papers (Feb-Mar 2026)
+  BibleWorld Pattern Match: PAT-059 (Genesis 3:1-6 — The Eve Decision / Unfaithful Reasoning Chain Pattern, PERFECT SCORE 10.0/10)
+  Match Quality: STRUCTURAL — counterfactual suppression algorithm derived directly from Genesis 3 structural observation
+  Solo-Builder Feasible: YES — 8 weeks, Python, sentence-transformers, no GPU required
+  Time to Prototype: 8 weeks to PyPI v0.1
+  Pivot_Score: 8.85
+  Status: GREEN — no direct competitor found in 7 web searches
+  Tool Name: cot-fidelity
+  Note: Window estimate 3-6 months (research extremely active, multiple papers per week). Build now.
+```
+
+---
+
 ## SUMMARY STATISTICS
 
-- Total findings: 15
-- STRUCTURAL matches: 11
+- Total findings: 18
+- STRUCTURAL matches: 13
 - THEMATIC matches: 3
+- MARKET_VALIDATION: 1
 - MAYBE feasible: 1
 - Companies researched: [OpenAI, Google, Meta, Apple, Microsoft, Anthropic, a16z, Sequoia, YC]
-- Kill gate status: **ALREADY EXCEEDS minimum** (need 5+, have 11 STRUCTURAL)
+- Kill gate status: **ALREADY EXCEEDS minimum** (need 5+, have 13 STRUCTURAL)
 
 ## COMPETITIVE VALIDATION (2026-03-27 — Live Web Search Results)
 
@@ -333,3 +379,84 @@ FINDING-015:
 3. **Multi-Agent Fallback Framework** (FINDING-003) — 39-70% degradation documented, PAT-025 ShepherdOps, 4-5 weeks
 4. **Domain-Specific Hallucination Checker** (FINDING-008) — $0 open-source option, PAT-010, 3-4 weeks
 5. **Agent Observability/Debugger** (FINDING-005) — Laminar proved fundable, PAT-025, 4-6 weeks
+
+---
+
+## CYCLE 018 FRESH WEB INTELLIGENCE [WEB-FRESH 2026-03-31]
+
+### New Findings from 7 Web Searches — Cycle 018 Completion
+
+```
+FINDING-019:
+  Company: All (Fortune / Narayanan Kapoor — March 24, 2026)
+  Category: MARKET_VALIDATION
+  Specific Problem: "AI agents are getting more capable, but reliability is lagging. And that is a problem." — Fortune headline, March 2026. Agent performance drops from 60% to 25% across 8 runs on same task (arXiv 2511.14136). Single-run success rate wildly overstates production reliability.
+  Evidence Source: Fortune 2026-03-24 (fortune.com), arXiv 2511.14136 "Beyond Accuracy" (Nov 2025)
+  BibleWorld Pattern Match: All BibleWorld reliability tools — chain-probe, cot-fidelity, prompt-shield, model-parity, prompt-lock
+  Match Quality: MARKET_VALIDATION
+  Solo-Builder Feasible: N/A (validates existing pipeline)
+  Pivot_Score: N/A (market signal)
+  [WEB-FRESH 2026-03-31]
+```
+
+```
+FINDING-020:
+  Company: All (arXiv Feb 2026)
+  Category: GAP (newly confirmed)
+  Specific Problem: "Towards a Science of AI Agent Reliability" (arXiv 2602.16666, Feb 2026) — Proposes 4 reliability dimensions: consistency, robustness, calibration, safety. KEY FINDING: agent performance drops from 60% (single run) to 25% (8-run consistency). Current evaluations compress agent behavior into single success metric — obscuring critical operational flaws. NO tool measures multi-run consistency as a CI gate.
+  Evidence Source: arXiv 2602.16666 "Towards a Science of AI Agent Reliability" (Feb 2026)
+  BibleWorld Pattern Match: PAT-054 (Urim and Thummim — chain-probe measures step-level consistency), PAT-042 (Proverbs 11:1 — differing weights = inconsistent measurement)
+  Match Quality: STRUCTURAL — multi-run consistency measurement = same prompt, n runs, variance threshold
+  Solo-Builder Feasible: YES — Python, chain-probe extension
+  Time to Prototype: 3-4 weeks (extension of chain-probe)
+  Pivot_Score: TBD (needs scoring — potentially 7.5-8.0 range)
+  Tool Candidate: consistency-probe (chain-probe v2 module)
+  [WEB-FRESH 2026-03-31]
+```
+
+```
+FINDING-021:
+  Company: OpenAI / All (YC RFS Spring 2026)
+  Category: GAP (confirmed)
+  Specific Problem: "Training large models remains brittle, time-consuming, and poorly tooled despite massive AI investment." — YC RFS 2026. Developer tools for AI development workflow quality are underserved even at the model-training level. YC calls for startups that can build AI-native product management (synthesize customer feedback → spec → features). Gap: closing the feedback loop from production output quality back to prompt/spec improvement.
+  Evidence Source: YC Requests for Startups Spring 2026 (ycombinator.com)
+  BibleWorld Pattern Match: PAT-017 (KnowFirst — pre-knowledge synthesis), PAT-009 (EvalGate — evaluation gates in creation)
+  Match Quality: STRUCTURAL
+  Solo-Builder Feasible: YES
+  Time to Prototype: 4-6 weeks
+  Pivot_Score: TBD
+  [WEB-FRESH 2026-03-31]
+```
+
+```
+FINDING-022:
+  Company: All (Gartner / HN — live confirmation March 2026)
+  Category: MARKET_VALIDATION
+  Specific Problem: Gartner: 40% of AI agent projects will fail by 2027. HN "Ask HN: How are you testing AI agents before shipping to production?" (HN 47325105) active March 2026 — 100+ comments from engineers actively seeking solutions. HN "AI agents: Less capability, more reliability, please" (HN 43535653) — market anxiety confirmed at developer community level.
+  Evidence Source: HN 47325105 (active), HN 43535653, Gartner prediction
+  BibleWorld Pattern Match: All BibleWorld reliability tools
+  Match Quality: MARKET_VALIDATION
+  [WEB-FRESH 2026-03-31]
+```
+
+```
+FINDING-023:
+  Company: Anthropic (primary) / All
+  Category: GAP (cot-fidelity confirmation — cycle 018 thesis)
+  Specific Problem: All major LLM observability tools (Langfuse 21K stars, Arize Phoenix, TruLens/Snowflake, Comet Opik) provide tracing + evaluation of outputs. NONE measure CoT faithfulness — whether the stated reasoning chain caused the output. Langfuse's four core components (Tracing, Evaluation, Cost Monitoring, Prompt Management) explicitly do NOT include faithfulness measurement. TruLens measures groundedness, context relevance, answer relevance, coherence, toxicity — NO faithfulness. Gap confirmed in fresh tool audit.
+  Evidence Source: openobserve.ai 2026 tool survey, posthog.com open-source LLM tool survey, langfuse.com docs (2026-03-31)
+  BibleWorld Pattern Match: PAT-059 (Genesis 3:1-6 — Unfaithful Reasoning Chain Pattern) → cot-fidelity
+  Match Quality: STRUCTURAL — confirmed GREEN across all 5 major observability suites
+  Solo-Builder Feasible: YES — 8 weeks to PyPI
+  Pivot_Score: 8.85 (CONFIRMED — matches cycle 018 scoring)
+  [WEB-FRESH 2026-03-31]
+```
+
+### UPDATED SUMMARY (Post Cycle 018 Fresh Searches)
+
+- Total findings: 23 (was 18)
+- New MARKET_VALIDATION additions: 2 (FINDING-019, FINDING-022)
+- New STRUCTURAL additions: 2 (FINDING-020, FINDING-021)
+- New CONFIRMATION for cot-fidelity: FINDING-023 — all 5 major observability tools audited, none measure faithfulness. GREEN confirmed.
+- cot-fidelity competitive status: GREEN — confirmed by Langfuse docs, TruLens metrics list, Arize Phoenix feature set, Comet Opik, OpenObserve — NONE measure CoT faithfulness.
+- Fortune March 2026 confirms: agent reliability is the #1 developer pain point heading into Q2 2026.

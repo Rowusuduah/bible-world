@@ -103,11 +103,11 @@ jobs:
 
             **BrittlenessScore:** ${cert.brittleness_score.toFixed(4)} > threshold ${cert.threshold}
             **Verdict:** ${cert.verdict}
-            **Certificate ID:** \`${cert.certificate_id}\`
+            **Certificate ID:** \\`${cert.certificate_id}\\`
 
             ### Fault Lines
             ${cert.fault_lines.slice(0, 3).map(f =>
-              `- **[${f.level}]** \`${f.variant}\` (deviation: ${f.deviation_score.toFixed(4)})`
+              `- **[${f.level}]** \\`${f.variant}\\` (deviation: ${f.deviation_score.toFixed(4)})`
             ).join('\\n')}
 
             **Fix:** ${cert.fault_lines[0]?.recommendation || 'Review prompt for surface-form dependency.'}
