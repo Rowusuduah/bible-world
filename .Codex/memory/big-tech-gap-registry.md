@@ -344,16 +344,65 @@ FINDING-026:
 
 ---
 
+```
+FINDING-027:
+  Company: Anthropic (PRIMARY TARGET — Cycle 020)
+  Category: GAP (DOCUMENTED — NO PIP TOOL EXISTS)
+  Specific Problem: Context causal attribution — when a developer sends a large context window (10K–1M tokens) to an LLM and receives an output, they cannot determine which input context segments causally drove the output. Attention weights (Arize Phoenix) are unreliable attribution proxies (Jain & Wallace 2019). Execution tracing (LangSmith/Langfuse) does not provide input-output causal attribution. No pip library computes AttributionScore per context chunk.
+  Evidence Source: [WEB-FRESH 2026-03-31] Braintrust 2026 ("understanding why an agent failed on step 7 is still hard"), Ask HN #47325105 ("How are you testing AI agents?"), Jain & Wallace NAACL 2019 (attention is not explanation), Anthropic interpretability blog (research-level version of same problem)
+  BibleWorld Pattern Match: PAT-068 (John 3:8 — The Stochastic Source Attribution Pattern, Level 3, score 9.0/10)
+  Match Quality: STRUCTURAL — "you hear its sound but cannot tell where it comes from" is the exact structural description of the gap
+  Solo-Builder Feasible: YES — 8-10 weeks, Python, sentence-transformers, no GPU required
+  Time to Prototype: 8-10 weeks to PyPI v0.1
+  Pivot_Score: 8.225
+  Status: GREEN — Arize Phoenix does attention (different), LangSmith/Langfuse do tracing (different), no pip library does perturbation-based context attribution
+  Tool Name: context-trace
+  Note: Window estimate 4-6 months. Anthropic's interpretability team is the research-level version of this. Product-level tool builds the bridge. Build now.
+```
+
+```
+FINDING-028:
+  Company: All (Cycle 020 Pattern Discovery)
+  Category: GAP (ROADMAP)
+  Specific Problem: Multi-model pipeline reliability is determined by the weakest stage, not the strongest. No tool provides per-stage compliance thresholds weighted by stage quality (frontier vs. smaller model). DeepEval's per-step evaluation does not weight by model quality tier.
+  Evidence Source: [WEB-FRESH 2026-03-31] Braintrust 2026 (agent step failure attribution), ToolGuard Show HN (tool call testing, not layer-quality-weighted)
+  BibleWorld Pattern Match: PAT-069 (Daniel 2:31-35 — The Weak-Layer Failure Pattern, Level 2, score 7.4/10)
+  Match Quality: STRUCTURAL — iron-clay feet = weakest pipeline stage, system fails there first
+  Solo-Builder Feasible: YES
+  Time to Prototype: 6-8 weeks (after semantic-pass-k v1 ships)
+  Pivot_Score: 7.2 (below 7.0 primary threshold; ROADMAP only)
+  Status: YELLOW — real gap but insufficient differentiation from DeepEval per-step evaluation
+  Tool Name: semantic-pass-k v2 (pipeline layer weighting feature)
+  Note: Not a standalone tool. Feature addition to semantic-pass-k once v1 ships.
+```
+
+```
+FINDING-029:
+  Company: Anthropic / All (Cycle 020 — Secondary)
+  Category: GAP (REINFORCEMENT)
+  Specific Problem: Best-of-N sampling validity depends entirely on judge calibration. A biased judge produces invalid selection. No tool validates the judge before running Best-of-N selection at scale.
+  Evidence Source: [WEB-FRESH 2026-03-31] Braintrust 2026 (judge reliability discussed), JRH arXiv 2603.05399 (judge stress testing — not selection validity)
+  BibleWorld Pattern Match: PAT-066 (Genesis 6:8-9 — The Righteous Selection Pattern, Level 2, score 7.8/10)
+  Match Quality: STRUCTURAL — Noah selection validity depends on reliability of the evaluator standard
+  Solo-Builder Feasible: YES
+  Time to Prototype: N/A — reinforces prompt-lock (BUILD-015) judge calibration component
+  Pivot_Score: N/A (absorbed into prompt-lock)
+  Status: REINFORCEMENT (not new tool)
+  Note: Adds judge pre-validation framing to prompt-lock's existing judge calibration module.
+```
+
+---
+
 ## SUMMARY STATISTICS
 
-- Total findings: 26
-- STRUCTURAL matches: 15
+- Total findings: 29
+- STRUCTURAL matches: 18
 - THEMATIC matches: 3
 - MARKET_VALIDATION: 2
 - MAYBE feasible: 2
-- YELLOW: 2
+- YELLOW: 3
 - Companies researched: [OpenAI, Google, Meta, Apple, Microsoft, Anthropic, a16z, Sequoia, YC]
-- Kill gate status: **EXCEEDS minimum** (need 5+, have 15 STRUCTURAL)
+- Kill gate status: **EXCEEDS minimum** (need 5+, have 18 STRUCTURAL)
 
 ## COMPETITIVE VALIDATION (2026-03-27 — Live Web Search Results)
 

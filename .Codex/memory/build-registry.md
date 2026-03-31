@@ -1,12 +1,30 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 019 (completed 2026-03-31)
-**Total Builds:** 18
+**Last Updated:** Cycle 020 (completed 2026-03-31)
+**Total Builds:** 19
 **Builds in Design:** 12 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-019: context-trace [PIVOT-PHASE CYCLE 020]
+**Pattern Source:** PAT-068 (John 3:8 — The Stochastic Source Attribution Pattern)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** Developers using long-context LLMs (10K–1M tokens) cannot determine which input context segments causally drove which parts of the output. When a RAG system hallucinates, developers cannot identify which retrieved chunk caused it. Attention visualization (Arize Phoenix) measures attention weights, which are unreliable proxies for causal attribution (Jain & Wallace 2019). Execution tracing (LangSmith/Langfuse) traces API calls, not input-output causal attribution. No pip library provides AttributionScore per context chunk.
+**Who It Serves:** ML engineers using RAG, multi-document prompting, long-context agents, or any LLM application with structured context segments. Every developer who has ever asked "which part of my context caused this output?"
+**How It Works:** Perturbation-based causal attribution: for each context chunk, mask/remove it, re-run the same prompt k times, embed masked outputs, compute cosine similarity vs. original output. AttributionScore[chunk] = 1 - mean_cosine_similarity(masked_outputs, original_output). High score = that chunk drove the output. Low score = that chunk was irrelevant.
+**Key Technical Innovation:** First pip-installable tool to provide per-context-chunk causal AttributionScore for LLM outputs. CI-gateable (AttributionGate). Cost-controlled (chunk clustering, adaptive stopping, budget parameter). LLM-agnostic (runner function interface).
+**Capital Required:** ZERO (sentence-transformers + anthropic/openai SDK + click + rich + numpy)
+**Build Score:** 9.0/10
+**Pivot_Score:** 8.225
+**Status:** DESIGN
+**Agent Responsible:** Chief Builder (Senior Agent)
+**Cycle Started:** 020
+**Implementation:** Full API spec (ContextTracer, AttributionReport, AttributionGate, CostBudget, @attribution_probe, CLI ctrace, pytest plugin), sprint plan (8-10 weeks), known unknowns (KU-048 through KU-052)
+**Competitive Moat:** GREEN [WEB-FRESH 2026-03-31] — Arize Phoenix (attention weights ≠ causal attribution), LangSmith/Langfuse (execution tracing, not attribution), AgentRx (failure step, not attribution), semantic-pass-k (consistency, not attribution), SHAP/LIME (not LLM-context-native). Window: 4-6 months.
 
 ---
 

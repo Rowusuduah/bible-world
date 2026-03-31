@@ -79,6 +79,47 @@ Secondary: Psalm 5 (Morning prayer — structured petition pattern)
 Tertiary: John 3 (Nicodemus / born again / wind blows where it will — stochasticity patterns)
 Pivot Priority: Daniel 2 (Nebuchadnezzar's dream — pattern recognition under uncertainty; image interpretation)
 
+---
+
+## CYCLE 020 READING RECORD
+
+**Date Completed:** 2026-03-31
+**Cycle Type:** PATTERN_DISCOVERY (Type A)
+
+### Scripture Read This Cycle:
+- Genesis 6:1-22 (Corruption of earth; Noah found righteous; ark specification — multi-constraint formal interface definition)
+- Psalm 5:1-12 (Morning petition — structured escalation; admission gate; straight path request)
+- John 3:1-21 (Nicodemus; born again; the wind blows wherever it pleases — stochastic source opacity)
+- Daniel 2:1-49 (Nebuchadnezzar's dream; composite statue; hierarchical weak-layer failure)
+
+### Coverage Status:
+- Genesis: Chapters 1-6 complete. Chapter 7 is next (the flood begins — waters rise, forty-day threshold).
+- Psalms: Psalms 1-5 complete. Psalm 6 is next ("I am worn out from my groaning" — distress and recovery).
+- John: Chapter 3:1-21 complete. John 3:22-4:42 is next (John's second testimony; woman at the well — multi-turn, living water).
+- Daniel: Chapter 2 complete. Daniel 3 is next (the fiery furnace — adversarial stress testing, preservation under pressure).
+
+### Next Reading Session (Cycle 021):
+Primary: Genesis 7 (the flood begins — threshold triggers, capacity limits, forty-day duration)
+Secondary: Psalm 6 (distress and recovery — "the LORD has heard my weeping" — error recovery pattern)
+Tertiary: John 3:22-4:42 (woman at the well — multi-turn dialogue, semantic memory, "living water" as self-generating resource)
+Pivot Priority: Daniel 3 (the fiery furnace — adversarial pressure, refusing to bow, preservation under maximum stress — adversarial robustness testing)
+
+### Patterns Discovered Cycle 020:
+- PAT-065 (Genesis 6:14-16 — Exact Specification Pattern, Level 1, 7.0/10) — roadmap (llm-contract v2)
+- PAT-066 (Genesis 6:8-9 — Righteous Selection Pattern, Level 2, 7.8/10) — reinforces prompt-lock
+- PAT-067 (Psalm 5:1-3 — Structured Petition Pattern, Level 1, 6.2/10) — no build target
+- PAT-068 (John 3:8 — Stochastic Source Attribution Pattern, Level 3, 9.0/10) — BUILD-019: context-trace
+- PAT-069 (Daniel 2:31-35 — Weak-Layer Failure Pattern, Level 2, 7.4/10) — roadmap (semantic-pass-k v2)
+
+### Unmined Remaining:
+- Genesis 6:1-4 — the Nephilim (population mixing, hybrid classification)
+- Genesis 6:3 — "My Spirit will not contend with humans forever... 120 years" (grace period / deprecation schedule pattern)
+- Daniel 2:21 — "He changes times and seasons; he deposes kings and raises up others" (dynamic system state transitions)
+- Daniel 2:22 — "He reveals deep and hidden things; he knows what lies in darkness" (inverse interpretability — divine hidden state access)
+- John 3:9-21 — Nicodemus "How can this be?" / earthly and heavenly things distinction (epistemological levels in systems)
+- Numbers 23:7-10 — First Balaam oracle (declarative programming / outputs without explicit algorithms)
+- Numbers 24:1-9 — Third oracle (Spirit-driven output different from planned output)
+
 ### Patterns Discovered Cycle 019:
 - PAT-062 (Numbers 23:19 — Perfect Consistency Standard, Level 3, 9.2/10) — BUILD-018 semantic-pass-k
 - PAT-063 (Genesis 5:1-32 — Schema-Enforced Lineage, Level 2, 7.5/10)

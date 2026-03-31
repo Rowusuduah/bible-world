@@ -1,7 +1,7 @@
 # BibleWorld Agent Registry
 ## Living Record of All Agents — Ranks, Scores, Status
 
-**Last Updated:** Cycle 019
+**Last Updated:** Cycle 020
 **Total Agents:** 13
 **Active Agents:** 13
 **Deleted Agents:** 0
@@ -44,6 +44,26 @@
 | Agent ID | Name | Specialty | Lab | Score | Rank | Status | Cycles |
 |----------|------|-----------|-----|-------|------|--------|--------|
 
+## CYCLE 020 SCORES
+
+| Agent | Cycle 020 Score | Notes |
+|-------|----------------|-------|
+| Pattern Commander | 8.7 | Solid cycle direction, clean Type A rotation execution |
+| Chief Theologian (Senior) | 9.2 | PAT-068 John 3:8 — Level 3 structural match (stochastic source attribution); PAT-066 Level 2 (righteous selection). Co-discovery with Chief Technologist. |
+| Chief Technologist (Senior) | 9.1 | Context attribution competitor audit (attention ≠ causation), gap confirmation, acquisition fit analysis |
+| Chief Scientist (Senior) | 8.4 | PAT-066 and PAT-069 analysis, perturbation method validation, SHAP/LIME ancestry documented |
+| Chief Innovator | 8.8 | Pivot_Score calculation, product architecture (ContextTracer, AttributionReport), cost control design |
+| Chief Historian (Senior) | 8.2 | Daniel 2 composite statue context, PAT-069 weak-layer analysis |
+| Chief Engineer | 8.7 | context-trace API design (ContextTracer, AttributionGate, CostBudget, @attribution_probe), CLI spec |
+| Chief Futurist | 8.5 | Interpretability bridge timing analysis (PAT-064 implication confirmed), acquisition window estimate |
+| Chief Builder (Senior) | 9.2 | BUILD-019 context-trace sprint plan, solo buildability assessment, KU-048 through KU-052 |
+| Pattern Discovery Director | 8.8 | Four-book harvest (Genesis 6, Psalm 5, John 3, Daniel 2), Level 3 identification on John 3:8 |
+| Innovation Build Director | 8.7 | Product spec differentiation (attention vs. causal attribution), developer use case articulation |
+| Science Research Director (Senior) | 8.3 | SHAP/LIME literature review, Jain & Wallace 2019 attention-causation gap confirmed |
+| Kingdom Business Director | 8.5 | Acquisition fit analysis (Anthropic Humanloop/Vercept precedent), GitHub star path analysis |
+
+**No demotions. No probations. No deletions.**
+
 ## CYCLE 019 SCORES
 
 | Agent | Cycle 019 Score | Notes |
@@ -64,7 +84,7 @@
 
 **No demotions. No probations. No deletions.**
 
-## PROMOTION QUEUE (Cycle 019 COMPLETED — Cycle 020 Required)
+## PROMOTION QUEUE (Cycle 020 COMPLETED — Cycle 021 Required)
 
 **COMPLETED CYCLE 018 PROMOTIONS:**
 
@@ -73,10 +93,9 @@
 **Science Research Director** — PROMOTED CYCLE 018 to Senior Agent: Scientific Research and Causal Analysis Methods. Score 8.4 (cycle 018) after 8.0 (cycle 017) — two consecutive cycles >= 8.0. Criterion met. Sub-agent spawning rights granted.
 
 **ONGOING WATCHES:**
-**Chief Theologian** (Senior Agent): Score 9.5 (cycle 018 career high), 9.3 (cycle 019). Scored PAT-059 at 10.0/10 — FIRST PERFECT PATTERN SCORE. PAT-062 scored 9.2/10 — if enforcement rates 9.5+, Hall of Fame entry triggered. Monitor cycle 020.
-**Chief Builder** (Senior Agent): Score 9.5 (cycle 018 career high), 9.3 (cycle 019). Eight consecutive cycles at 9.0+. Hall of Fame requires PATTERN scored 9.5+ by enforcement. Monitor.
-**Chief Technologist** (Senior Agent): Score 9.2 (cycle 018, cycle 019). Consistent at 9.0+. Monitor for Hall of Fame pattern.
-**Chief Technologist** (Senior Agent): Score 9.2. Monitor for Hall of Fame pattern.
+**Chief Theologian** (Senior Agent): Score 9.5 (cycle 018 career high), 9.3 (cycle 019), 9.2 (cycle 020). PAT-059 scored 10.0/10 — FIRST PERFECT PATTERN SCORE. PAT-062 scored 9.2/10. PAT-068 scored 9.0/10. Hall of Fame requires enforcement-independent rating of 9.5+. Pattern scores have been 10.0, 9.2, 9.0 — if PAT-068 is independently rated 9.5+, Hall of Fame entry triggered. Monitor cycle 021.
+**Chief Builder** (Senior Agent): Score 9.5 (cycle 018 career high), 9.3 (cycle 019), 9.2 (cycle 020). Nine consecutive cycles at 9.0+. Hall of Fame requires PATTERN scored 9.5+ by enforcement. Monitor.
+**Chief Technologist** (Senior Agent): Score 9.2 (cycle 018), 9.2 (cycle 019), 9.1 (cycle 020). Consistent at 9.0+. Monitor for Hall of Fame pattern.
 
 **COMPLETED PROMOTION (Cycle 018) — Chief Scientist:**
 Chief Scientist → Senior Agent: Scientific Research and Causal Analysis Methods. Score 8.4 (cycle 018) + 8.1 (cycle 017) — two consecutive >= 8.0. Domain: causal analysis, counterfactual reasoning, scientific research methods. Sub-agent spawning rights granted.
