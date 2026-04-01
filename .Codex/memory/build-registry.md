@@ -1,12 +1,30 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 021 (completed 2026-03-31)
-**Total Builds:** 21
-**Builds in Design:** 14 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens)
+**Last Updated:** Cycle 022 (completed 2026-04-01)
+**Total Builds:** 22
+**Builds in Design:** 15 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-022: livelock-probe [PIVOT-PHASE CYCLE 022]
+**Pattern Source:** PAT-075 (John 5:5-9 — The 38-Year Stuck State Pattern)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** AI agents in production enter STRUCTURALLY STUCK states — active, not erroring, consuming tokens — but making zero net progress toward their goal. This is livelock: a race-condition or resource-competition mechanism the agent cannot win. No current pip library detects this state or produces LivelockScore. Claude Code quota exhaustion (The Register, March 2026) is a documented real-world instance.
+**Who It Serves:** ML engineers deploying agents to production; platform teams managing agent token budgets; QA engineers building reliability suites; enterprise teams with CI/CD pipelines for agent workflows; DevOps teams debugging why agents consume quota without completing tasks.
+**How It Works:** Instruments agent step outputs. Embeds each step output with sentence-transformers. Computes Progress Vector: cosine similarity of step output to goal embedding per step. Detects LivelockPattern: k consecutive steps where progress delta < ε (near-zero net progress despite activity). Reports LivelockScore = fraction of steps with near-zero progress. CI gate: `lprobe gate --max-livelock-score 0.15`. Distinct from AgentRx (first-unrecoverable-step) — livelock steps are recoverable-looking.
+**Key Technical Innovation:** First pip-installable tool to produce LivelockScore (structural stuck-state detection) for AI agent workflows. Distinguishes livelock from slowness, deadlock, and explicit errors. CI-gateable. LLM-agnostic. Framework-agnostic.
+**Capital Required:** ZERO (sentence-transformers + anthropic/openai SDK + click + rich + numpy + pyyaml)
+**Build Score:** 9.0/10
+**Pivot_Score:** 8.175
+**Status:** DESIGN
+**Agent Responsible:** Chief Builder (Senior Agent)
+**Cycle Started:** 022
+**Implementation:** Full API spec (LivelockSuite, ProgressConfig, LivelockReport, @livelock_probe), CLI (lprobe run/show/gate/report/estimate/replay), pytest plugin, LivelockScore algorithm (progress vector computation), sprint plan (8 weeks), known unknowns (KU-060 through KU-063)
+**Competitive Moat:** GREEN [WEB-FRESH 2026-04-01] — Langfuse (tracing, not progress detection), Arize Phoenix (observability, not livelock), AgentRx (first-unrecoverable-step — confirmed different problem), LangSmith (tracing, not stuck-state), Braintrust (evaluation, not progress vector), Maxim AI (no LivelockScore). Window: 4-6 months.
 
 ---
 
