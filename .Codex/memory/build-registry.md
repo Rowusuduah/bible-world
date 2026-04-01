@@ -1,12 +1,30 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 023 (completed 2026-04-01)
-**Total Builds:** 23
-**Builds in Design:** 16 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe, BUILD-023 pressure-gauge)
+**Last Updated:** Cycle 024 (completed 2026-04-01)
+**Total Builds:** 24
+**Builds in Design:** 17 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe, BUILD-023 pressure-gauge, BUILD-024 covenant-keeper)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-024: covenant-keeper [PIVOT-PHASE CYCLE 024]
+**Pattern Source:** PAT-082 (Daniel 6:4-10 — The Lion's Den Invariance Pattern)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** AI agents are tested for breakage (offense-focused: can adversarial inputs make the model do something harmful?) but NOT for commitment fidelity (defense-focused: does the agent maintain its declared behavioral commitments when the environment becomes adversarial?). Every deployed agent has a system prompt with behavioral commitments. No pip library tests whether those specific commitments survive tailored adversarial pressure.
+**Who It Serves:** ML engineers deploying agents with system prompts; security teams verifying AI agent behavioral guarantees; QA engineers building adversarial test suites; compliance teams verifying constraint stability; platform teams running CI/CD.
+**How It Works:** CovenantSuite takes a list of behavioral commitments (from system prompt or manual list), generates adversarial scenarios TAILORED to each commitment (using an LLM), runs the agent under each scenario, embeds outputs, compares to baseline committed behavior, and reports CovenantFidelity = fraction of commitments maintained under adversarial pressure. CLI: `ckeeper test/show/gate/generate/quick`. pytest plugin.
+**Key Technical Innovation:** First pip-installable tool to produce CovenantFidelity — behavioral commitment invariance under tailored adversarial conditions. Distinct from: Promptfoo (offense-focused red-teaming), Augustus (generic adversarial scanning), invariant-probe (environmental perturbation), ToolGuard (tool call testing), Guardrails AI (format validation).
+**Capital Required:** ZERO (sentence-transformers + anthropic/openai SDK + click + rich + numpy + pyyaml)
+**Build Score:** 9.0/10
+**Pivot_Score:** 8.30
+**Status:** DESIGN
+**Agent Responsible:** Chief Builder (Senior Agent)
+**Cycle Started:** 024
+**Implementation:** Full API spec (CovenantSuite, CovenantConfig, CovenantReport, @covenant_test decorator, CLI ckeeper test/show/gate/generate/quick, pytest plugin), sprint plan (6 weeks), known unknowns (KU-068 through KU-071), competitive differentiation matrix (10 tools differentiated)
+**Competitive Moat:** GREEN [WEB-FRESH 2026-04-01] — 10 tools audited — NONE implement CovenantFidelity. Window: 4-6 months.
 
 ---
 
