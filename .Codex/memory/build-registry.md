@@ -1,12 +1,30 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 022 (completed 2026-04-01)
-**Total Builds:** 22
-**Builds in Design:** 15 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe)
+**Last Updated:** Cycle 023 (completed 2026-04-01)
+**Total Builds:** 23
+**Builds in Design:** 16 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe, BUILD-023 pressure-gauge)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-023: pressure-gauge [PIVOT-PHASE CYCLE 023]
+**Pattern Source:** PAT-078 (Daniel 5:5-6, 27 — The TEKEL Pressure Drift Pattern)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** Long-running LLM agents change behavior as their context window fills — a phenomenon named "context anxiety" in 2026 developer literature. Agents wrap up prematurely, rush steps, and falsely declare tasks complete when the context window is near capacity. No pip library measures this behavioral drift as a function of context fill level. pressure-gauge runs a controlled fill-level sweep: executes the same agent task at 10%, 30%, 50%, 70%, 90% fill, embeds all outputs, computes ContextPressureScore = mean cosine similarity to baseline (10% fill), reports pressure_onset_token, plots ContextDriftCurve, provides CI gate.
+**Who It Serves:** ML engineers deploying long-running agents; platform teams managing context window costs; QA engineers building reliability suites; DevOps teams adding agent behavioral stability checks to CI/CD pipelines; any developer using Claude Code or similar long-session agents.
+**How It Works:** PressureGauge.sweep() runs agent_fn at each fill level by padding context with inject_history / repeat_text / lorem_ipsum strategy. Embeds outputs with sentence-transformers. Computes cosine similarity of each fill-level output vector vs. baseline vector. ContextPressureScore = 1 - mean_drift. pressure_onset_token = first token count where similarity < stability_threshold. ContextDriftCurve shows drift shape across fill levels.
+**Key Technical Innovation:** First pip-installable tool to produce ContextPressureScore and ContextDriftCurve measuring LLM behavioral drift as a function of context fill level. Distinct from: invariant-probe (external environmental perturbations), livelock-probe (zero-progress detection), session-lens (session memory fidelity), Langfuse (execution tracing), Arize Phoenix (output quality scoring).
+**Capital Required:** ZERO (sentence-transformers + anthropic/openai SDK + click + rich + numpy + matplotlib + pyyaml)
+**Build Score:** 9.1/10
+**Pivot_Score:** 8.65
+**Status:** DESIGN
+**Agent Responsible:** Chief Builder (Senior Agent)
+**Cycle Started:** 023
+**Implementation:** Full API spec (PressureGauge, PressureConfig, PressureReport, DriftPoint, @pressure_probe, CLI pgauge run/show/gate/plot/quick/onset/estimate, pytest plugin), sprint plan (6 weeks), known unknowns (KU-064 through KU-067), competitive differentiation matrix (7 tools differentiated)
+**Competitive Moat:** GREEN [WEB-FRESH 2026-04-01] — 9 tools audited (Langfuse, Arize Phoenix, invariant-probe, session-lens, livelock-probe, DeepEval, Braintrust, W&B Weave, AgentOps) — NONE produce ContextPressureScore. Window: 4-6 months.
 
 ---
 
