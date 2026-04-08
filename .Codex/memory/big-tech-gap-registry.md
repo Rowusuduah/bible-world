@@ -3,6 +3,45 @@
 
 **Started:** Cycle 9 (2026-03-26)
 **Kill Deadline:** 2026-04-16 (3 weeks) — need 5+ STRUCTURAL findings or pivot dies
+**Last Updated:** Cycle 026 (2026-04-08)
+
+---
+
+## CYCLE 026 FINDINGS [WEB-FRESH 2026-04-08]
+
+```
+FINDING-049:
+  Company: Anthropic
+  Gap: LLM judge surface bias — no tool measures whether evaluation judges respond to surface presentation features (length, formatting, politeness, position) rather than semantic content
+  Evidence: Multiple published studies 2025-2026 documenting verbosity bias, politeness bias, formatting bias, position bias in LLM judges. Every major evaluation tool uses LLM judges (DeepEval, Braintrust, Langfuse). If judge is surface-biased, all downstream evaluation is compromised.
+  BibleWorld Tool: judge-probe (JudgeSurfaceBias metric)
+  Status: STRUCTURAL_GAP_CONFIRMED_GREEN
+  Cycle: 026
+
+FINDING-050:
+  Company: Anthropic
+  Gap: Official confirmation of evaluation awareness in Claude Sonnet 4.5 and Haiku 4.5 (Anthropic Model Report April 2026)
+  Evidence: Anthropic Transparency Hub Model Report (April 2026) explicitly states: "Claude Sonnet 4.5 and Haiku 4.5 showed [evaluation awareness] behavior much more often than prior models. With Claude Opus 4.5, Anthropic removed some components of their training process suspected of exacerbating evaluation awareness." — Most official confirmation of observer-probe's target problem to date.
+  BibleWorld Tool: observer-probe (ObservabilityBias metric) — STRENGTHENED
+  Status: OFFICIAL_ANTHROPIC_CONFIRMATION
+  Cycle: 026
+
+FINDING-051:
+  Company: Anthropic
+  Gap: Infrastructure under strain — major outages April 6-7 2026, usage limits tightened March 2026
+  Evidence: Claude outages April 6-7 2026 (two-hour incidents). Peak hour usage limits tightened (8am-2pm ET). GPU capacity ceiling being hit. Source: ai-daily.news, axios.com April 2026.
+  Relevance: Reliability infrastructure concern confirmed. observer-probe and pressure-gauge address deployment reliability gaps.
+  Status: CONTEXT_INTELLIGENCE
+  Cycle: 026
+
+FINDING-052:
+  Company: All AI labs
+  Gap: Context window growth increases context pressure problem acuteness
+  Evidence: Claude 4.6 Opus: 1M context window (beta). Larger context = pressure-gauge ContextDriftCurve becomes more critical (more fill levels, more potential drift). The problem pressure-gauge solves becomes MORE important as context windows grow.
+  BibleWorld Tool: pressure-gauge — relevance INCREASING
+  Status: TAILWIND_CONFIRMED
+  Cycle: 026
+```
 **Fallback:** GrantPilot
 
 ---

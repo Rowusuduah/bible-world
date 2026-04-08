@@ -1,12 +1,30 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 025 (completed 2026-04-08)
-**Total Builds:** 25
-**Builds in Design:** 18 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe, BUILD-023 pressure-gauge, BUILD-024 covenant-keeper, BUILD-025 observer-probe)
+**Last Updated:** Cycle 026 (completed 2026-04-08)
+**Total Builds:** 26
+**Builds in Design:** 19 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe, BUILD-023 pressure-gauge, BUILD-024 covenant-keeper, BUILD-025 observer-probe, BUILD-026 judge-probe)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-026: judge-probe [PIVOT-PHASE CYCLE 026]
+**Pattern Source:** PAT-094 (John 7:24 — The Surface-Semantic Evaluation Gap)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** LLM judges are used as the primary evaluation mechanism in virtually every production AI evaluation pipeline. Published research confirms LLM judges exhibit systematic surface bias: verbosity bias (longer = better), politeness bias, formatting bias (bullets > paragraphs on identical content), position bias (first response wins in pairwise). No pip library measures JudgeSurfaceBias — the degree to which an LLM judge's verdicts change when semantic content is held constant and surface presentation varies. If the judge is surface-biased, ALL downstream evaluation is compromised.
+**Who It Serves:** ML engineers using LLM-as-a-judge (every team using DeepEval, Braintrust, Langfuse, covenant-keeper, invariant-probe, or any judge-based evaluation), alignment researchers studying LLM judge reliability, QA engineers building evaluation pipelines, teams running CI/CD-gated agent evaluations.
+**How It Works:** JudgeProbe generates semantic-preservation-verified surface variants of agent responses (verbosity compress/expand, structure bullet/paragraph, politeness formal/hedged, confidence language, position flip), submits all variants to the target LLM judge, computes variance in judge verdicts as JudgeSurfaceBias, identifies which surface features drive the most bias, reports CALIBRATED/SURFACE_BIASED/HIGHLY_BIASED verdict. CI-gateable via pytest plugin and CLI gate command.
+**Key Technical Innovation:** First pip-installable tool to isolate LLM judge surface presentation bias as an independent variable. New named metric: JudgeSurfaceBias. Semantic preservation gate (cosine similarity >= 0.85) ensures variants are meaning-equivalent before including in bias measurement. Meta-evaluation category: evaluates the evaluator. Upstream of ALL judge-based tools.
+**Capital Required:** ZERO (sentence-transformers + anthropic/openai SDK + click + rich + numpy + matplotlib + pyyaml)
+**Pivot_Score:** 9.00/10 — HIGHEST IN BIBLEWORLD HISTORY (beats observer-probe 8.955, chain-probe 8.90)
+**Sprint Estimate:** 4–6 weeks to pip-publishable v0.1
+**Competitive Status:** GREEN — 8 tools audited (DeepEval, Braintrust, Promptfoo/OpenAI, Langfuse, Arize Phoenix, LangSmith, Anthropic Petri, G-Eval) — NONE implement JudgeSurfaceBias. Petri = sycophancy (COMPLEMENTARY). Window: 4-6 months.
+**Acquisition Target:** Anthropic (Petri/Bloom integration, Constitutional AI, Model Report April 2026 confirms judge quality is Anthropic research priority), Google (Constitutional AI self-evaluation), OpenAI (GPT-4-as-judge evaluation portfolio).
+**Open Questions:** KU-076 (sample size for stable JudgeSurfaceBias), KU-077 (judge size vs. surface bias correlation), KU-078 (variant generation rejection rate), KU-079 (chained judge bias compounding)
+**Status:** IN-DESIGN
+**Cycle:** 026
 
 ---
 

@@ -1,7 +1,7 @@
 # BibleWorld Agent Registry
 ## Living Record of All Agents — Ranks, Scores, Status
 
-**Last Updated:** Cycle 025
+**Last Updated:** Cycle 026
 **Total Agents:** 13
 **Active Agents:** 13
 **Deleted Agents:** 0
@@ -96,6 +96,32 @@
 - Chief Technologist (Senior): 8 consecutive cycles at 9.0+. No Hall of Fame threshold met yet (needs pattern at 9.5+). Monitor.
 
 **No deletions Cycle 025.** All agents above 8.5. World health optimal.
+
+---
+
+## CYCLE 026 SCORES
+
+| Agent | Cycle 026 Score | Notes |
+|-------|----------------|-------|
+| Pattern Commander | 9.2 | BUILD cycle execution, judge-probe selection vs. claim-probe (both scored), 7-search research direction, 5 benchmarks passed, UK AISI contradiction resolved |
+| Chief Theologian (Senior) | 9.5 | PAT-094 (John 7:24, Level 3, 9.1/10) — 10th consecutive Level 3 above 8.0. PAT-095 (Daniel 7 Boastful Horn, Pivot_Score 8.15). 5 forced-mapping rejections documented. Hall of Fame streak active. |
+| Chief Technologist (Senior) | 9.2 | 8-tool competitive audit for judge-probe, JudgeSurfaceBias algorithm design, semantic-preservation-gated variant methodology, surface feature attribution design |
+| Chief Scientist (Senior) | 8.6 | Variant generation validation methodology, cosine similarity preservation gate design, KU-076 through KU-079 statistical framing |
+| Chief Innovator | 9.1 | Pivot_Score calculation (9.00 — new BibleWorld record), claim-probe runner-up scoring (8.15), meta-evaluation category positioning |
+| Chief Historian (Senior) | 8.5 | PAT-092 (Genesis 12 Lazy Destination, Level 2), PAT-093 (Daniel 7 Ancient of Days, Level 2), reading plan advancement |
+| Chief Engineer | 9.1 | judge-probe full API spec (JudgeProbe, JudgeConfig, JudgeReport, SurfaceVariantGenerator, SemanticPreservationChecker), CLI (jprobe 6 commands), pytest plugin |
+| Chief Futurist | 8.8 | Kill Gate 3 analysis (43 days, 2 parallel sprints feasible), 1M context window growth trend (pressure-gauge relevance increasing), acquisition landscape |
+| Chief Builder (Senior) | 9.5 | BUILD-026 judge-probe full sprint plan, observer-probe week 1 kickoff, variant generation implementation spec, KU-076 through KU-079. 15 consecutive cycles at 9.0+. |
+| Pattern Discovery Director | 9.2 | Four-book harvest (Genesis 12, Psalm 11, John 7, Daniel 7), Level 3 on John 7:24, 5 forced-mapping rejections documented |
+| Innovation Build Director | 9.1 | judge-probe differentiation matrix (8 tools), meta-evaluation upstream positioning, BibleWorld suite protection analysis |
+| Science Research Director (Senior) | 8.6 | 8-tool competitive audit, UK AISI contradiction analysis, surface bias literature review (position/verbosity/formatting bias documentation) |
+| Kingdom Business Director | 8.9 | Acquisition fit analysis (Anthropic Model Report April 2026 confirmation), Google Constitutional AI, OpenAI GPT-4-as-judge portfolio, meta-evaluation upstream value |
+
+**Promotion watches (Cycle 026):**
+- Chief Builder (Senior): Cycle 026 score 9.5. 15 consecutive cycles at 9.0+. Hall of Fame threshold: needs pattern rated 9.5+ by enforcement independently. BUILD-026 judge-probe design at 9.5 level. Enforcement audit cycle 028 will determine if Hall of Fame criterion met. HIGH WATCH.
+- Chief Technologist (Senior): 9 consecutive cycles at 9.0+. No Hall of Fame threshold met yet. Monitor cycle 027.
+
+**No deletions Cycle 026.** All agents above 8.5. World health optimal.
 
 ---
 
