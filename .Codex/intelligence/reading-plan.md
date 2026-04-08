@@ -237,11 +237,37 @@ Pivot Priority: Daniel 6 (lion's den — behavioral commitment under adversarial
 - John 6:29 — single authoritative instruction (unmined from cycle 023)
 - Daniel 7 — four beasts + son of man (next cycle priority)
 
-### Next Reading Session (Cycle 025):
-Primary: Genesis 11 (Tower of Babel — universal language broken; genealogy from Shem to Abram)
-Secondary: Psalm 10 (the wicked's arrogance; "why do you stand far off?")
-Tertiary: John 7 (Feast of Tabernacles; division; "rivers of living water")
-Pivot Priority: Daniel 7 (four beasts — composite system architecture; "one like a son of man" — authority delegation)
+### CYCLE 025 READING RECORD
+
+**Date Completed:** 2026-04-08
+**Cycle Type:** COMPETITIVE_TEARDOWN (I)
+
+### Scripture Read This Cycle:
+- Genesis 11:1-32 (Tower of Babel — protocol fragmentation; Shem genealogy; Harran halt)
+- Psalm 10:1-18 (Hidden actor pattern; wicked's observation model; God's consistent observation)
+- Proverbs 1:1-28 (Wisdom taxonomy; delayed calamity warning)
+- John 7 (Feast of Tabernacles; rivers of living water — PARTIALLY REFERENCED for Daniel 7 priority; John 7 not fully read this cycle)
+- Daniel 7 (four beasts — referenced for next cycle)
+
+**Patterns Discovered Cycle 025:**
+- PAT-086 (Psalm 10:6,11 — Hidden Actor Pattern, Level 3, 9.0/10) — BUILD-025: observer-probe (Pivot_Score 8.955 — SECOND HIGHEST in BibleWorld history)
+- PAT-087 (Genesis 11:1-9 — Babel Protocol Fragmentation, Level 2, 7.2/10)
+- PAT-088 (Proverbs 1:24-28 — Delayed Calamity Warning, Level 2, 7.0/10)
+- PAT-089 (Genesis 11:31 — Harran Halt, Level 1, 4.8/10)
+- PAT-090 (Proverbs 1:2-7 — Wisdom Taxonomy, Level 1, 4.5/10)
+
+**Unmined Remaining in Cycle 025 Passages:**
+- Psalm 10:12-18 — God's response to hidden actor (rises up, does not forget afflicted) — consistent external observer pattern
+- Proverbs 1:5-6 — "let the wise listen and add to their learning... for understanding proverbs and parables" — multi-layer interpretation protocol
+- John 7:24 — "Stop judging by mere appearances, and make a right judgment" — surface vs. semantic evaluation
+- John 7:37-38 — "rivers of living water will flow from within them" — output emergence from internal state (not yet mined at Level 3)
+- Daniel 7 — four beasts (composite system architecture), son of man (authority delegation) — PRIORITY for cycle 026
+
+### Next Reading Session (Cycle 026):
+Primary: Genesis 12:1-20 (Abram's call — invitation-based resource activation; Sarai in Egypt — identity concealment protocol)
+Secondary: Psalm 11 (refuge amid instability; "the LORD is in his holy temple" — remote execution authority)
+Tertiary: John 7 (CONTINUE — Feast of Tabernacles; "rivers of living water"; stop judging by appearance)
+Pivot Priority: Daniel 7 (four beasts — composite multi-agent architecture; authority delegation to "one like a son of man")
 
 ---
 

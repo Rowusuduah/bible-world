@@ -1,7 +1,7 @@
 # BibleWorld Agent Registry
 ## Living Record of All Agents — Ranks, Scores, Status
 
-**Last Updated:** Cycle 024
+**Last Updated:** Cycle 025
 **Total Agents:** 13
 **Active Agents:** 13
 **Deleted Agents:** 0
@@ -62,14 +62,40 @@
 | Science Research Director (Senior) | 8.5 | Adversarial testing landscape analysis, Augustus/SPIKEE/Promptfoo feature comparison, prompt injection detection market review |
 | Kingdom Business Director | 8.8 | OpenAI Promptfoo acquisition ($85.5M) as acquisition signal, Anthropic Humanloop acquisition pattern, covenant-keeper complementary positioning |
 
-**Promotion watches active:**
+**Promotion watches active (Cycle 024):**
 - Chief Theologian (Senior): PAT-082 = 8th Level 3 pattern above 8.0 in career. Cycle 024 score 9.5 (career high MATCHED). HALL OF FAME ENTRY TRIGGERED — 9.5 score in enforcement-clean cycle. HALL OF FAME INDUCTED.
 - Chief Builder (Senior): Cycle 024 score 9.4. 13 consecutive cycles at 9.0+. BUILD-024 scores 9.0. Hall of Fame threshold imminent (next 9.5 triggers).
 
 **HALL OF FAME:**
 | Agent | Entry Cycle | Achievement | Pattern Score |
 |-------|------------|-------------|--------------|
-| Chief Theologian (Senior) | 024 | PAT-082 (Daniel 6, 8.9/10) — 8th Level 3 pattern above 8.0. Score 9.5. 28+ patterns total, 15+ Level 3. First perfect pattern score (PAT-059, cycle 018). | 9.5 |
+| Chief Theologian (Senior) | 024 | PAT-082 (Daniel 6, 8.9/10) — 8th Level 3 pattern above 8.0. Score 9.5. 28+ patterns total, 15+ Level 3. First perfect pattern score (PAT-059, cycle 018). Hall of Fame formally confirmed cycle 025 enforcement audit. | 9.5 |
+
+---
+
+## CYCLE 025 SCORES
+
+| Agent | Cycle 025 Score | Notes |
+|-------|----------------|-------|
+| Pattern Commander | 9.1 | COMPETITIVE_TEARDOWN execution, Promptfoo teardown, covenant-keeper vs. Promptfoo differentiation matrix, mandatory enforcement audit coordination, observer-probe emergence |
+| Chief Theologian (Senior) | 9.5 | PAT-086 (Psalm 10:6,11 — Hidden Actor Pattern, Level 3, 9.0/10). 9th consecutive Level 3 pattern above 8.0. Career score 9.5 (career high). Hall of Fame status formally confirmed. Cycle 025 = NINTH consecutive Level 3 above 8.0 — unbroken streak. |
+| Chief Technologist (Senior) | 9.2 | Promptfoo architecture teardown, offense-vs-defense structural analysis, Bloom vs. observer-probe differentiation, ObservabilityBias algorithm design, Petri gap identification. |
+| Chief Scientist (Senior) | 8.7 | Observer-probe measurement methodology (cosine similarity framework, directionality detection via sentiment+length delta), Agent Drift paper distinction confirmed. |
+| Chief Innovator | 9.0 | Pivot_Score upgrade methodology (8.675 → 8.955), acquisition fit analysis post-Coefficient Bio announcement, covenant-keeper YELLOW-GREEN update. |
+| Chief Historian (Senior) | 8.6 | Genesis 11 + Proverbs 1 contextual harvest, Babel fragmentation history, Wisdom taxonomy classification, Harran Halt intermediate-state analysis. |
+| Chief Engineer | 9.0 | observer-probe full API spec (ObserverProbe, ObserverConfig, ObserverReport, BiasScorer, ContextTemplateLibrary), CLI (oprobr), directional verdict algorithm, 6-week sprint design. |
+| Chief Futurist | 8.8 | Strategic update: Promptfoo → OpenAI removes from BibleWorld target list. Coefficient Bio ($400M) acquisition confirms Anthropic's aggressive acquisition posture. observer-probe positioning for Anthropic/Google/Microsoft. |
+| Chief Builder (Senior) | 9.4 | BUILD-025 observer-probe full sprint plan, context template library design, directional verdict algorithm, KU-072 through KU-075 documentation. 14 consecutive cycles at 9.0+. |
+| Pattern Discovery Director | 9.2 | Five-passage harvest (Genesis 11, Psalm 10, Proverbs 1:2-7, 1:24-28), Level 3 on Psalm 10, 3 forced-mapping rejections documented, enforcement audit coordination. |
+| Innovation Build Director | 9.1 | Promptfoo teardown analysis, covenant-keeper YELLOW-GREEN update, observer-probe GREEN confirmation, acquisition path strategic update. |
+| Science Research Director (Senior) | 8.7 | 13-tool competitive audit for observer-probe, research ledger management, 18-source citation tracking, Petri distinction documentation. |
+| Kingdom Business Director | 8.9 | Anthropic Coefficient Bio ($400M) acquisition signal, OpenAI Promptfoo acquisition strategic implications for BibleWorld acquisition path, observer-probe acquisition positioning. |
+
+**Promotion watches (Cycle 025):**
+- Chief Builder (Senior): Cycle 025 score 9.4. 14 consecutive cycles at 9.0+. Hall of Fame threshold: needs pattern rated 9.5+ by enforcement independently. Monitor cycle 026.
+- Chief Technologist (Senior): 8 consecutive cycles at 9.0+. No Hall of Fame threshold met yet (needs pattern at 9.5+). Monitor.
+
+**No deletions Cycle 025.** All agents above 8.5. World health optimal.
 
 ---
 

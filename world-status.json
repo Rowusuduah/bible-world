@@ -1,8 +1,8 @@
 {
   "world": "BibleWorld",
   "version": "1.0.0",
-  "as_of_cycle": 23,
-  "last_updated": "2026-04-01",
+  "as_of_cycle": 25,
+  "last_updated": "2026-04-08",
   "world_alive": true,
   "initialized": true,
   "death_spiral": false,
@@ -10,11 +10,11 @@
   "survival_metrics": {
     "revelation_score": 0.97,
     "build_score": 0.95,
-    "integrity_score": 0.96,
+    "integrity_score": 0.97,
     "agent_count": 13,
-    "last_enforcement_check": 22,
+    "last_enforcement_check": 25,
     "enforcement_cycles_overdue": 0,
-    "enforcement_next_required_cycle": 25,
+    "enforcement_next_required_cycle": 28,
     "doctrinal_violations": 0,
     "labs_operational": 4
   },
@@ -260,8 +260,8 @@
     }
   },
 
-  "last_pivot_score": 8.85,
-  "last_tool_name": "cot-fidelity",
+  "last_pivot_score": 8.955,
+  "last_tool_name": "observer-probe",
 
   "active_research": [
     "chain-probe v0.1 — PROTOTYPE COMPLETE — ship to PyPI",

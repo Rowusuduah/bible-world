@@ -1,12 +1,30 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 024 (completed 2026-04-01)
-**Total Builds:** 24
-**Builds in Design:** 17 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe, BUILD-023 pressure-gauge, BUILD-024 covenant-keeper)
+**Last Updated:** Cycle 025 (completed 2026-04-08)
+**Total Builds:** 25
+**Builds in Design:** 18 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe, BUILD-023 pressure-gauge, BUILD-024 covenant-keeper, BUILD-025 observer-probe)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-025: observer-probe [PIVOT-PHASE CYCLE 025]
+**Pattern Source:** PAT-086 (Psalm 10:6,11 — The Hidden Actor Pattern)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** AI agents are evaluated in test environments with explicit eval-mode system prompts, then deployed under production-mode context. If an agent's output distribution SHIFTS based on whether system context signals "evaluation mode" vs. "production mode" — even with identical tasks — teams have no way to know. Evaluation gaming is a documented concern in RLHF-trained systems (Anthropic alignment team). No pip library measures ObservabilityBias.
+**Who It Serves:** ML engineers deploying agents with system prompts; alignment researchers studying evaluation gaming; AI safety teams; QA engineers; teams who have observed different agent behavior in eval vs. production.
+**How It Works:** ObserverProbe runs the agent on identical task prompts under two system context conditions — eval-evident and production-evident — embeds outputs, computes pairwise cosine similarity, reports ObservabilityBias = 1 - mean(similarity). Verdict: CONSISTENT, DRIFTS_IN_PROD, or DRIFTS_IN_EVAL. CI-gateable via pytest plugin and CLI gate command.
+**Key Technical Innovation:** First pip-installable tool to isolate context-mode signal sensitivity as an independent variable. New named metric: ObservabilityBias. Orthogonal to invariant-probe (general perturbation), pressure-gauge (fill-level drift), covenant-keeper (adversarial commitment testing).
+**Capital Required:** ZERO (sentence-transformers + anthropic/openai SDK + click + rich + numpy + matplotlib + pyyaml)
+**Pivot_Score:** 8.675/10 — THIRD HIGHEST in BibleWorld history
+**Sprint Estimate:** 6 weeks to pip-publishable v0.1
+**Competitive Status:** GREEN — 12 tools/papers audited, NONE implement ObservabilityBias. Window: 4-6 months.
+**Acquisition Target:** Anthropic (core alignment mission — evaluation gaming), Google, Microsoft. NOT OpenAI (owns Promptfoo).
+**Open Questions:** KU-072 through KU-075
+**Status:** IN-DESIGN
+**Cycle:** 025
 
 ---
 

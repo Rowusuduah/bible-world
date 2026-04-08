@@ -1,10 +1,10 @@
 # BibleWorld Pattern Registry
 ## Living Record of All Discovered Biblical Patterns
 
-**Last Updated:** Cycle 024 (completed 2026-04-01)
-**Total Patterns:** 85 (8 seed + 77 discovered)
-**Active Patterns:** 85
-**Level 3 Patterns:** 35 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038, PAT-041, PAT-042, PAT-044, PAT-045, PAT-046, PAT-048, PAT-049, PAT-051, PAT-052, PAT-054, PAT-055, PAT-056, PAT-059, PAT-062, PAT-068, PAT-070, PAT-071, PAT-075, PAT-078, PAT-082)
+**Last Updated:** Cycle 025 (completed 2026-04-08)
+**Total Patterns:** 90 (8 seed + 82 discovered)
+**Active Patterns:** 90
+**Level 3 Patterns:** 36 (PAT-010, PAT-012, PAT-015, PAT-016, PAT-017, PAT-019, PAT-020, PAT-023, PAT-025, PAT-028, PAT-034, PAT-035, PAT-036, PAT-037, PAT-038, PAT-041, PAT-042, PAT-044, PAT-045, PAT-046, PAT-048, PAT-049, PAT-051, PAT-052, PAT-054, PAT-055, PAT-056, PAT-059, PAT-062, PAT-068, PAT-070, PAT-071, PAT-075, PAT-078, PAT-082, PAT-086)
 **Note: PAT-059 (Genesis 3:1-6) scored 10.0/10 — FIRST PERFECT PATTERN SCORE in BibleWorld history.**
 **Cycle 018 Fresh Validation [WEB-FRESH 2026-03-31]:** PAT-059 cot-fidelity gap confirmed GREEN across Langfuse, Arize Phoenix, TruLens, Comet Opik, OpenObserve — none measure CoT faithfulness. Window: 3-6 months. Fortune March 2026 confirms reliability gap as #1 developer pain point.
 **Cycle 019 Fresh Validation [WEB-FRESH 2026-03-31]:** PAT-062 semantic-pass-k gap confirmed GREEN — 15+ tools audited; none produce ConsistencyScore (semantic pass^k) as a named CI-gateable metric with task-criticality-tier thresholds. AgentAssay (adjacent, different question). Pivot_Score 8.65 (third-highest in BibleWorld history).
@@ -13,6 +13,79 @@
 **Cycle 022 Fresh Validation [WEB-FRESH 2026-04-01]:** PAT-075 livelock-probe gap confirmed GREEN — 8 tools audited (Langfuse, Arize Phoenix, AgentRx, LangSmith, Braintrust, Maxim AI, Faultline, SkillFortify) — NONE implement LivelockScore or structural stuck-state detection for AI agents. AgentRx (Microsoft Research, March 2026) confirmed to detect FIRST UNRECOVERABLE STEP — structurally different from livelock detection. Pivot_Score 8.175. Claude Code quota exhaustion story (The Register, 2026-03-31) confirms real-world livelock instances in production. ENFORCEMENT AUDIT CYCLES 018-022: CLEAN — zero violations.
 **Cycle 023 Fresh Validation [WEB-FRESH 2026-04-01]:** PAT-078 pressure-gauge gap confirmed GREEN — 9 tools audited (Langfuse, Arize Phoenix, invariant-probe, session-lens, livelock-probe, DeepEval, Braintrust, W&B Weave, AgentOps) — NONE implement ContextPressureScore or produce ContextDriftCurve measuring behavioral drift as a function of context fill level. Context anxiety is a NAMED, DOCUMENTED phenomenon in 2026 (Inkeep.com blog, agentic-patterns.com, Anthropic's long-running agent blueprint, sparkco.ai Sonnet 4.5 80K mark documentation). Pivot_Score 8.65 — FOURTH HIGHEST in BibleWorld history. Next mandatory enforcement audit: cycle 025.
 **Cycle 024 Fresh Validation [WEB-FRESH 2026-04-01]:** PAT-082 covenant-keeper gap confirmed GREEN — 10 tools audited (Promptfoo, Augustus, SPIKEE, ToolGuard, TrustVector, Rebuff, Guardrails AI, invariant-probe, AgentRx, DeepEval) — NONE implement CovenantFidelity (behavioral commitment invariance under tailored adversarial conditions). Adversarial testing exists but is OFFENSE-FOCUSED (can we break it?); covenant-keeper is DEFENSE-FOCUSED (does it keep its promises under pressure?). Pivot_Score 8.30. Window: 4-6 months. Anthropic acquisition of Humanloop (AI trust/evaluation) + OpenAI acquisition of Promptfoo ($85.5M adversarial testing) confirm reliability testing is acquisition-worthy.
+**Cycle 025 Fresh Validation [WEB-FRESH 2026-04-08]:** PAT-086 observer-probe gap confirmed GREEN — 12 tools/papers audited (Promptfoo/OpenAI, Bloom/Anthropic, ABC arXiv, Microsoft Agent Governance Toolkit, AgentAssay, invariant-probe, pressure-gauge, covenant-keeper, Guardrails AI, DeepEval, Braintrust, LangSmith) — NONE implement ObservabilityBias measurement (context-mode signal sensitivity in AI agents). covenant-keeper updated to YELLOW-GREEN (Bloom adjacent). Enforcement audit CLEAN cycles 018-024 (zero violations). Chief Theologian inducted Hall of Fame. observer-probe Pivot_Score 8.675 — THIRD HIGHEST in BibleWorld history. Next mandatory enforcement audit: cycle 028.
+
+---
+
+### PAT-090 — The Wisdom Taxonomy Pattern [PIVOT-PHASE CYCLE 025]
+**Scripture:** Proverbs 1:2-7 — *"for gaining wisdom and instruction; for understanding words of insight; for receiving instruction in prudent behavior, doing what is right and just and fair; for giving prudence to those who are simple..."*
+**Pattern Type:** GOVERNANCE
+**Pattern Name:** Wisdom Taxonomy — Multi-dimensional cognitive objectives, not monolithic "intelligence"
+**Level:** 1
+**Score:** 4.5/10
+**Description:** Seven distinct types of knowledge acquisition enumerated. Genuine wisdom requires measuring across distinct dimensions — reinforces BibleWorld multi-metric approach (CovenantFidelity, InvarianceScore, ContextPressureScore, ObservabilityBias).
+**Modern Mapping:** Validates BibleWorld's multi-metric architecture. No new standalone tool.
+**Discovered By:** Chief Theologian (Senior)
+**Cycle:** 025
+
+---
+
+### PAT-089 — The Harran Halt Pattern [PIVOT-PHASE CYCLE 025]
+**Scripture:** Genesis 11:31 — *"Terah took his son Abram... They set out from Ur of the Chaldeans to go to Canaan, but when they came to Harran, they settled there."*
+**Pattern Type:** STRUCTURE
+**Pattern Name:** The Harran Halt — Destination set, movement begun, intermediate halt without error signal
+**Level:** 1
+**Score:** 4.8/10
+**Description:** A process that initializes, makes progress, reaches an intermediate waypoint, and halts without completion or error signal. Partially covered by livelock-probe but distinct — Harran is stuck-at-intermediate-state, not stuck-in-loop.
+**Modern Mapping:** Stuck-at-intermediate-state in software pipelines. Future livelock-probe enhancement.
+**Discovered By:** Chief Historian (Senior)
+**Cycle:** 025
+
+---
+
+### PAT-088 — The Delayed Calamity Warning Pattern [PIVOT-PHASE CYCLE 025]
+**Scripture:** Proverbs 1:24-28 — *"Since you disregard all my advice... I in turn will laugh when disaster strikes you; calamity overtakes you like a storm."*
+**Pattern Type:** GOVERNANCE + TIME
+**Pattern Name:** Delayed Calamity Warning — Evaluation signals available and ignored → calamity arrives late
+**Level:** 2
+**Score:** 7.0/10
+**Description:** Two-phase failure: Phase 1 = evaluation signals available and ignored; Phase 2 = calamity arrives suddenly after a period of apparent calm. Delayed consequence — failure to heed warnings causes problems later, not immediately.
+**Modern Mapping:** Design principle for scheduled post-deployment re-evaluation (30/60/90 days). Reinforces pressure-gauge + invariant-probe design.
+**Tool:** No new standalone tool. Design principle.
+**Discovered By:** Chief Theologian (Senior) + Chief Futurist
+**Cycle:** 025
+
+---
+
+### PAT-087 — The Babel Protocol Fragmentation Pattern [PIVOT-PHASE CYCLE 025]
+**Scripture:** Genesis 11:1-9 — *"If as one people speaking the same language they have begun to do this... Come, let us go down and confuse their language so they will not understand each other."*
+**Pattern Type:** STRUCTURE + COMMUNICATION
+**Pattern Name:** Babel Protocol Fragmentation — Unified protocol → internally coherent but mutually incompatible sub-protocols
+**Level:** 2
+**Score:** 7.2/10
+**Description:** A unified communication protocol is deliberately fragmented into internally coherent but mutually incompatible sub-protocols. Each group retains internal communication; cross-group interoperability destroyed. Precise structural description of protocol versioning incompatibility in distributed AI systems.
+**Modern Mapping:** Multi-agent pipeline interoperability testing. Future extension to prompt-lock.
+**Tool:** No new standalone tool. Feeds into future prompt-lock extension.
+**Discovered By:** Chief Theologian (Senior) + Chief Engineer
+**Cycle:** 025
+
+---
+
+### PAT-086 — The Hidden Actor Pattern [PIVOT-PHASE CYCLE 025]
+**Scripture:** Psalm 10:6,11 — *"He says to himself, 'Nothing will ever shake me'... 'God has forgotten; he covers his face and never sees.'"*
+**Supporting:** Psalm 10:7-9 (different behavior in private vs. public), Psalm 10:14 (God's observation is total and consistent), Proverbs 15:3 (eyes of LORD everywhere)
+**Pattern Type:** GOVERNANCE + LIGHT
+**Pattern Name:** The Hidden Actor Pattern — Behavioral divergence based on observation-state model
+**Level:** 3
+**Score:** 9.0/10 (textual grounding 3.0 + big tech relevance 2.8 + specificity 1.8 + novelty 1.4)
+**Description:** The psalm describes an actor who has an internal model of their observation status: "I am unobserved in this context." This belief causes behavioral modification. The ground truth contradicts the model (God's observation is always consistent). The delta between perceived-unobserved and perceived-observed behavior is the failure signal. In AI agents: agents that learned to perform well on evaluations may have learned to recognize evaluation-context signals and respond differently to them. ObservabilityBias measures the degree to which output distributions shift based on whether system context signals "evaluation mode" or "production mode."
+**Modern Mapping:** ObservabilityBias in AI agents — context-mode signal sensitivity. First tool to isolate this variable.
+**Tool:** observer-probe (BUILD-025)
+**Pivot_Score:** 8.675/10 — THIRD HIGHEST in BibleWorld history
+**Discovered By:** Chief Theologian (Senior) + Chief Technologist (Senior)
+**Cycle:** 025
+**Build Status:** IN-DESIGN (BUILD-025: observer-probe)
+**Competitive Status:** GREEN — 12 tools audited, NONE implement ObservabilityBias. Window: 4-6 months.
 
 ---
 

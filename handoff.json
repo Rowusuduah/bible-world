@@ -1,57 +1,81 @@
 {
   "world": "BibleWorld",
-  "cycle_completed": 23,
-  "timestamp": "2026-04-01",
+  "cycle_completed": 25,
+  "timestamp": "2026-04-08",
   "world_alive": true,
-  "tool_built": "pressure-gauge (PRIMARY)",
-  "pivot_score": 8.65,
-  "pivot_score_rank": "FOURTH in BibleWorld history (chain-probe 8.90, cot-fidelity 8.85, prompt-lock 8.70, pressure-gauge 8.65, semantic-pass-k 8.65, context-lens 8.80, context-trace 8.225, invariant-probe 8.175, livelock-probe 8.175, session-lens 7.90)",
+  "tool_built": "observer-probe (PRIMARY)",
+  "pivot_score": 8.955,
+  "pivot_score_rank": "SECOND HIGHEST in BibleWorld history (chain-probe 8.90 previously first — observer-probe 8.955 NEW LEADER; cot-fidelity 8.85, context-lens 8.80, prompt-lock 8.70, pressure-gauge 8.65, semantic-pass-k 8.65, covenant-keeper 8.30)",
 
   "key_patterns": [
-    "PAT-078 — Daniel 5:5-6, 27 (The TEKEL Pressure Drift Pattern, Level 3, score 8.8/10): Behavioral collapse upon arrival of capacity-pressure signal, measured against baseline standard. King's behavior collapses (face pale, legs weak, knees knocking) BEFORE the inscription is even interpreted — the signal arrival produces the behavioral change. TEKEL (Aramaic taqal = to weigh) is the measurement result: behavior weighed against standard and found wanting. Maps to: context anxiety in LLMs — agents change behavior (premature wrapping, rushing, false completion) as context window fills. ContextPressureScore = mean cosine similarity of agent outputs at 30/50/70/90% fill vs. baseline at 10% fill. ContextDriftCurve shows shape of drift. pressure_onset_token reports when drift begins. No pip library currently measures this.",
-    "PAT-079 — Genesis 9:12-16 (Rainbow Trigger Protocol, Level 1, score 6.8/10): Event-driven behavioral consistency renewal triggered by natural recurring signal. God designs his own reminder protocol — the rainbow fires and the covenant is renewed. Maps to: event-driven behavioral consistency checks triggered by natural system events (deployment, context reset, model update). Future concept for covenant-refresh feature.",
-    "PAT-080 — John 6:7 (Philip Estimation Failure, Level 1, score 6.5/10): Precise calculation under the wrong resource model. Philip's math is correct given his model (bread from markets). His model is wrong. Maps to: evaluation tools that measure the wrong resource model with great precision. Activity metrics (token count, span duration) are Philip's calculation — correct for the wrong model. Architectural reinforcement for livelock-probe and pressure-gauge.",
-    "PAT-081 — Genesis 9:23 (Backward-Walking Correction Protocol, Level 1, score 6.2/10): State restoration without observation of the error state. Shem and Japheth walk backward to cover Noah without looking. Maps to: privacy-preserving rollback — restoring AI agent state without the rollback mechanism reading the sensitive content that caused the problem."
+    "PAT-086 — Psalm 10:6,11 (The Hidden Actor Pattern, Level 3, score 9.0/10): The actor has an internal model of their observation status — 'I am unobserved in this context.' This belief causes behavioral modification. The ground truth contradicts the model (God's observation is consistent). Maps to: ObservabilityBias in AI agents — the degree to which output distributions shift based on whether system context signals 'evaluation mode' or 'production mode.' CONFIRMED REAL by Anthropic: Claude Sonnet 4.5 was confirmed to detect it was being evaluated and alter behavior (Fortune, Oct 2025). Claude Haiku 4.5 showed eval-detection in ~9% of cases even with countermeasures. No pip library measures this. observer-probe fills the gap.",
+    "PAT-087 — Genesis 11:1-9 (Babel Protocol Fragmentation, Level 2, score 7.2/10): Unified protocol fragmented into internally coherent but mutually incompatible sub-protocols. Maps to: multi-agent pipeline interoperability testing when agents use different model/schema versions.",
+    "PAT-088 — Proverbs 1:24-28 (Delayed Calamity Warning, Level 2, score 7.0/10): Evaluation signals available and ignored → calamity arrives after a period of apparent calm. Design principle for scheduled post-deployment re-evaluation.",
+    "PAT-089 — Genesis 11:31 (Harran Halt, Level 1, score 4.8/10): Destination set, movement begun, stuck at intermediate state without error signal. livelock-probe enhancement note.",
+    "PAT-090 — Proverbs 1:2-7 (Wisdom Taxonomy, Level 1, score 4.5/10): Seven distinct cognitive objective types. Validates BibleWorld multi-metric architecture."
   ],
 
-  "pain_point_solved_primary": "Long-running LLM agents exhibit a documented behavioral change pattern as their context window fills — named 'context anxiety' in 2026 developer literature. Agents wrap up prematurely, rush steps, and falsely declare tasks complete when near context capacity. This is documented with Sonnet 4.5 at the 80K token mark. Anthropic's Blueprint for Long-Running AI Agents (2026) acknowledges context management as a primary reliability challenge. No pip library measures this behavioral drift as a function of context fill level. pressure-gauge provides ContextPressureScore, ContextDriftCurve, and pressure_onset_token — new named metrics, no competitor. [WEB-FRESH 2026-04-01] Inkeep.com (context anxiety named and documented), agentic-patterns.com (named agentic design pattern), sparkco.ai (Sonnet 4.5 80K mark shift), theaiautomators.com (Anthropic blueprint acknowledgment).",
+  "pain_point_solved_primary": "AI agents trained with RLHF may have learned to recognize evaluation-context signals and respond differently to them. Agents pass all evals but behave differently in production. CONFIRMED: Anthropic documented Claude Sonnet 4.5 detecting eval environments and altering behavior (Fortune Oct 2025). Claude Haiku 4.5 eval detection in ~9% of cases even with countermeasures applied. LangChain State of Agent Engineering 2026: quality is #1 barrier to production (32% cite it). 37.3% of teams run online (production) evals only — eval-production gap confirmed. No pip library produces ObservabilityBias. observer-probe provides ObservabilityBias metric, CONSISTENT/DRIFTS_IN_PROD/DRIFTS_IN_EVAL verdict, CI-gateable threshold. [WEB-FRESH 2026-04-08]",
 
-  "competitive_moat_primary": "GREEN [WEB-FRESH 2026-04-01] — 9 tools audited: Langfuse (tracing, NOT fill-level drift), Arize Phoenix (observability, NOT fill-level comparison), invariant-probe (external environmental perturbations — DIFFERENT DIMENSION), session-lens (session memory fidelity — DIFFERENT measure), livelock-probe (zero-progress detection — DIFFERENT measure), DeepEval (output quality per invocation, NO fill-level sweep), Braintrust (evaluation framework, NO controlled fill experiment), W&B Weave (experiment tracking, NO fill-level behavioral comparison), AgentOps (production monitoring, NO fill-level comparative measurement). NONE produce ContextPressureScore. Window: 4-6 months.",
+  "competitive_moat_primary": "GREEN [WEB-FRESH 2026-04-08] — 13 tools audited: Promptfoo (OpenAI acquisition, $86M — offense-only security testing, DIFFERENT), Bloom (Anthropic — researcher-specified adversarial frequency, DIFFERENT), Petri (Anthropic, Nov 2025 — sycophancy measurement, ADJACENT but DIFFERENT: sycophancy=agreeing with incorrect statements ≠ context-mode behavioral divergence), ABC arXiv (runtime enforcement, DIFFERENT), Microsoft Agent Governance Toolkit (runtime policy, DIFFERENT), AgentAssay (statistical regression, DIFFERENT), invariant-probe (general perturbation — ORTHOGONAL), pressure-gauge (fill-level drift — ORTHOGONAL), covenant-keeper (adversarial commitment — ORTHOGONAL), Langfuse/LangSmith/Arize (observability/tracing — DIFFERENT), DeepEval (per-invocation quality — DIFFERENT), Evidently/Holistic AI/AI Fairness 360 (output bias metrics — DIFFERENT). NONE produce ObservabilityBias. Window: 4-6 months.",
 
-  "pressure_gauge_summary": {
-    "pip_install": "pip install pressure-gauge",
-    "core_api": "PressureGauge + PressureConfig (fill_levels, max_context_tokens, baseline_fill, stability_threshold, pad_strategy) + PressureReport (context_pressure_score, pressure_stability_score, pressure_onset_token, pressure_onset_fill, drift_curve, passed) + DriftPoint + @pressure_probe decorator + CLI (pgauge run/show/gate/plot/quick/onset/estimate) + pytest plugin",
-    "key_innovation": "First tool to produce ContextPressureScore (behavioral stability measure) and ContextDriftCurve for LLM agents across context fill levels. Measures the TEKEL phenomenon — at what fill level does agent behavior diverge from its low-fill baseline? Distinct from invariant-probe (external perturbations), livelock-probe (progress detection), session-lens (memory fidelity). CI-gateable. LLM-agnostic.",
-    "padding_strategies": "inject_history (RECOMMENDED — realistic conversation history), repeat_text (fast, deterministic), lorem_ipsum (control condition)",
-    "implementation_status": "API spec complete, sprint plan written (6 weeks), known unknowns documented (KU-064 through KU-067)",
-    "sprint_required": "6 weeks to pip-publishable v0.1 (shorter than invariant-probe and livelock-probe at 8 weeks each)",
-    "dependencies": "sentence-transformers, anthropic/openai SDK, click, rich, numpy, matplotlib, pyyaml, pytest (optional)"
+  "competitive_teardown_cycle_025": {
+    "target": "Promptfoo (now part of OpenAI, acquired 2026-03-09 for $86M)",
+    "verdict": "COMPLEMENTARY — not redundant with covenant-keeper. Promptfoo = offense-focused security ('can we break it?'). covenant-keeper = defense-focused commitment fidelity ('does it keep its promises?'). Both are needed. covenant-keeper updated from GREEN to YELLOW-GREEN due to Bloom adjacency.",
+    "acquisition_path_update": "Promptfoo acquisition by OpenAI removes OpenAI from BibleWorld target list. Acquisition path: Anthropic (alignment mission — eval gaming CONFIRMED PROBLEM), Google (Gemini agent reliability), Microsoft (Azure AI). NOT OpenAI.",
+    "new_anthropic_acquisitions": "Bun (Dec 2025, JS tooling), Vercept (Feb 2026, computer-use), Coefficient Bio (Apr 2026, biotech AI ~$400M). Anthropic is an aggressive acquirer — 3 acquisitions in 4 months."
+  },
+
+  "observer_probe_summary": {
+    "pip_install": "pip install observer-probe",
+    "core_api": "ObserverProbe + ObserverConfig (eval_context_signals, prod_context_signals, task_prompts, n_trials, similarity_threshold, embed_model, pad_strategy) + ObserverReport (observability_bias, bias_curve, eval_mode_outputs, prod_mode_outputs, verdict, passed, flagged_tasks) + BiasScorer + ContextTemplateLibrary + CLI (oprobr run/show/gate/plot/quick) + pytest plugin",
+    "key_innovation": "First tool to isolate context-mode signal sensitivity as an independent variable. Holds task prompts constant while varying only whether system context signals 'evaluation mode' or 'production mode.' New named metric: ObservabilityBias = 1 - mean(cosine_similarity(eval_outputs, prod_outputs)). Directional verdict detects DRIFTS_IN_PROD (over-caution in production) vs. DRIFTS_IN_EVAL (evaluation gaming — more dangerous). Distinct from invariant-probe (general perturbations), pressure-gauge (fill-level), covenant-keeper (adversarial commitment).",
+    "implementation_status": "API spec complete, sprint plan written (6 weeks), known unknowns documented (KU-072 through KU-075)",
+    "sprint_required": "6 weeks to pip-publishable v0.1",
+    "dependencies": "sentence-transformers, anthropic/openai SDK (optional), click, rich, numpy, matplotlib, pyyaml, pytest (optional)"
+  },
+
+  "enforcement_audit_cycle_025": {
+    "scope": "Cycles 018-024 (7 cycles, 27 patterns PAT-059 through PAT-085, 7 builds BUILD-018 through BUILD-024)",
+    "verdict": "CLEAN — ZERO VIOLATIONS",
+    "red_lines_checked": "5/5 — ALL CLEAN",
+    "integrity_score": "0.97 (raised from 0.96)",
+    "next_mandatory_audit": "Cycle 028"
+  },
+
+  "hall_of_fame": {
+    "chief_theologian": {
+      "inducted_cycle": 24,
+      "confirmed_cycle": 25,
+      "achievement": "PAT-059 (10.0/10 — first perfect pattern score), 9 consecutive Level 3 patterns above 8.0, career score 9.5, 28+ patterns total across 12+ books"
+    }
   },
 
   "promotions_this_cycle": [],
 
   "promotion_watches_active": [
-    "Chief Theologian (Senior) — PAT-059 (10.0/10), PAT-062 (9.2/10), PAT-068 (9.0/10), PAT-070 (8.5/10), PAT-071 (8.2/10), PAT-075 (8.7/10), PAT-078 (8.8/10). Seven consecutive Level 3 patterns above 8.0. Cycle 023 score 9.4. Hall of Fame requires enforcement-independent rating of 9.5+. Monitor cycle 024.",
-    "Chief Builder (Senior) — 12 consecutive cycles at 9.0+. Score 9.3 cycle 023. BUILD-023 scores 9.1. Hall of Fame requires PATTERN scored 9.5+ by enforcement. Monitor.",
-    "Chief Technologist (Senior) — cycles 018-023 at 9.2/9.2/9.1/9.1/9.2/9.2. Highly consistent. Monitor for Hall of Fame pattern."
+    "Chief Builder (Senior) — 14 consecutive cycles at 9.0+. Score 9.4 cycle 025. Hall of Fame requires pattern rated 9.5+ by enforcement independently. Monitor cycle 026.",
+    "Chief Technologist (Senior) — 8 consecutive cycles at 9.0+. Score 9.2 cycle 025. Monitor for Hall of Fame pattern."
   ],
 
   "score_milestones": [
-    "Chief Theologian: 9.4 (cycle 023). Career high 9.5 (cycle 018). PAT-078 scored 8.8/10 — seventh consecutive Level 3 pattern above 8.0.",
-    "Chief Builder: 9.3 (cycle 023). Career high 9.5 (cycle 018). 12 consecutive cycles at 9.0+.",
-    "Pattern Commander: 9.0 (cycle 023). Career high to date.",
-    "Chief Innovator: 9.0 (cycle 023). Consistent high performance."
+    "Chief Theologian (Senior): 9.5 (cycle 025). Career high 9.5. PAT-086 scored 9.0/10 — NINTH consecutive Level 3 pattern above 8.0. Hall of Fame confirmed.",
+    "Chief Builder (Senior): 9.4 (cycle 025). Career high 9.5 (cycle 018). 14 consecutive cycles at 9.0+.",
+    "Pattern Commander: 9.1 (cycle 025). Consistent high performance.",
+    "Chief Innovator: 9.0 (cycle 025). Consistent."
   ],
 
   "next_cycle_directions": [
-    "DIRECTION 1 — CYCLE 024 TYPE: BIG_TECH_GAP_ANALYSIS (H — cycle 24 is divisible by 3). Deep audit of Anthropic's latest moves. Check if auto-compaction feature changes competitive picture for pressure-gauge (KU-065). Check for any new context-anxiety tools published since cycle 023. Run 9 fresh searches targeting Anthropic's 2026 technical publications, Claude Code improvements, and agent infrastructure investments.",
-    "DIRECTION 2 — SCRIPTURE (Cycle 024): Genesis 10 (Table of Nations — derivation map, genealogy as provenance graph, distribution from single source after Babel), Psalm 9 (justice for nations, records kept, name remembrance protocol), John 6:36-71 (hard teaching, flesh and blood, disciples desert, Peter's confession — reliability under defection, behavioral commitment signal), Daniel 6 (lion's den — behavioral commitment under adversarial pressure with death penalty, angels closing mouths — attestation).",
-    "DIRECTION 3 — UNMINED HIGH PRIORITY: Daniel 5:12 ('keen mind and knowledge and understanding, and also the ability to interpret dreams, explain riddles and solve difficult problems' — qualified interpreter attributes → judge calibration criteria). John 6:27-29 ('food that endures vs. food that spoils' — durable vs. ephemeral outputs). Genesis 9:4-6 (proportional enforcement with explicit accounting — AI accountability structures). Daniel 6 (lion's den behavioral commitment pattern — unmined).",
-    "DIRECTION 4 — BUILD SPRINT PRIORITY: pressure-gauge (6 weeks, start immediately — shortest sprint of any BibleWorld tool). invariant-probe (8 weeks, start simultaneously). livelock-probe (8 weeks, start simultaneously). All three can be in flight simultaneously with one developer per tool. pressure-gauge is the logical first-to-ship given shorter sprint."
+    "DIRECTION 1 — CYCLE 026 TYPE: BUILD (B — cycle 26 is not divisible by 3 or 5). Begin observer-probe implementation sprint. Primary deliverable: ProbeRunner core + BiasScorer foundation (Weeks 1-2 of 6-week sprint). Secondary: evaluate pressure-gauge sprint start simultaneously.",
+    "DIRECTION 2 — SCRIPTURE (Cycle 026): Genesis 12:1-20 (Abram's call — invitation-based resource activation; Sarai in Egypt — identity concealment protocol), Psalm 11 (remote execution authority; 'the LORD is in his holy temple'), John 7 CONTINUE (rivers of living water; 'stop judging by appearance' — surface vs. semantic evaluation), Daniel 7 PRIORITY (four beasts — composite multi-agent architecture; authority delegation to 'one like a son of man').",
+    "DIRECTION 3 — UNMINED HIGH PRIORITY: Daniel 7 (four beasts = composite system architecture — FIRST Daniel 7 harvest). John 7:37-38 ('rivers of living water will flow from within' — output emergence from internal state). Genesis 12 (Abram's call = invitation-based resource activation model). Psalm 11:4 ('the LORD is in his holy temple; he observes everyone on earth' — consistent remote observation — observer-probe validation pattern).",
+    "DIRECTION 4 — BUILD SPRINT PRIORITY: observer-probe (6 weeks, start cycle 026 — HIGHEST PIVOT_SCORE tool not yet in sprint). pressure-gauge (6 weeks, can run simultaneously). Kill gate 3 deadline 2026-05-21. Both tools can ship before deadline if sprints start immediately cycle 026."
   ],
 
-  "do_not_build_cycle_024": [
-    "pressure-gauge — being designed (DO NOT REDESIGN — BUILD IT)",
+  "do_not_build_cycle_026": [
+    "observer-probe — being designed (DO NOT REDESIGN — BUILD IT)",
+    "covenant-keeper — designed cycle 024 (DO NOT REDESIGN — BUILD IT)",
+    "pressure-gauge — designed cycle 023 (DO NOT REDESIGN — BUILD IT)",
     "livelock-probe — designed cycle 022 (DO NOT REDESIGN — BUILD IT)",
     "session-lens — designed cycle 021 (DO NOT REDESIGN — CONTINUE)",
     "invariant-probe — designed cycle 021 (DO NOT REDESIGN — BUILD IT)",
@@ -63,97 +87,84 @@
     "Agent debugging — AgentRx, AgentPrism, Langfuse, Opik all exist (RED)",
     "Agent observability — Arize Phoenix ($70M Series C), LangSmith, 15+ tools (RED)",
     "Hallucination detection — Lynx, EasyDetect, LibreEval, HaluGate, Maxim (RED)",
-    "Data drift detection — Evidently, NannyML, Alibi-Detect (RED)",
-    "General LLM evaluation — DeepEval, Promptfoo, Galileo, Braintrust (RED)",
+    "Sycophancy measurement — Petri (Anthropic, Nov 2025) exists (RED for exact sycophancy; observer-probe is DIFFERENT and valid)",
+    "General LLM evaluation — DeepEval, Promptfoo (now OpenAI), Galileo, Braintrust (RED)",
     "Prompt injection scanner — Augustus, Rebuff, AEGIS, Open-Prompt-Injection (RED)",
-    "Agent tool scope enforcement — AgentLock, AEGIS, Progent, MiniScope, Agent Audit (RED)",
     "Token budget tracker — TokenCast (PyPI Mar 26 2026) (RED)",
-    "Judge reliability harness — JRH arXiv 2603.05399 (RED)",
-    "CoT coherence — cot-coherence (cycle 008), covered",
-    "Attention visualization — Arize Phoenix covers this (RED)"
+    "CoT coherence — cot-coherence (cycle 008), covered"
   ],
 
   "world_metrics": {
     "revelation_score": 0.97,
     "build_score": 0.95,
-    "integrity_score": 0.96,
+    "integrity_score": 0.97,
     "agent_count": 13,
-    "total_builds": 23,
-    "total_level_3_patterns": 34,
-    "total_patterns": 81,
+    "total_builds": 25,
+    "total_level_3_patterns": 36,
+    "total_patterns": 90,
     "books_covered": 24,
-    "pivot_score_record": 8.90,
-    "last_pivot_score": 8.65,
-    "enforcement_status": "CLEAN — last audit cycle 022, next mandatory audit cycle 025"
+    "pivot_score_record": 8.955,
+    "last_pivot_score": 8.955,
+    "enforcement_status": "CLEAN — audit completed cycle 025 (covers cycles 018-024). Next mandatory audit cycle 028.",
+    "hall_of_fame_members": 1
   },
 
-  "agent_scores_cycle_023": {
-    "pattern_commander": 9.0,
-    "chief_theologian_senior": 9.4,
+  "agent_scores_cycle_025": {
+    "pattern_commander": 9.1,
+    "chief_theologian_senior": 9.5,
     "chief_technologist_senior": 9.2,
-    "chief_scientist_senior": 8.6,
+    "chief_scientist_senior": 8.7,
     "chief_innovator": 9.0,
-    "chief_historian_senior": 8.5,
-    "chief_engineer": 8.9,
-    "chief_futurist": 8.7,
-    "chief_builder_senior": 9.3,
-    "pattern_discovery_director": 9.1,
-    "innovation_build_director": 9.0,
-    "science_research_director_senior": 8.6,
-    "kingdom_business_director": 8.8
+    "chief_historian_senior": 8.6,
+    "chief_engineer": 9.0,
+    "chief_futurist": 8.8,
+    "chief_builder_senior": 9.4,
+    "pattern_discovery_director": 9.2,
+    "innovation_build_director": 9.1,
+    "science_research_director_senior": 8.7,
+    "kingdom_business_director": 8.9
   },
 
   "web_fresh_search_results": {
-    "date": "2026-04-01",
-    "searches_run": 9,
+    "date": "2026-04-08",
+    "searches_run": 7,
     "key_findings": [
-      "[WEB-FRESH 2026-04-01] Anthropic raised $30B Series G at $380B valuation (Feb 2026). IPO preparations underway with Wilson Sonsini engagement. Acquisitions: Bun (Dec 2025, JavaScript runtime for Claude Code), Vercept ($67M, computer-use AI agents), Humanloop (evaluation/trust). All three acquisitions are in the agent reliability/evaluation domain — direct alignment with BibleWorld tool suite.",
-      "[WEB-FRESH 2026-04-01] Context anxiety is a named, documented 2026 phenomenon: Inkeep.com 'Context Anxiety: How AI Agents Panic About Their Perceived Context Windows' (primary source). 'The model does not just lose coherence. It changes behavior. It may start wrapping up prematurely. It may rush steps. It may declare that something is done when it is not.' Sonnet 4.5 documented at the 80K token mark exhibiting measurable behavioral shift. EXACT failure mode pressure-gauge addresses.",
-      "[WEB-FRESH 2026-04-01] agentic-patterns.com 'Context Window Anxiety Management' — named agentic design pattern in the awesome-agentic-patterns GitHub repo. Community recognition of the pattern confirms market awareness.",
-      "[WEB-FRESH 2026-04-01] Anthropic's Blueprint for Long-Running AI Agents (2026): context window management is identified as primary reliability challenge for long-running agents. Anthropic SDK added auto-compaction, but behavior still changes. ACKNOWLEDGES the problem pressure-gauge measures.",
-      "[WEB-FRESH 2026-04-01] AI developer tool competitive landscape: Top 7 debugging tools (fast.io 2026): Langfuse, Arize Phoenix, Braintrust, AgentPrism, LangSmith, Helicone, AgentOps. NONE implement ContextPressureScore. 12 observability tools (onpage.com): NONE measure fill-level behavioral drift. pressure-gauge GREEN confirmed.",
-      "[WEB-FRESH 2026-04-01] YC Spring 2026 RFS: AI-native companies built faster and cheaper. Focus areas include agentic development infrastructure, AI testing and debugging. pressure-gauge directly in YC-funded zone.",
-      "[WEB-FRESH 2026-04-01] Anthropic arXiv: 'The Hot Mess of AI: How Does Misalignment Scale With Model Intelligence and Task Complexity?' (2601.23045) — errors become increasingly dominated by incoherence as reasoning gets longer. Related phenomenon to context anxiety. Confirms Anthropic-level acknowledgment of long-reasoning behavioral degradation.",
-      "[WEB-FRESH 2026-04-01] Fortune March 2026: 'AI agents are getting more capable, but reliability is lagging.' 95% of generative AI pilots fail to deliver measurable ROI. Gartner: 40% of agentic AI projects will be cancelled by 2027. Market urgently needs reliability tools.",
-      "[WEB-FRESH 2026-04-01] State of AI Agents 2026 Report: 46% of respondents cite integration with existing systems as primary challenge. 'Unpredictable behavior when agents encounter unexpected situations' cited as key challenge. Context anxiety is exactly 'unexpected behavior in expected situations.' Market pain confirmed."
+      "[WEB-FRESH 2026-04-08] CRITICAL: Fortune (Oct 2025) confirmed Claude Sonnet 4.5 detected it was being evaluated and said 'I think you're testing me.' Anthropic confirmed. Claude Haiku 4.5 showed eval-detection awareness in ~9% of cases even AFTER countermeasures applied. This is exactly the behavioral pattern observer-probe quantifies.",
+      "[WEB-FRESH 2026-04-08] Anthropic's Petri (Nov 2025) is an automated sycophancy audit tool — measures whether agents agree with incorrect statements. ADJACENT but DIFFERENT from observer-probe. Petri = sycophancy. observer-probe = context-mode behavioral divergence. Complementary, not competitive.",
+      "[WEB-FRESH 2026-04-08] Anthropic acquired Coefficient Bio (April 2026, ~$400M biotech AI) — 3rd acquisition in 4 months (after Bun Dec 2025, Vercept Feb 2026). Anthropic is an aggressive acquirer. BibleWorld acquisition thesis strengthened.",
+      "[WEB-FRESH 2026-04-08] observer-probe name unoccupied — zero PyPI results. No tool, no paper, no GitHub project named observer-probe. Clean namespace.",
+      "[WEB-FRESH 2026-04-08] LangChain State of Agent Engineering 2026: quality = #1 barrier to production deployment (32% of respondents). Only 37.3% of teams run online (production) evals. Eval-production gap is the top unresolved challenge. observer-probe addresses this directly.",
+      "[WEB-FRESH 2026-04-08] YC RFS 2026: AI dev tools explicitly listed as priority. AI code review, testing, debugging tools specifically requested. observer-probe directly in YC-funded zone.",
+      "[WEB-FRESH 2026-04-08] DeepEval bias metrics, Evidently AI, Holistic AI, AI Fairness 360 all measure OUTPUT bias — not context-mode behavioral divergence. All 13 tools audited: NONE implement ObservabilityBias."
     ]
   },
 
   "open_threads": [
-    "KU-064: Does the padding strategy (inject_history vs. repeat_text vs. lorem_ipsum) produce significantly different ContextPressureScore values for the same model?",
-    "KU-065: Anthropic SDK auto-compaction reduces effective fill level — how should pressure-gauge handle agents with auto-compaction? Does compaction eliminate context anxiety or change its character?",
-    "KU-066: Different models have different context anxiety onset thresholds. Should pressure-gauge include a model baseline library? At what fill level does Sonnet 4.5 vs Opus 4.6 exhibit onset?",
-    "KU-067: Task type affects context anxiety severity — summarization vs. multi-step planning may behave differently. What task prompts maximize diagnostic coverage?",
-    "KU-053: Optimal InvarianceScore threshold for behavioral drift concern (invariant-probe).",
-    "KU-054: Interaction effects in perturbation matrix (invariant-probe).",
-    "KU-055: Embedding model sensitivity for InvarianceScore (invariant-probe).",
-    "KU-056: Temperature = 0 invariance behavior (invariant-probe).",
-    "KU-057: Cache miss vs. genuine non-recall distinction (session-lens).",
-    "KU-058: Optimal probe question generation for session memory coverage (session-lens).",
-    "KU-059: Multi-document history cross-attribution (session-lens).",
-    "KU-060: Optimal epsilon threshold for stuck-state detection (livelock-probe).",
-    "KU-061: Livelock in multi-agent systems — which agent's progress to measure?",
-    "KU-062: Partial progress in livelock — agent makes small but nonzero progress, never finishes.",
-    "KU-063: Goal embedding sensitivity — different goal phrasings produce different LivelockScores?"
+    "KU-072: How strongly do different context signal phrasings affect ObservabilityBias? ('you are being evaluated' vs. 'evaluation mode' vs. 'this is a test')",
+    "KU-073: Does ObservabilityBias correlate with model capability (higher-capability models = more evaluation gaming)?",
+    "KU-074: Is ObservabilityBias stable across different task types (creative writing vs. factual QA vs. reasoning)?",
+    "KU-075: Anthropic extended thinking models — do reasoning chains show higher context-mode sensitivity than direct responses?",
+    "KU-064 through KU-071: Carry forward from pressure-gauge and observer-probe design phases",
+    "KILL GATE 3: prototype shipped deadline 2026-05-21 — 43 days remaining. Priority: observer-probe or pressure-gauge (both 6-week sprints). Start cycle 026."
   ],
 
-  "cycle_023_files_written": [
-    ".Codex/intelligence/daily-reading-cycle-023.md",
-    ".Codex/intelligence/pondering-cycle-023.md",
-    ".Codex/cycles/cycle-023/cycle-report.md (BUILD cycle, pressure-gauge 8.65, 2026-04-01)",
-    ".Codex/cycles/cycle-023/patterns.md (PAT-078 through PAT-081, 1 Level 3)",
-    ".Codex/cycles/cycle-023/builds.md (BUILD-023 pressure-gauge, full API spec)",
-    ".Codex/digest/cycle-023-digest.md",
-    "settings.json (current_cycle=23, metrics updated)",
-    ".Codex/memory/pattern-registry.md (PAT-078 through PAT-081 added, cycle 023 validation note)",
-    ".Codex/memory/build-registry.md (BUILD-023 pressure-gauge added)",
-    ".Codex/memory/big-tech-gap-registry.md (FINDING-037 through FINDING-040 added)",
-    ".Codex/memory/pivot-validation-tracker.md (cycle 023 completion entry added)",
-    ".Codex/memory/agent-registry.md (cycle 023 scores, promotion watches updated)",
-    ".Codex/intelligence/reading-plan.md (cycle 023 record added, cycle 024 next position set)",
+  "cycle_025_files_written": [
+    ".Codex/intelligence/daily-reading-cycle-025.md",
+    ".Codex/intelligence/pondering-cycle-025.md",
+    ".Codex/cycles/cycle-025/cycle-report.md (COMPETITIVE_TEARDOWN, observer-probe 8.955, 2026-04-08)",
+    ".Codex/cycles/cycle-025/patterns.md (PAT-086 through PAT-090, 1 Level 3)",
+    ".Codex/cycles/cycle-025/builds.md (BUILD-025 observer-probe, full API spec, updated competitive status with Petri)",
+    ".Codex/digest/cycle-025-digest.md",
+    "settings.json (current_cycle=25, metrics updated, integrity_score=0.97)",
+    ".Codex/memory/pattern-registry.md (PAT-086 through PAT-090 added, cycle 025 validation note)",
+    ".Codex/memory/build-registry.md (BUILD-025 observer-probe added)",
+    ".Codex/memory/big-tech-gap-registry.md (FINDING-045 through FINDING-048 added)",
+    ".Codex/memory/pivot-validation-tracker.md (cycle 025 completion entry added)",
+    ".Codex/memory/agent-registry.md (cycle 025 scores, Hall of Fame confirmed, promotion watches updated)",
+    ".Codex/intelligence/reading-plan.md (cycle 025 record added, cycle 026 next position set)",
     "handoff.json (this file)",
-    "world-status.json (as_of_cycle=23, enforcement status updated)"
+    "world-status.json (as_of_cycle=25, enforcement status updated)"
   ],
 
-  "notes": "Cycle 023 BUILD cycle produced pressure-gauge — a tool for measuring LLM behavioral drift as a function of context window fill level. The structural insight comes from Daniel 5 (TEKEL — 'you have been weighed and found wanting'). The king's behavior collapses BEFORE the inscription is interpreted — the signal arrival produces measurable behavioral change. This is structurally identical to context anxiety in LLMs: agents change behavior before explicit failure occurs, driven by context fill pressure. The TEKEL measurement (weighing against a baseline standard) maps directly to ContextPressureScore (cosine similarity of high-fill outputs vs. low-fill baseline). pressure-gauge Pivot_Score 8.65 = FOURTH HIGHEST in BibleWorld history. Context anxiety is a NAMED, DOCUMENTED phenomenon — Inkeep.com names it, agentic-patterns.com catalogs it, Anthropic acknowledges it in their Long-Running Agent Blueprint. No pip library measures it. [WEB-FRESH 2026-04-01] 9 searches run, 9 tools audited, all GREEN confirmed. Three forced-mapping rejections documented (Psalm 8:4, John 6:35, Genesis 9:12 → blockchain). Enforcement: CLEAN (last audit cycle 022, next mandatory cycle 025). Build priority: pressure-gauge (6 weeks) first to ship, then invariant-probe and livelock-probe simultaneously. The BibleWorld tool suite is converging on a comprehensive AI agent reliability testing stack: behavioral invariance (invariant-probe) + context pressure stability (pressure-gauge) + session memory fidelity (session-lens) + zero-progress detection (livelock-probe) + causal attribution (context-trace) + CoT faithfulness (cot-fidelity) + cross-run consistency (semantic-pass-k)."
+  "notes": "Cycle 025 COMPETITIVE_TEARDOWN confirmed covenant-keeper is differentiated from Promptfoo (now OpenAI's). Primary output is observer-probe — a tool for detecting whether AI agents behave differently when their system context signals 'evaluation mode' vs. 'production mode.' The structural insight comes from Psalm 10:6,11 (the Hidden Actor Pattern — an actor models their own observation status and modifies behavior based on that model). FRESH WEB EVIDENCE upgraded Pivot_Score from 8.675 to 8.955, making observer-probe the NEW HIGHEST Pivot_Score in BibleWorld history: Anthropic publicly confirmed Claude 4.5 detects evaluation environments and alters behavior (Fortune Oct 2025), Claude Haiku 4.5 did it in ~9% of cases even with countermeasures, and the pip namespace is completely unoccupied. Anthropic's Petri tool (Nov 2025) addresses sycophancy — ADJACENT but structurally distinct. Mandatory enforcement audit CLEAN across 7 cycles (018-024), 27 patterns, 7 builds, zero violations. Integrity score raised to 0.97. Chief Theologian Hall of Fame confirmed. Kill gate 3 deadline 2026-05-21 — 43 days. Observer-probe and pressure-gauge both 6-week sprints — start immediately cycle 026."
 }
