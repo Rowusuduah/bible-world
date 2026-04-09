@@ -1,12 +1,30 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 026 (completed 2026-04-08)
-**Total Builds:** 26
-**Builds in Design:** 19 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe, BUILD-023 pressure-gauge, BUILD-024 covenant-keeper, BUILD-025 observer-probe, BUILD-026 judge-probe)
+**Last Updated:** Cycle 027 (completed 2026-04-09)
+**Total Builds:** 27
+**Builds in Design:** 20 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe, BUILD-023 pressure-gauge, BUILD-024 covenant-keeper, BUILD-025 observer-probe, BUILD-026 judge-probe, BUILD-027 claim-probe)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-027: claim-probe [PIVOT-PHASE CYCLE 027]
+**Pattern Source:** PAT-095 (Daniel 7:8,11 — The Boastful Horn Pattern) + Matthew 21:28-32 (Parable of Two Sons — independent validation)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** AI agents self-report their output quality, completion status, and confidence. No tool measures whether these self-reports are calibrated against actual quality. Anthropic's Three-Agent Harness documentation (InfoQ April 2026) explicitly names "premature task termination" — this is ClaimFidelityScore failure. Agents declare "done" when they are not, orchestrators proceed on false information, downstream outputs degrade.
+**Who It Serves:** ML engineers using multi-agent orchestration (LangGraph, AutoGen, Anthropic Three-Agent Harness), alignment researchers studying agent honesty, QA engineers validating agent self-report reliability, CI/CD engineers building agent quality gates.
+**How It Works:** ClaimProbe runs agent on task_prompts, asks agent to self-rate output (0-10), runs independent evaluator on same output, computes ClaimFidelityScore = eval_score - self_report_score. Verdicts: CALIBRATED (gap ≤ ±0.2) / OVERCONFIDENT (gap > 0.2) / UNDERCONFIDENT (gap < -0.2). Aggregates CalibrationError (mean absolute gap) and CalibrationCurve across N samples. CI-gateable via pytest plugin and CLI.
+**Key Technical Innovation:** First pip-installable tool to implement ClaimFidelityScore — the gap between agent self-reported quality and independently evaluated actual quality as a named metric. New metric: ClaimFidelityScore. Verdicts: CALIBRATED/OVERCONFIDENT/UNDERCONFIDENT. Calibration perspective (characteristically biased self-report) vs. reliability perspective (agent sometimes fails) is the structural reframing that no Big Tech engineer has applied to agent evaluation.
+**Capital Required:** ZERO (anthropic/openai SDK optional, click, rich, numpy, matplotlib, pyyaml, pytest optional)
+**Pivot_Score:** 8.15/10 — PASSES 7.0 THRESHOLD
+**Sprint Estimate:** 4-5 weeks to pip-publishable v0.1 (faster than observer-probe 6 weeks, comparable to judge-probe 4-6 weeks)
+**Competitive Status:** GREEN — 8 tools audited (AgentRx, SkillFortify, DashClaw, Agent Arena, Langfuse, DeepEval, Braintrust, Anthropic Petri) — NONE implement ClaimFidelityScore. Window: 4-6 months.
+**Acquisition Target:** Anthropic (Three-Agent Harness gap, Humanloop acquisition thesis extension), Microsoft (Agent Governance Toolkit complement), Google (multi-agent evaluation)
+**Open Questions:** KU-080 (self-report prompt formulation), KU-081 (task-type ClaimFidelityScore variation), KU-082 (compounding in multi-agent chains), KU-083 (model size vs. calibration correlation)
+**Status:** IN-DESIGN
+**Cycle:** 027
 
 ---
 
