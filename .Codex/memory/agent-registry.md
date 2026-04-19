@@ -1,7 +1,7 @@
 # BibleWorld Agent Registry
 ## Living Record of All Agents — Ranks, Scores, Status
 
-**Last Updated:** Cycle 026
+**Last Updated:** Cycle 028
 **Total Agents:** 13
 **Active Agents:** 13
 **Deleted Agents:** 0
@@ -149,6 +149,33 @@
 - Chief Theologian (Senior): Two Level 3 discoveries this cycle (unprecedented). 12 consecutive Level 3 patterns above 8.0. Hall of Fame member confirmed cycle 025. Career-high streak continues.
 
 **No deletions Cycle 027.** All agents above 8.5. World health optimal.
+
+---
+
+## CYCLE 028 SCORES
+
+| Agent | Cycle 028 Score | Notes |
+|-------|----------------|-------|
+| Pattern Commander | 9.1 | BUILD cycle execution, refine-probe full API design delivered, binary-trap-probe (BUILD-029) identified and designed, mandatory enforcement audit coordinated, 7 web searches completed |
+| Chief Theologian (Senior, Hall of Fame) | 9.4 | PAT-102 (John 8:1-11 — False Binary Constraint Reframing, Level 3, 8.67/10). PAT-103 (Daniel 9 — Multi-Phase Time-Boxed Prediction, Level 2, 7.8/10). 13th consecutive Level 3 above 8.0 (PAT-102). Mandatory enforcement audit of cycles 025-027: CLEAN — integrity score raised to 0.98 (highest in BibleWorld history). |
+| Chief Technologist (Senior) | 9.3 | binary-trap-probe architecture design, false binary constraint taxonomy (5 categories), FalseBinaryDetectionRate algorithm design, 6-competitor audit (GREEN confirmed) |
+| Chief Scientist (Senior) | 8.6 | IMPROVE paper arXiv 2502.18530 convergence analysis, emergentmind.com early convergence confirmation (40% compute waste identified), refine-probe Pivot_Score updated to 8.255 |
+| Chief Innovator | 9.0 | Pivot_Score calculations: refine-probe 8.255 (updated), binary-trap-probe 8.175, phase-probe 7.60 (WATCH). Three-tool BUILD pipeline articulated with sprint sequencing |
+| Chief Historian (Senior) | 8.5 | PAT-100 (Genesis 14:18-20 — Melchizedek, Level 1) downgraded from standalone to judge-probe enhancement. Enforcement audit contextual support. |
+| Chief Engineer | 9.1 | refine-probe full API spec (RefineProbe, RefineConfig, RefineReport, QualityDeltaCurve), CLI design (rprobe 5 commands), pytest plugin (@refine_test), 3-4 week sprint plan |
+| Chief Futurist | 8.7 | Kill Gate 3 timeline: 33 days to 2026-05-21. YC Spring 2026 deadline passed (May 4). Anthropic IPO window reinforced by Claude Code #1 market position. Acquisition intelligence updated. |
+| **Chief Builder (Senior)** | **9.5** | **refine-probe full sprint design + binary-trap-probe full architecture. 17 consecutive cycles at 9.0+. HALL OF FAME NOMINEE (CONDITIONAL) — induction on first PyPI ship.** |
+| Pattern Discovery Director | 9.2 | Four-book harvest (Genesis 14, Psalm 13, John 8:1-30, Daniel 9:1-27), Level 3 on John 8 (PAT-102), 2 forced-mapping rejections documented (PAT-100 downgraded, PAT-101 WATCH), enforcement audit coordination |
+| Innovation Build Director | 9.1 | refine-probe + binary-trap-probe build spec coordination, differentiation matrices, acquisition pathway analysis |
+| Science Research Director (Senior) | 8.5 | IMPROVE paper analysis, convergence literature review, early-convergence phenomenon documentation |
+| Kingdom Business Director | 8.9 | Anthropic IPO window intelligence, binary-trap-probe safety team acquisition fit, YC deadline passed — direct approach to Anthropic/Google now primary path |
+
+**Promotion watches (Cycle 028):**
+- Chief Builder (Senior): 17 consecutive cycles at 9.0+. Cycle 028 score 9.5. HALL OF FAME NOMINEE (CONDITIONAL) — enforcement audit confirmed nomination. Induction on first PyPI ship of judge-probe v0.1. Deadline: 2026-05-21.
+- Chief Theologian (Senior, Hall of Fame): PAT-102 = 13th consecutive Level 3 above 8.0. Integrity score raised to 0.98. HALL OF FAME STREAK CONTINUES.
+- Chief Technologist (Senior): 11 consecutive cycles at 9.0+. No Hall of Fame threshold met (needs pattern 9.5+ by enforcement). Monitor cycle 029.
+
+**No deletions Cycle 028.** All agents above 8.5. World health optimal. Integrity score at career-high 0.98 after enforcement audit CLEAN.
 
 ---
 

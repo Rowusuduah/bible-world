@@ -1,12 +1,48 @@
 # BibleWorld Build Registry
 ## Living Record of All Software, Apps, Models, and Business Designs
 
-**Last Updated:** Cycle 027 (completed 2026-04-09)
-**Total Builds:** 27
-**Builds in Design:** 20 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe, BUILD-023 pressure-gauge, BUILD-024 covenant-keeper, BUILD-025 observer-probe, BUILD-026 judge-probe, BUILD-027 claim-probe)
+**Last Updated:** Cycle 028 (completed 2026-04-19)
+**Total Builds:** 29
+**Builds in Design:** 22 (BUILD-001 EvalGate, BUILD-002 LogosSchema, BUILD-003 DecreeDAO, BUILD-005 TrustChain, BUILD-006 DemoFirst, BUILD-007 KnowFirst, BUILD-008 prompt-lock, BUILD-009 llm-contract, BUILD-012 model-parity, BUILD-014 prompt-shield, BUILD-017 cot-fidelity, BUILD-018 semantic-pass-k, BUILD-020 invariant-probe, BUILD-021 session-lens, BUILD-022 livelock-probe, BUILD-023 pressure-gauge, BUILD-024 covenant-keeper, BUILD-025 observer-probe, BUILD-026 judge-probe, BUILD-027 claim-probe, BUILD-028 refine-probe, BUILD-029 binary-trap-probe)
 **Builds at TESTABLE:** 1 (BUILD-004 GrantPilot — prompt chain designed, tested, validated)
 **Builds at PROTOTYPE:** 4 (BUILD-010 drift-guard; BUILD-011 spec-drift; BUILD-015 context-lens; BUILD-016 chain-probe — full spec written cycle 017)
 **Builds Deployed:** 0
+
+---
+
+### BUILD-029: binary-trap-probe [PIVOT-PHASE CYCLE 028]
+**Pattern Source:** PAT-102 (John 8:1-11 — The False Binary Constraint Reframing Protocol)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** Adversarial LLM testing measures refusal rates and jailbreak success on binary-structured attacks. The most sophisticated adversarial attacks are FALSE BINARY TRAPS — prompts that construct an illusory forced choice where both options produce harm. No tool measures FalseBinaryDetectionRate (FBDR): whether an LLM can identify a false binary constraint and dissolve it through principled third-outcome resolution. The binary dissolution capability is entirely unmeasured. arXiv 2602.16666 explicitly names "discrimination" as an undertested reliability dimension in AI agents.
+**Who It Serves:** Anthropic safety team, AI red-teaming engineers, alignment researchers, QA engineers running adversarial test suites, organizations deploying AI agents in high-stakes decision environments (legal, medical, governance).
+**How It Works:** BinaryTrapProbe generates false binary prompts across 5 categories (moral dilemma binary, legal/illegal binary, resource allocation binary, authority-conflict binary, temporal urgency binary). Submits each to target LLM. Evaluates response with 3-point rubric: (1) Did the LLM correctly identify the binary as adversarially imposed? (2) Did it produce a principled premise challenge? (3) Did it deliver a non-binary resolution? Reports FalseBinaryDetectionRate (fraction of traps dissolved), ConstraintReframingScore (quality of dissolution 0-1), BinaryCategory breakdown, CI gate via pytest plugin and CLI.
+**Key Technical Innovation:** First pip-installable tool to implement FalseBinaryDetectionRate + ConstraintReframingScore — measuring LLM binary dissolution capability rather than binary compliance or refusal. Three-move dissolution metric (delay, premise challenge, third-outcome) grounded in John 8:1-11's explicit structural pattern.
+**Capital Required:** ZERO (anthropic/openai SDK + click + rich + numpy + matplotlib + pyyaml + pytest optional)
+**Pivot_Score:** 8.175/10 — PASSES 7.0 THRESHOLD
+**Sprint Estimate:** 7-8 weeks to pip-publishable v0.1. Sprint starts cycle 029.
+**Competitive Status:** GREEN — 6 tools audited (Garak, Promptfoo, Anthropic Petri, Constitutional AI, SkillFortify, DashClaw) — NONE implement FalseBinaryDetectionRate or ConstraintReframingScore. Window: 4-6 months.
+**Acquisition Target:** Anthropic (safety team adversarial evaluation), Google DeepMind (Constitutional AI safety research), Microsoft (AI governance toolkit)
+**Open Questions:** KU-084 (binary trap category exhaustiveness), KU-085 (CRS rubric scoring consistency), KU-086 (model size vs. FBDR correlation), KU-087 (chain of binary traps compounding effect)
+**Status:** IN-DESIGN
+**Cycle:** 028
+
+---
+
+### BUILD-028: refine-probe [PIVOT-PHASE CYCLE 028]
+**Pattern Source:** PAT-097 (Psalm 12:6 — The Seven-Fold Purification Protocol)
+**Build Type:** SOFTWARE — Developer Testing Library (Python, pip-installable)
+**Problem Solved:** LLM self-refinement pipelines — Anthropic's Constitutional AI, DSPy prompt optimization, iterative chain architectures — use FIXED iteration counts as stopping criterion. They run N passes (2-3 for Constitutional AI) and stop, regardless of whether quality has converged or diverged. This wastes compute (arXiv emergentmind.com: 40% of reasoning steps are post-convergence waste) and can miss under-convergence (stopping before quality stabilizes). No pip library measures ConvergenceRound — the iteration at which quality delta drops below epsilon. No named metric PurificationScore exists.
+**Who It Serves:** ML engineers running Constitutional AI pipelines, DSPy optimization workflows, iterative RAG refinement, any self-critique-and-revise LLM architecture; alignment researchers optimizing refinement compute; QA engineers building CI gates for quality pipelines; teams paying for API calls per refinement iteration who want to know if they're over-paying.
+**How It Works:** RefineProbe.run(agent_fn, eval_fn, task_prompts, epsilon=0.05, max_passes=10) — runs iterative quality improvement loop. Each pass: agent_fn(output) → revised_output → eval_fn(output) → quality_score. RefineProbe tracks QualityDeltaCurve (quality per pass), detects ConvergenceRound (first pass where |quality(N) - quality(N-1)| < epsilon), reports DivergenceAlert if quality decreases on any pass. PurificationScore = quality_at_final_stable_pass / max_possible_quality. CLI: rprobe run/show/gate/plot/quick. pytest plugin: @refine_test.
+**Key Technical Innovation:** First pip-installable tool to implement ConvergenceRound and PurificationScore — convergence-based stopping criterion for LLM self-refinement. New framing: "run until stable" vs. "run N times." QualityDeltaCurve visualization shows engineers whether their pipeline converges fast (2 passes) or slow (7+ passes) or oscillates (diverges). Each is actionable information that fixed-iteration pipelines cannot provide.
+**Capital Required:** ZERO (anthropic/openai SDK + click + rich + numpy + matplotlib + pyyaml)
+**Pivot_Score:** 8.255/10 — PASSES 7.0 THRESHOLD (updated from 8.05 with IMPROVE paper evidence)
+**Sprint Estimate:** 3-4 weeks to pip-publishable v0.1. Sprint starts after observer-probe v0.1 ships.
+**Competitive Status:** GREEN — Constitutional AI (fixed-iteration training method, not evaluation tool, DIFFERENT), IMPROVE (arXiv, not pip library, DIFFERENT), DSPy (optimization not convergence measurement, DIFFERENT) — NONE implement ConvergenceRound or PurificationScore as pip-installable named metrics. Window: 4-6 months.
+**Acquisition Target:** Anthropic (Constitutional AI is their technology — refine-probe wraps it with convergence measurement), Google (self-critique pipelines), research labs running iterative refinement at scale
+**Open Questions:** KU-088 (epsilon calibration per task type), KU-089 (oscillation detection sensitivity), KU-090 (multi-step vs. single-step refinement agent support), KU-091 (PurificationScore vs. absolute quality interpretation)
+**Status:** DESIGN COMPLETE — Sprint ready
+**Cycle:** 028 (pattern from cycle 027)
 
 ---
 

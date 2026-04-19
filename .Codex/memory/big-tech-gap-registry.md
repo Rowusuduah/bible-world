@@ -3,7 +3,47 @@
 
 **Started:** Cycle 9 (2026-03-26)
 **Kill Deadline:** 2026-04-16 (3 weeks) — need 5+ STRUCTURAL findings or pivot dies
-**Last Updated:** Cycle 027 (2026-04-09)
+**Last Updated:** Cycle 028 (2026-04-19)
+
+---
+
+## CYCLE 028 FINDINGS [WEB-FRESH 2026-04-19]
+
+```
+FINDING-057:
+  Company: Anthropic
+  Gap: No tool measures FalseBinaryDetectionRate (FBDR) — whether an LLM can correctly identify adversarially-imposed false binary constraints and produce principled third-outcome resolutions rather than picking one horn of the binary. Adversarial safety research focuses on refusal rates and jailbreak success; the binary dissolution capability is untested.
+  Evidence: arXiv 2602.16666 "Towards a Science of AI Agent Reliability" names "discrimination" as undertested dimension. Anthropic safety research (trustworthy-agents, April 2026) does not address false binary constraint identification. Fortune March 2026: "reliability lagging." John 8:1-11 structural analog: author explicitly identifies "trap" (v.6a), three-move dissolution executed, accusers leave, third outcome given.
+  BibleWorld Tool: binary-trap-probe (FalseBinaryDetectionRate + ConstraintReframingScore) — BUILD-029
+  Biblical Source: PAT-102 (John 8:1-11 — False Binary Constraint Reframing Protocol)
+  Status: STRUCTURAL_GAP_CONFIRMED_GREEN
+  Cycle: 028
+
+FINDING-058:
+  Company: Anthropic + All AI labs using self-refinement pipelines
+  Gap: Iterative self-refinement (Constitutional AI, DSPy, chain-of-thought revision) uses fixed iteration count as stopping criterion. No pip-installable tool measures convergence — quality delta approaching zero — as the stopping criterion. arXiv 2502.18530 confirms "iteration budget" dominates over convergence check. emergentmind.com documents that 40% of reasoning steps are wasted post-convergence.
+  Evidence: arXiv 2502.18530 (IMPROVE paper): iteration budget as primary stopping criterion. emergentmind.com: early convergence at 60% of reasoning steps. Anthropic Constitutional AI documentation: 2-3 fixed passes, no convergence check. No ConvergenceRound or PurificationScore as named pip-installable metrics confirmed in any tool.
+  BibleWorld Tool: refine-probe (PurificationScore + ConvergenceRound) — BUILD-028
+  Biblical Source: PAT-097 (Psalm 12:6 — Seven-Fold Purification Protocol)
+  Status: STRUCTURAL_GAP_CONFIRMED_GREEN — Pivot_Score updated 8.255
+  Cycle: 028
+
+FINDING-059:
+  Company: All AI labs (agent deployment)
+  Gap: Memograph CLI (HN Show HN, Feb 25 2026) addresses agent memory failures — "diagnose memory failures in AI agents." Adjacent to session-lens but focused on memory retention not session fidelity scoring. Confirms memory as active pain point. session-lens remains DIFFERENTIATED (session-fidelity scoring vs. memory failure diagnosis).
+  Evidence: HN Show HN: Memograph CLI (Feb 25 2026). Confirmed different from session-lens (different problem framing and implementation).
+  BibleWorld Tool: session-lens — remains GREEN, differentiation confirmed
+  Status: COMPETITIVE_INTELLIGENCE — session-lens GREEN maintained
+  Cycle: 028
+
+FINDING-060:
+  Company: All AI labs (developer tools market)
+  Gap: Claude Code confirmed #1 most-used AI coding tool globally (overtook GitHub Copilot in 8 months, May 2025 to April 2026). 95% of developers use AI tools weekly. 75% use AI for half or more of their work. This confirms the addressable market for AI reliability probe suite is at peak historical size.
+  Evidence: Tech-Insider April 2026, LogRocket March 2026, multiple sources confirm Claude Code #1. Anthropic GPU capacity strain (The Register March 2026) — Anthropic tightening usage limits = scale confirmed.
+  Relevance: All BibleWorld tools targeting Claude Code users (judge-probe, observer-probe, claim-probe, refine-probe, pressure-gauge) are targeting the #1 most-used AI coding platform. Market timing optimal.
+  Status: MARKET_INTELLIGENCE_UPDATED
+  Cycle: 028
+```
 
 ---
 
